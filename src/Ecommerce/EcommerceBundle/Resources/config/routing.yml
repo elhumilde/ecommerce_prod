@@ -1,0 +1,90 @@
+routingAdmin:
+  resource: "@EcommerceBundle/Resources/config/routing/routingAdmin.yml"
+  prefix: /admin
+
+routingPanier:
+  resource: "@EcommerceBundle/Resources/config/routing/routingPanier.yml"
+  prefix: /panier
+routingProduits:
+  resource: "@EcommerceBundle/Resources/config/routing/routingProduits.yml"
+  prefix: /
+
+routingProduitsAdmin:
+  resource: "@EcommerceBundle/Resources/config/routing/routingProduitsAdmin.yml"
+  prefix: /admin/produits
+
+routingCategoriesAdmin:
+    resource: "@EcommerceBundle/Resources/config/routing/routingCategoriesAdmin.yml"
+    prefix:   /admin/categories
+routingClientAdmin:
+    resource: "@EcommerceBundle/Resources/config/routing/routingClientAdmin.yml"
+    prefix:   /admin/clients
+routingNosClientAdmin:
+        resource: "@EcommerceBundle/Resources/config/routing/routingNosClientsAdmin.yml"
+        prefix:   /admin/nos_clients
+routingClientAdmin:
+    resource: "@EcommerceBundle/Resources/config/routing/routingClientAdmin.yml"
+    prefix:   /admin/client
+
+routingTelecontactAdmin:
+  resource: "@EcommerceBundle/Resources/config/routing/routingTelecontactAdmin.yml"
+  prefix:   /admin/telecontact
+
+routingFactureAdmin:
+  resource: "@EcommerceBundle/Resources/config/routing/routingFactureAdmin.yml"
+  prefix:   /admin/facture
+
+routingEmailAdmin:
+  resource: "@EcommerceBundle/Resources/config/routing/routingEmailAdmin.yml"
+  prefix:   /user/email
+
+
+routingReferencement:
+  resource: "@EcommerceBundle/Resources/config/routing/routingReferencement.yml"
+  prefix: /referencement
+
+routingLien:
+  resource: "@EcommerceBundle/Resources/config/routing/routingLien.yml"
+  prefix: /lien
+
+ajax_va:
+    pattern:  /ajax_va
+    defaults: { _controller: EcommerceBundle:Produits:ajaxVA }
+ajax_t:
+    pattern:  /ajax_t
+    defaults: { _controller: EcommerceBundle:Produits:ajaxT}
+
+ajax_pj:
+    pattern:  /ajax_pj
+    defaults: { _controller: EcommerceBundle:Produits:ajaxPJ }
+ajax_ep:
+    pattern:  /ajax_ep
+    defaults: { _controller: EcommerceBundle:Produits:ajaxEP }
+ajax_hb:
+    pattern:  /ajax_hb
+    defaults: { _controller: EcommerceBundle:Produits:ajaxhb }
+
+
+clients:
+    pattern:  /admin/clts
+    defaults: { _controller: EcommerceBundle:Client:clients   }
+
+presentationclient:
+    pattern:  /clients/{id}
+    defaults: { _controller: EcommerceBundle:Client:presentation }
+
+referencementdevis:
+    pattern:  /referencementdevis
+    defaults: { _controller: EcommerceBundle:Referencement:referencementdevis }
+
+ajax:
+    pattern:  /ajax
+    defaults: { _controller: EcommerceBundle:Referencement:ajax }
+
+ajaxRef:
+    pattern:  /ajaxRef
+    defaults: { _controller: EcommerceBundle:Referencement:ajaxRef }
+
+acceuil:
+    pattern:  /admin/acceuil
+    defaults: { _controller: EcommerceBundle:Admin:acceuil   }

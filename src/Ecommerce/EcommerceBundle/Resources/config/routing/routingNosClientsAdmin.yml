@@ -1,0 +1,31 @@
+adminNosClients:
+    pattern:  /
+    defaults: { _controller: "EcommerceBundle:NosClientsAdmin:index" }
+
+adminNosClients_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "EcommerceBundle:NosClientsAdmin:show" }
+
+adminNosClients_new:
+    pattern:  /new
+    defaults: { _controller: "EcommerceBundle:NosClientsAdmin:new" }
+
+adminNosClients_create:
+    pattern:  /create
+    defaults: { _controller: "EcommerceBundle:NosClientsAdmin:create" }
+    requirements: { _method: post }
+
+adminNosClients_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "EcommerceBundle:NosClientsAdmin:edit" }
+
+adminNosClients_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "EcommerceBundle:NosClientsAdmin:update" }
+    requirements: { _method: post|put }
+
+adminNosClients_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "EcommerceBundle:NosClientsAdmin:delete" }
+    requirements: { _method: post|delete }
+

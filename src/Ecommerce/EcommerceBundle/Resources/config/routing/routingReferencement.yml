@@ -1,0 +1,112 @@
+referencement:
+    pattern:  /
+    defaults: { _controller: EcommerceBundle:Referencement:referencement }
+
+referencement_commande:
+    pattern:  /commande
+    defaults: { _controller: EcommerceBundle:Referencement:refcom }
+referencement_commande_ajax_send:
+    pattern:  /commande/ajax-send
+    defaults: { _controller: EcommerceBundle:Referencement:ajaxsend }
+
+referencement_commande_getting:
+    pattern:  /getting
+    defaults: { _controller: EcommerceBundle:Referencement:getting }
+
+referencement_commande_contenu:
+    pattern:  /contenu
+    defaults: { _controller: EcommerceBundle:Referencement:contenu }
+
+referencement_commande_affichage:
+    pattern:  /affichage
+    defaults: { _controller: EcommerceBundle:Referencement:affichage }
+
+referencement_commande_devis_somme:
+    pattern:  /somme_devis
+    defaults: { _controller: EcommerceBundle:Referencement:somme }
+referencement_commande_devis_somme_aff:
+    pattern:  /somme_devissss
+    defaults: { _controller: EcommerceBundle:Referencement:sommeaff }
+referencement_commande_devis_somme_cont:
+    pattern:  /somme_deviss
+    defaults: { _controller: EcommerceBundle:Referencement:sommecont }
+
+referencement_commande_devis_cont:
+    pattern:  /cont
+    defaults: { _controller: EcommerceBundle:Referencement:cont }
+referencement_commande_devis_ref:
+    pattern:  /ref
+    defaults: { _controller: EcommerceBundle:Referencement:ref }
+referencement_commande_devis_rs:
+    pattern:  /rs
+    defaults: { _controller: EcommerceBundle:Referencement:rs }
+referencement_commande_devis_fn:
+    pattern:  /fn
+    defaults: { _controller: EcommerceBundle:Referencement:fn }
+
+referencement_commande_devis_mail_proposition:
+    pattern:  /mail_proposition
+    defaults: { _controller: EcommerceBundle:Referencement:mailproposition }
+
+
+referencement_commande_devis_mail_bon_commande:
+    pattern:  /mail_bon_commande
+    defaults: { _controller: EcommerceBundle:Referencement:mailboncommande }
+
+referencement_commande_devis_mail_bon_devis:
+    pattern:  /mail_devis
+    defaults: { _controller: EcommerceBundle:Referencement:maildevis }
+
+referencement_commande_devis_aff:
+    pattern:  /aff
+    defaults: { _controller: EcommerceBundle:Referencement:aff }
+
+facture:
+    pattern:  /facture
+    defaults: { _controller: EcommerceBundle:Referencement:facture }
+modalite_paiement:
+    pattern:  /modalite_paiement
+    defaults: { _controller: EcommerceBundle:Referencement:modalitePaiement }
+
+facture_sec:
+    pattern:  /sec
+    defaults: { _controller: EcommerceBundle:Referencement:sec }
+
+referencement_commande_devis_fn_pdf:
+    pattern:  /pdf
+    defaults: { _controller: EcommerceBundle:Referencement:pdf }
+
+referencement_commande_devis_paiement:
+    pattern:  /paie
+    defaults: { _controller: EcommerceBundle:Referencement:paie }
+
+referencement_commande_devis_code_rp:
+    pattern:  /code_rp
+    defaults: { _controller: EcommerceBundle:Referencement:code_rp }
+
+referencement_commande_devis_des_rub:
+    pattern:  /des_rub
+    defaults: { _controller: EcommerceBundle:Referencement:desrub}
+referencement_commande_devis_des_rub_nbr_rub:
+    pattern:  /nbr_rub
+    defaults: { _controller: EcommerceBundle:Referencement:nbrrub}
+referencement_commande_devis_visbilite_header:
+    pattern:  /visbilite_header
+    defaults: { _controller: EcommerceBundle:Referencement:visbilite}
+referencement_commande_devis_des_marque:
+    pattern:  /des_marque
+    defaults: { _controller: EcommerceBundle:Referencement:marque}
+
+referencement_commande_profession:
+    pattern:  /profession
+    defaults: { _controller: EcommerceBundle:Referencement:profession }
+
+
+referencement_commande_devis_prof:
+    pattern:  /prof
+    defaults: { _controller: EcommerceBundle:Referencement:prof }
+
+
+referencement_clear_session:
+    pattern:  /clear_session
+    defaults: { _controller: EcommerceBundle:Referencement:index }

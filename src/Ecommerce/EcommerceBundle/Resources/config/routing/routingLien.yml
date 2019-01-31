@@ -1,0 +1,56 @@
+prestation:
+    pattern:  /prestation
+    defaults: { _controller: EcommerceBundle:Produits:prestation   }
+marque:
+    pattern:  /marque
+    defaults: { _controller: EcommerceBundle:Produits:marque   }
+rubrique:
+    pattern:  /rubrique
+    defaults: { _controller: EcommerceBundle:Produits:rubrique   }
+carte_visite:
+    pattern:  /carte
+    defaults: { _controller: EcommerceBundle:Produits:cartevisite   }
+video:
+    pattern:  /video
+    defaults: { _controller: EcommerceBundle:Produits:video   }
+
+catalogue_reference:
+    pattern:  /catalogue
+    defaults: { _controller: EcommerceBundle:Produits:catalogue   }
+pvi:
+    pattern:  /pvi
+    defaults: { _controller: EcommerceBundle:Produits:pvi   }
+banniere:
+    pattern:  /banniere
+    defaults: { _controller: EcommerceBundle:Produits:banniere   }
+vignette_thematique:
+    pattern:  /vignette_thematique
+    defaults: { _controller: EcommerceBundle:Produits:vignetteT   }
+vignette_localte:
+    pattern:  /vignette_localte
+    defaults: { _controller: EcommerceBundle:Produits:vignetteL }
+vignette_accueil_video:
+    pattern:  /vignette_accueil_video
+    defaults: { _controller: EcommerceBundle:Produits:vignetteav   }
+professionnels:
+    pattern:  /professionnels
+    defaults: { _controller: EcommerceBundle:Produits:professionnels   }
+espace_promo:
+    pattern:  /espace_promo
+    defaults: { _controller: EcommerceBundle:Produits:espacepromo   }
+habillage:
+    pattern:  /habillage
+    defaults: { _controller: EcommerceBundle:Produits:habillage  }
+
+
+profession:
+    pattern:  /profession
+    defaults: { _controller: EcommerceBundle:Produits:professionL  }
+
+site_internet:
+    pattern:  /site_internet
+    defaults: { _controller: EcommerceBundle:Produits:site  }
+
+catalogue_ref:
+    pattern:  /scatalogue_ref
+    defaults: { _controller: EcommerceBundle:Produits:catalogueref  }

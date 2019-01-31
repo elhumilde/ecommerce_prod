@@ -1,0 +1,26 @@
+adminEmail:
+    pattern:  /
+    defaults: { _controller: "EcommerceBundle:EmailAdmin:index" }
+adminEmail_show:
+    pattern:  /show/{id}
+    defaults: { _controller: EcommerceBundle:EmailAdmin:show }
+adminEmail_show_email:
+    pattern:  /email/{id}
+    defaults: { _controller: EcommerceBundle:EmailAdmin:email }
+
+
+
+Email:
+    pattern:  /by_id
+    defaults: { _controller: "EcommerceBundle:EmailAdmin:emailById" }
+Email_show:
+    pattern:  /show/{id}
+    defaults: { _controller: EcommerceBundle:EmailAdmin:show }
+Email_show_email:
+    pattern:  /email/{id}
+    defaults: { _controller: EcommerceBundle:EmailAdmin:email }
+
+
+Email_group:
+    pattern:  /by_group
+    defaults: { _controller: "EcommerceBundle:EmailAdmin:emailBygroup" }

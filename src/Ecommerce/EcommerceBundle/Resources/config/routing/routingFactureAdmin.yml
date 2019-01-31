@@ -1,0 +1,9 @@
+adminFacture:
+    pattern:  /
+    defaults: { _controller: "EcommerceBundle:FactureAdmin:index" }
+adminFacture_show:
+    pattern:  /show/{id}
+    defaults: { _controller: EcommerceBundle:FactureAdmin:show }
+adminFacture_show_facture:
+    pattern:  /facture/{id}
+    defaults: { _controller: EcommerceBundle:FactureAdmin:facture }

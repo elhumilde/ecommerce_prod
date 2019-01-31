@@ -1,0 +1,32 @@
+budget_gestion_contenu:
+    pattern:  /user/budget_g_c
+    defaults: { _controller: EcommerceBundle:Produits:budgetgestiondecontenu }
+
+devis_gestion_contenu:
+    pattern:  /user/devis_g_c
+    defaults: { _controller: EcommerceBundle:Produits:devisgestiondecontenu }
+
+budget_affichage:
+    pattern:  /user/budget_affichage
+    defaults: { _controller: EcommerceBundle:Produits:budgetaffichage }
+
+devis_affichage:
+    pattern:  /user/devis_affichage
+    defaults: { _controller: EcommerceBundle:Produits:devisaffichage }
+
+profession_liberale:
+    pattern:  /user/profession_liberale
+    defaults: { _controller: EcommerceBundle:Produits:profession }
+presentation:
+    pattern:  /produit/{id}
+    defaults: { _controller: EcommerceBundle:Produits:presentation }
+
+categorieProduits:
+    pattern:  /categorie/{categorie}
+    defaults: { _controller: EcommerceBundle:Produits:produits }
+
+rechercheProduits:
+    pattern:  /recherche
+    defaults: { _controller: EcommerceBundle:Produits:rechercheTraitement }
+
+

@@ -1,0 +1,74 @@
+body {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0;
+}
+
+section {
+    padding: 0;
+    margin: 0;
+    width: auto;
+}
+
+
+#fond-4 {
+    background-color: white;
+    height: 600px;
+    width: auto;
+}
+
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+.demo {
+    width: 240px;
+    height: 46px;
+    background-color: black;
+    color: black;
+    font-size: 20px;
+    margin: 15px;
+    color: white;
+}
+
+.demo:hover {
+    color: #ffdb2e;
+}
+.demo:focus {
+    color: #ffdb2e;
+}
+
+.show-product {
+    width: 400px;
+    height: 70px;
+    background-color: #ffdb2e;
+    color: black;
+    font-size: 26px;
+    margin: 30px;
+}
+
+.btn [aria-expanded="true"]{
+    background-color: #ffdb2e!important;
+}
+
+span.glyphicon-triangle-bottom {
+    color: black;
+    font-size: 20px;
+}
+
+.demo span.glyphicon-triangle-bottom {
+    color: white;
+    font-size: 16px;
+}
+
+.test1 a:hover  {
+    color: yellow;
+}
+
+.test2 a:hover  {
+    color: black;
+}
