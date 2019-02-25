@@ -3260,10 +3260,10 @@ class ReferencementController extends Controller
 
             );*/
         $raison =$session->get('raison');
-        $villes = $em->getRepository('EcommerceBundle:Ville')->findBy(array(), array('libelle' => 'asc'));
-        $rubriques = $em->getRepository('EcommerceBundle:Rubrique')->findAll();
-        /*$prestation = $em->getRepository('EcommerceBundle:Prestation')->getpresrt();*/
-        $entities = $em->getRepository('EcommerceBundle:Region')->findBy(array(), array('libelle' => 'asc'));
+        $villes     =     $em->getRepository('EcommerceBundle:Ville')->findBy(array(), array('libelle' => 'asc'));
+        $rubriques  =     $em->getRepository('EcommerceBundle:Rubrique')->findAll();
+      /*$prestation =     $em->getRepository('EcommerceBundle:Prestation')->getpresrt();*/
+        $entities   =     $em->getRepository('EcommerceBundle:Region')->findBy(array(), array('libelle' => 'asc'));
 
         return $this->render('EcommerceBundle:Default:referencement/modulesUsed/referencement.html.twig',
             array(
