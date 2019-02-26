@@ -106,4 +106,29 @@ class Ville
         $this->categorie = $categorie;
     }
 
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="cat", type="integer", nullable=true)
+     */
+    private $cat;
+
+    /**
+     * @return string
+     */
+    public function getCat()
+    {
+        return $this->cat;
+    }
+
+    /**
+     * @param string $cat
+     */
+    public function setCat($cat)
+    {
+        $this->cat = $cat;
+    }
+
+
 }

@@ -2,6 +2,10 @@ referencement:
     pattern:  /
     defaults: { _controller: EcommerceBundle:Referencement:referencement }
 
+referencement_mptei:
+    pattern:  /moteur
+    defaults: { _controller: EcommerceBundle:Referencement:moteur }
+
 referencement_commande:
     pattern:  /commande
     defaults: { _controller: EcommerceBundle:Referencement:refcom }

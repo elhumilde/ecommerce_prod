@@ -57,6 +57,17 @@ class ReferencementController extends Controller
 
     }
 
+    public function moteurAction(/*Categories $categorie = null*/)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $rubriques = $em->getRepository('EcommerceBundle:Rubrique')->findAll();
+
+
+        $villes = $em->getRepository('EcommerceBundle:Ville')->findBy(array(), array('libelle' => 'asc'));
+
+        return $this->render('EcommerceBundle:Default:produits/layout/moteur.html.twig', array('rubriques' => $rubriques,'villes' => $villes));
+    }
+
     public function secAction(/*Categories $categorie = null*/)
     {
         $session = $this ->getRequest()->getSession();
