@@ -33,20 +33,61 @@
 
 
     </section>
+    <section  id="fond-2" >
+
+        <form id="jsForm" class="form-group" action="" method="GET">
     <div class="container" style="width: 1800px!important; ">
+
+
+
+
+
 <div class="row">
-
-    <div class="col-md-3">
-        <div class="form-group" style="margin-top: 36px" >
-
-            <label for="exampleInputAmount">Rubriques</label>
-
-            <div class="input-group ">
-                <input type="number" class="form-control exampleInputAmount rubrique mySelect  " placeholder="Nbre" name="num1" id="num1" min="0" max="5" style="width:194px;" >
-            </div>
-
+    <div class="activites" style="margin-left: 68px!important;">
+        <div class="btn-2" align="center">
+            <p >Mes activités</p>
         </div>
+        <div class="form-group" style="margin-top: 36px">
+            <label for="exampleInputAmount">Rubriques</label>
+            <div class="input-group ">
+                <input type="number" class="form-control exampleInputAmount rubrique mySelect"   {% if referencement['rubrique'] %} value="{{  referencement['rubrique']}}" {% else %} value="0"{% endif %}  placeholder="Nbre" name="num1" id="num1" min="0" max="5" style="width:194px;" >
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleInputAmount">Prestations</label>
+            <div class="input-group">
+                <input type="number" class="form-control exampleInputAmount" {% if referencement['prest'] %} value="{{  referencement['prest']}}" {% else %} value="0"{% endif %}   placeholder="Nbre" name="sum" id="sum" readonly>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exampleInputAmount"> Prestations suppl</label>
+            <div class="input-group">
+
+                <input type="number" class="form-control exampleInputAmount pres_marq" {% if referencement['prest_sup'] %} value="{{  referencement['prest_sup']}}" {% else %} value="0"{% endif %}  placeholder="Nbre" name="num2" id="num2" min="0">
+            </div>
+        </div>
+        <tr><td><input type="number" name="sum2" id="sum2" class="pres_marq" style="display:none;" /></td></tr>
+        <br>
+        <div class="form-group">
+            <label for="exampleInputAmount"> Marque</label>
+            <div class="input-group">
+                <input type="number" class="form-control exampleInputAmount pres_marq positionnement"  {% if referencement['marque'] %} value="{{  referencement['marque']}}" {% else %} value="0"{% endif %} placeholder="Nbre" name="num3" id="num3" min="0">
+            </div>
+        </div>
+        <td><input type="number"  id="sum3" name="sum3"  class="pres_marq" {% if referencement['sum3'] %} value="{{  referencement['sum3']}}" {% else %} value="0"{% endif %}  style="display:none;" /></td>
+        <td> <input type="number" id="mari" name="mari"  {% if referencement['mari'] %} value="{{  referencement['mari']}}" {% else %} value="0"{% endif %}   style="display: none" ></td>
+        <td> <input type="number" id="marque_pack" name="marque_pack" {% if referencement['marque_pack'] %} value="{{  referencement['marque_pack']}}" {% else %} value="0"{% endif %}  style="display: none" ></td>
+        <td> <input type="number" id="resulta" name="resulta" {% if referencement['resulta'] %} value="{{  referencement['resulta']}}" {% else %} value="0"{% endif %}    style="display: none"></td>
+        <td> <input type="number" id="resulta2" name="resulta2"  {% if referencement['resulta2'] %} value="{{  referencement['resulta2']}}" {% else %} value="0"{% endif %} style="display: none" ></td>
+
+        <td> <input type="number" id="rubd"  name="rubd"     {% if referencement['rubd'] %} value="{{  referencement['rubd']}}" {% else %} value="0"{% endif %} style="display: none"></td>
+        <td><input type="number" id="rania" name="rania"    {% if referencement['rania'] %} value="{{  referencement['rania']}}" {% else %} value="0"{% endif %} style="display: none"></td>
+        <td><input type="number" id="raniad" name="raniad"  {% if referencement['raniad'] %} value="{{  referencement['raniad']}}" {% else %} value="0"{% endif %} style="display: none"></td><br>
+
     </div>
+
 </div>
         <div style="margin-left: 41px;">
 
@@ -54,12 +95,15 @@
                 Plus de détails
             </button>
             <br><br>
+
             <div id="demo-10" class="collapse">
                 <input type="number" id="r_count" ><input type="number" id="p_count" >
                 <p class="p_details_tub" >Vous avez choisi d'être référencé sur <input id="nbr_rubrique" type="text"  readonly/>rubrique avec  prestations <input id="nbr_prestattion" type="text"  readonly/><br> Veuillez séléctionner les rubrique et prestations rattachées</p>
                 <div id="contenu_lists">
 
-                    <div class="row">
+                    <form id="rub_prest"  action="" method="GET">
+
+                        <div class="row">
 
                         <div class="col-md-3">
 
@@ -185,7 +229,7 @@
                         <div class="col-md-3">
 
 
-                            <button type="button" id="dropdownMenu2"  class="btn dropdown-toggle multiselect" data-toggle="collapse" data-target="#demo-2-2">
+                            <button type="button" id="dropdownMenu2"  class="btn dropdown-toggle multiselect mySelect" data-toggle="collapse" data-target="#demo-2-2">
                                 &nbsp;   <span class="glyphicon glyphicon-triangle-bottom visibilite_icon"></span>
                                 <span id="select_ville_principe_supp">parution supplémentaire  </span><span id="ville_principe_view_supp"></span>
                             </button>
@@ -202,7 +246,7 @@
                                         <tr>
                                             <td>
                                                 <label data-toggle="collapse" data-target="#demo-2-2" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline" id="ville_casa">
-                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox"  name="villes_panier" value="91010|Casablanca|1">Casablanca
+                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox"  name="villes_panier[]" value="91010|Casablanca|1">Casablanca
                                                 </label><br>
                                             </td>
                                         </tr>
@@ -210,35 +254,35 @@
                                         <tr>
                                             <td>
                                                 <label data-toggle="collapse" data-target="#demo-2-2" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier" value="101010|Rabat|2">Rabat
+                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier[]" value="101010|Rabat|2">Rabat
                                                 </label><br>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <label data-toggle="collapse" data-target="#demo-2-2" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier" value="141010|Fès|3">Fès
+                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier[]" value="141010|Fès|3">Fès
                                                 </label><br>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <label data-toggle="collapse" data-target="#demo-2-2" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier" value="41110|Agadir|3">Agadir
+                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier[]" value="41110|Agadir|3">Agadir
                                                 </label><br>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <label data-toggle="collapse" data-target="#demo-2-2" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier" value="163010|Tanger|2">Tanger
+                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier[]" value="163010|Tanger|2">Tanger
                                                 </label><br>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>
                                                 <label data-toggle="collapse" data-target="#demo-2-2" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier" value="71010|Marrakech|2">Marrakech
+                                                    <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier[]" value="71010|Marrakech|2">Marrakech
                                                 </label><br>
                                             </td>
                                         </tr>
@@ -247,7 +291,7 @@
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-2" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier"  value="{{ ville.codeville }}|{{ ville.libelle }}"/>{{ ville.libelle }}
+                                                        <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier[]"  value="{{ ville.codeville }}|{{ ville.libelle }}"/>{{ ville.libelle }}
                                                     </label><br>
                                                 </td>
                                             </tr>
@@ -393,7 +437,7 @@
 
                             <div class="col-md-3">
 
-                                <button type="button" id="dropdownMenu1"  class="btn dropdown-toggle multiselect" data-toggle="collapse" data-target="#demo-2-3">
+                                <button type="button" id="dropdownMenu1"  class="btn dropdown-toggle multiselect mySelect" data-toggle="collapse" data-target="#demo-2-3">
                                     &nbsp;   <span class="glyphicon glyphicon-triangle-bottom visibilite_icon"></span>
                                     <span id="select_ville_principe_supp_1">parution supplémentaire &nbsp; </span><span id="ville_principe_view_supp_1"></span>
                                 </button>
@@ -410,7 +454,7 @@
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-3" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline" id="ville_casa">
-                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox"  name="villes_panier1" value="91010|Casablanca|1">&nbsp; &nbsp;Casablanca
+                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox"  name="villes_panier1[]" value="91010|Casablanca|1">&nbsp; &nbsp;Casablanca
                                                     </label><br>
                                                 </td>
                                             </tr>
@@ -418,35 +462,35 @@
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-3" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1" value="101010|Rabat|2">&nbsp; &nbsp;Rabat
+                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1[]" value="101010|Rabat|2">&nbsp; &nbsp;Rabat
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-3" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1" value="141010|Fès|3">&nbsp; &nbsp;Fès
+                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1[]" value="141010|Fès|3">&nbsp; &nbsp;Fès
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-3" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1" value="41110|Agadir|3">&nbsp; &nbsp;Agadir
+                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1[]" value="41110|Agadir|3">&nbsp; &nbsp;Agadir
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-3" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1" value="163010|Tanger|2">&nbsp; &nbsp;Tanger
+                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1[]" value="163010|Tanger|2">&nbsp; &nbsp;Tanger
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-3" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1" value="71010|Marrakech|2">&nbsp; &nbsp;Marrakech
+                                                        <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1[]" value="71010|Marrakech|2">&nbsp; &nbsp;Marrakech
                                                     </label><br>
                                                 </td>
                                             </tr>
@@ -455,7 +499,7 @@
                                                 <tr>
                                                     <td>
                                                         <label data-toggle="collapse" data-target="#demo-2-3" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                            <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1"  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
+                                                            <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1[]"  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
                                                         </label><br>
                                                     </td>
                                                 </tr>
@@ -595,7 +639,7 @@
                             <div class="col-md-3">
 
 
-                                <button type="button" id="dropdownMenu1"  class="btn dropdown-toggle multiselect" data-toggle="collapse" data-target="#demo-2-4">
+                                <button type="button" id="dropdownMenu1"  class="btn dropdown-toggle multiselect mySelect" data-toggle="collapse" data-target="#demo-2-4">
                                     &nbsp;   <span class="glyphicon glyphicon-triangle-bottom visibilite_icon"></span>
                                     <span id="select_ville_principe_supp_2">parution supplémentaire &nbsp; </span><span id="ville_principe_view_supp_2"></span>
                                 </button>
@@ -612,7 +656,7 @@
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-4" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline" id="ville_casa">
-                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox"  name="villes_panier2" value="91010|Casablanca|1">&nbsp; &nbsp;Casablanca
+                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox"  name="villes_panier2[]" value="91010|Casablanca|1">&nbsp; &nbsp;Casablanca
                                                     </label><br>
                                                 </td>
                                             </tr>
@@ -620,35 +664,35 @@
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-4" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2" value="101010|Rabat|2">&nbsp; &nbsp;Rabat
+                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2[]" value="101010|Rabat|2">&nbsp; &nbsp;Rabat
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-4" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2" value="141010|Fès|3">&nbsp; &nbsp;Fès
+                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2[]" value="141010|Fès|3">&nbsp; &nbsp;Fès
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-4" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2" value="41110|Agadir|3">&nbsp; &nbsp;Agadir
+                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2[]" value="41110|Agadir|3">&nbsp; &nbsp;Agadir
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-4" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2" value="163010|Tanger|2">&nbsp; &nbsp;Tanger
+                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2[]" value="163010|Tanger|2">&nbsp; &nbsp;Tanger
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-4" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2" value="71010|Marrakech|2">&nbsp; &nbsp;Marrakech
+                                                        <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2[]" value="71010|Marrakech|2">&nbsp; &nbsp;Marrakech
                                                     </label><br>
                                                 </td>
                                             </tr>
@@ -657,7 +701,7 @@
                                                 <tr>
                                                     <td>
                                                         <label data-toggle="collapse" data-target="#demo-2-4" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                            <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2"  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
+                                                            <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2[]"  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
                                                         </label><br>
                                                     </td>
                                                 </tr>
@@ -797,7 +841,7 @@
                             <div class="col-md-3">
 
 
-                                <button type="button" id="dropdownMenu1"  class="btn dropdown-toggle multiselect" data-toggle="collapse" data-target="#demo-2-5">
+                                <button type="button" id="dropdownMenu1"  class="btn dropdown-toggle multiselect mySelect" data-toggle="collapse" data-target="#demo-2-5">
                                     &nbsp;   <span class="glyphicon glyphicon-triangle-bottom visibilite_icon"></span>
                                     <span id="select_ville_principe_supp_3">parution supplémentaire &nbsp; </span><span id="ville_principe_view_supp_3"></span>
                                 </button>
@@ -814,7 +858,7 @@
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-5" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline" id="ville_casa">
-                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox"  name="villes_panier3" value="91010|Casablanca|1">&nbsp; &nbsp;Casablanca
+                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox"  name="villes_panier3[]" value="91010|Casablanca|1">&nbsp; &nbsp;Casablanca
                                                     </label><br>
                                                 </td>
                                             </tr>
@@ -822,35 +866,35 @@
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-5" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3" value="101010|Rabat|2">&nbsp; &nbsp;Rabat
+                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3[]" value="101010|Rabat|2">&nbsp; &nbsp;Rabat
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-5" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3" value="141010|Fès|3">&nbsp; &nbsp;Fès
+                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3[]" value="141010|Fès|3">&nbsp; &nbsp;Fès
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-5" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3" value="41110|Agadir|3">&nbsp; &nbsp;Agadir
+                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3[]" value="41110|Agadir|3">&nbsp; &nbsp;Agadir
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-5" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3" value="163010|Tanger|2">&nbsp; &nbsp;Tanger
+                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3[]" value="163010|Tanger|2">&nbsp; &nbsp;Tanger
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-2-5" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3" value="71010|Marrakech|2">&nbsp; &nbsp;Marrakech
+                                                        <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3[]" value="71010|Marrakech|2">&nbsp; &nbsp;Marrakech
                                                     </label><br>
                                                 </td>
                                             </tr>
@@ -859,7 +903,7 @@
                                                 <tr>
                                                     <td>
                                                         <label data-toggle="collapse" data-target="#demo-2-5" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                            <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3"  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
+                                                            <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3[]"  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
                                                         </label><br>
                                                     </td>
                                                 </tr>
@@ -1005,11 +1049,11 @@
                             <div class="col-md-3">
 
 
-                                <button type="button" id="dropdownMenu1"  class="btn dropdown-toggle multiselect" data-toggle="collapse" data-target="#demo-9">
+                                <button type="button" id="dropdownMenu1"  class="btn dropdown-toggle multiselect mySelect" data-toggle="collapse" data-target="#demo-2-1">
                                     &nbsp;   <span class="glyphicon glyphicon-triangle-bottom visibilite_icon"></span>
                                     <span id="select_ville_principe_supp_4">parution supplémentaire &nbsp; </span><span id="ville_principe_view_supp_4"></span>
                                 </button>
-                                <div id="demo-9" class="collapse bouton-2" style="overflow-y:scroll;position: relative!important;">
+                                <div id="demo-2-1" class="collapse bouton-2" style="overflow-y:scroll;position: relative!important;">
 
 
                                     <input type="text" id="myInput_ville_panier_4" class="form-control" placeholder="search" >
@@ -1022,7 +1066,7 @@
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-9" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline" id="ville_casa">
-                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox"  name="villes_panier4" value="91010|Casablanca|1">&nbsp; &nbsp;Casablanca
+                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox"  name="villes_panier4[]" value="91010|Casablanca|1">&nbsp; &nbsp;Casablanca
                                                     </label><br>
                                                 </td>
                                             </tr>
@@ -1030,35 +1074,35 @@
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-9" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4" value="101010|Rabat|2">&nbsp; &nbsp;Rabat
+                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4[]" value="101010|Rabat|2">&nbsp; &nbsp;Rabat
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-9" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4" value="141010|Fès|3">&nbsp; &nbsp;Fès
+                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4[]" value="141010|Fès|3">&nbsp; &nbsp;Fès
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-9" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4" value="41110|Agadir|3">&nbsp; &nbsp;Agadir
+                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4[]" value="41110|Agadir|3">&nbsp; &nbsp;Agadir
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-9" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4" value="163010|Tanger|2">&nbsp; &nbsp;Tanger
+                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4[]" value="163010|Tanger|2">&nbsp; &nbsp;Tanger
                                                     </label><br>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>
                                                     <label data-toggle="collapse" data-target="#demo-9" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4" value="71010|Marrakech|2">&nbsp; &nbsp;Marrakech
+                                                        <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4[]" value="71010|Marrakech|2">&nbsp; &nbsp;Marrakech
                                                     </label><br>
                                                 </td>
                                             </tr>
@@ -1067,7 +1111,7 @@
                                                 <tr>
                                                     <td>
                                                         <label data-toggle="collapse" data-target="#demo-9" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
-                                                            <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4"  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
+                                                            <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4[]"  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
                                                         </label><br>
                                                     </td>
                                                 </tr>
@@ -1147,8 +1191,99 @@
                     </div>
 
 
+        </form>
+
+                    {# ------------------- selectionner marque-----------------#}
+                    <form id="jsForm" class=" form-inline" action="" method="GET">
+
+                        <div class="form-group marques" style="display:none ;">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle multiselect" type="button" style="width: 400px;" id="marques" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Enter vos marques <span class="caret"></span></button>
+                                <ul class="dropdown-menu ul_rub" aria-labelledby="marques" style="overflow-y:scroll; width: 400px;height: 109px">
+                                    <li ><input class="input_marque positionnement m " type="text" id="marq"  name="marq"   {% if marque['marq1'] %} value="{{  marque['marq1']}}" {% endif %} placeholder="Marque1"   style="display: none"/>&nbsp; </li>
+                                    <li ><input class="input_marque positionnement m1" type="text" id="marq1"  name="marq1" {% if marque['marq2'] %} value="{{  marque['marq2']}}" {% endif %} placeholder="Marque2" style="display: none"/>&nbsp; </li>
+                                    <li ><input class="input_marque positionnement m2" type="text" id="marq2"  name="marq2" {% if marque['marq3'] %} value="{{  marque['marq3']}}" {% endif %}placeholder="Marque3" style="display: none"/>&nbsp; </li>
+                                    <li ><input class="input_marque positionnement m3" type="text" id="marq3"  name="marq3" {% if marque['marq4'] %} value="{{  marque['marq4']}}" {% endif %}placeholder="Marque4" style="display: none"/>&nbsp; </li>
+                                    <li ><input class="input_marque positionnement m4" type="text" id="marq4"  name="marq4" {% if marque['marq5'] %} value="{{  marque['marq5']}}" {% endif %}placeholder="Marque5" style="display: none"/>&nbsp; </li>
+                                    <li ><input class="input_marque positionnement m5" type="text" id="marq5"  name="marq5" {% if marque['marq6'] %} value="{{  marque['marq6']}}" {% endif %}placeholder="Marque6" style="display: none"/>&nbsp; </li>
+                                    <li ><input class="input_marque positionnement m6" type="text" id="marq6"  name="marq6" {% if marque['marq7'] %} value="{{  marque['marq7']}}" {% endif %}placeholder="Marque7" style="display: none"/>&nbsp; </li>
+                                    <li ><input class="input_marque positionnement m7" type="text" id="marq7"  name="marq7" {% if marque['marq8'] %} value="{{  marque['marq8']}}" {% endif %}placeholder="Marque8" style="display: none"/>&nbsp; </li>
+                                    <li ><input class="input_marque positionnement m8" type="text" id="marq8"  name="marq8" {% if marque['marq9'] %} value="{{  marque['marq9']}}" {% endif %}placeholder="Marque9" style="display: none"/>&nbsp; </li>
+                                    <li ><input class="input_marque positionnement m9" type="text" id="marq9" name="marq9"  {% if marque['marq10'] %}value="{{  marque['marq10']}}" {% endif %}placeholder="Marque10" style="display: none"/>&nbsp; </li>
 
 
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="form-group marques" style="display: none">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle multiselect" type="button" style="width: 400px;" id="positionnement" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Précisez votre positionnement liée à chaque marque<span class="caret"></span></button>
+                                <ul class="dropdown-menu ul_rub ma" aria-labelledby="positionnement" style="overflow-y:scroll; width: 400px;height: 109px">
+                                    <div id="g" style="display: none">
+                                        <input class="input_marque"   type="text" id="marque"  {% if marque['marq1'] %} value="{{  marque['marq1']}}" {% endif %}readonly placeholder="Marque1"/><br>
+                                        <label ><input class="positionnement p1" type="checkbox" name="positionnement[]" {% if 'Distributeurs' in marque['posi1'] %} checked {% endif %} value="Distributeurs"/>&nbsp;Distributeurs </label>
+                                        <label><input class="positionnement p1" type="checkbox" name="positionnement[]"  {% if 'Importateurs' in marque['posi1'] %} checked {% endif %} value="Importateurs"/>&nbsp;Importateurs </label>
+                                        <label><input class="positionnement p1" type="checkbox" name="positionnement[]"  {% if 'Représentants agrées' in marque['posi1'] %} checked {% endif %} value="Représentants agrées"/>&nbsp;Représentants agrées </label>
+                                    </div>
+                                    <div id="g1" style="display: none">
+                                        <input class="input_marque"  type="text" id="marque1"  {% if marque['marq2'] %} value="{{  marque['marq2']}}" {% endif %}readonly placeholder="Marque2"/><br>
+                                        <label><input class="positionnement p2" type="checkbox" name="positionnement1[]" {% if 'Distributeurs' in marque['posi2']  %}checked  {% endif %}value="Distributeurs"/>&nbsp;Distributeurs </label>
+                                        <label><input class="positionnement p2" type="checkbox" name="positionnement1[]" {% if 'Importateurs' in marque['posi2']  %}checked  {% endif %}value="Importateurs"/>&nbsp;Importateurs </label>
+                                        <label><input class="positionnement p2" type="checkbox" name="positionnement1[]" {% if 'Représentants agrées' in marque['posi2']  %}checked  {% endif %}value="Représentants agrées"/>&nbsp;Représentants agrées </label>
+                                    </div>
+                                    <div id="g2" style="display: none">
+                                        <input class="input_marque"  type="text" id="marque2"  {% if marque['marq3'] %} value="{{  marque['marq3']}}" {% endif %} readonly placeholder="Marque3"/><br>
+                                        <label><input class="positionnement p3" type="checkbox" name="positionnement2[]" {% if 'Distributeurs' in marque['posi3']  %}checked  {% endif %}value="Distributeurs"/>&nbsp;Distributeurs </label>
+                                        <label><input class="positionnement p3" type="checkbox" name="positionnement2[]" {% if 'Importateurs' in marque['posi3'] %}checked  {% endif %}value="Importateurs"/>&nbsp;Importateurs </label>
+                                        <label><input class="positionnement p3" type="checkbox" name="positionnement2[]" {% if 'Représentants agrées' in marque['posi3']  %}checked  {% endif %}value="Représentants agrées"/>&nbsp;Représentants agrées </label>
+                                    </div>
+                                    <div id="g3" style="display: none">
+                                        <input class="input_marque"  type="text" id="marque3"  {% if marque['marq4'] %} value="{{  marque['marq4']}}" {% endif %} readonly placeholder="Marque4"/><br>
+                                        <label><input class="positionnement p4" type="checkbox" name="positionnement3[]" {% if 'Distributeurs' in marque['posi4']  %}checked  {% endif %}value="Distributeurs"/>&nbsp;Distributeurs </label>
+                                        <label><input class="positionnement p4" type="checkbox" name="positionnement3[]" {% if 'Importateurs' in marque['posi4']  %}checked  {% endif %}value="Importateurs"/>&nbsp;Importateurs </label>
+                                        <label><input class="positionnement p4" type="checkbox" name="positionnement3[]" {% if 'Représentants agrées' in marque['posi4']  %}checked  {% endif %}value="Représentants agrées"/>&nbsp;Représentants agrées </label>
+                                    </div>
+                                    <div id="g4" style="display: none">
+                                        <input class="input_marque"  type="text" id="marque4"  {% if marque['marq5'] %} value="{{  marque['marq5']}}" {% endif %} readonly placeholder="Marque5"/><br>
+                                        <label><input class="positionnement p5" type="checkbox" name="positionnement4[]" {% if 'Distributeurs' in marque['posi5']  %}checked  {% endif %}value="Distributeurs"/>&nbsp;Distributeurs </label>
+                                        <label><input class="positionnement p5" type="checkbox" name="positionnement4[]" {% if 'Importateurs' in marque['posi5']  %}checked  {% endif %}value="Importateurs"/>&nbsp;Importateurs </label>
+                                        <label><input class="positionnement p5" type="checkbox" name="positionnement4[]" {% if 'Représentants agrées' in marque['posi5']  %}checked  {% endif %}value="Représentants agrées"/>&nbsp;Représentants agrées </label>
+                                    </div>
+                                    <div id="g5" style="display: none">
+                                        <input class="input_marque"  type="text" id="marque5"  {% if marque['marq6'] %} value="{{  marque['marq6']}}" {% endif %} readonly placeholder="Marque6"/><br>
+                                        <label><input class="positionnement p6" type="checkbox" name="positionnement5[]" {% if 'Distributeurs' in marque['posi6']  %}checked  {% endif %}value="Distributeurs"/>&nbsp;Distributeurs </label>
+                                        <label><input class="positionnement p6" type="checkbox" name="positionnement5[]" {% if 'Importateurs' in marque['posi6']  %}checked  {% endif %}value="Importateurs"/>&nbsp;Importateurs </label>
+                                        <label><input class="positionnement p6" type="checkbox" name="positionnement5[]" {% if 'Représentants agrées' in marque['posi6']  %}checked  {% endif %}value="Représentants agrées"/>&nbsp;Représentants agrées </label>
+                                    </div>
+                                    <div id="g6" style="display: none">
+                                        <input class="input_marque"  type="text" id="marque6"  {% if marque['marq7'] %} value="{{  marque['marq7']}}" {% endif %} readonly placeholder="Marque7"/><br>
+                                        <label><input class="positionnement p7" type="checkbox" name="positionnement6[]" {% if 'Distributeurs' in marque['posi7']  %}checked  {% endif %}value="Distributeurs"/>&nbsp;Distributeurs </label>
+                                        <label><input class="positionnement p7" type="checkbox" name="positionnement6[]" {% if 'Importateurs' in marque['posi7']  %}checked  {% endif %}value="Importateurs"/>&nbsp;Importateurs </label>
+                                        <label><input class="positionnement p7" type="checkbox" name="positionnement6[]" {% if 'Représentants agrées' in marque['posi7']  %}checked  {% endif %}value="Représentants agrées"/>&nbsp;Représentants agrées </label>
+                                    </div>
+                                    <div id="g7" style="display: none">
+                                        <input class="input_marque"  type="text" id="marque7"  {% if marque['marq8'] %} value="{{  marque['marq8']}}" {% endif %} readonly placeholder="Marque8"/><br>
+                                        <label><input class="positionnement p8" type="checkbox" name="positionnement7[]" {% if 'Distributeurs' in marque['posi8']  %}checked  {% endif %}value="Distributeurs"/>&nbsp;Distributeurs </label>
+                                        <label><input class="positionnement p8" type="checkbox" name="positionnement7[]" {% if 'Importateurs' in marque['posi8']  %}checked  {% endif %}value="Importateurs"/>&nbsp;Importateurs </label>
+                                        <label><input class="positionnement p8" type="checkbox" name="positionnement7[]" {% if 'Représentants agrées' in marque['posi8']  %}checked  {% endif %}value="Représentants agrées"/>&nbsp;Représentants agrées </label>
+                                    </div>
+                                    <div id="g8" style="display: none">
+                                        <input class="input_marque"  type="text" id="marque8"  {% if marque['marq9'] %} value="{{  marque['marq9']}}" {% endif %} readonly placeholder="Marque9"/><br>
+                                        <label><input class="positionnement p9" type="checkbox" name="positionnement8[]" {% if 'Distributeurs' in marque['posi9'] %}checked  {% endif %}value="Distributeurs"/>&nbsp;Distributeurs </label>
+                                        <label><input class="positionnement p9" type="checkbox" name="positionnement8[]" {% if 'Importateurs' in marque['posi9']  %}checked  {% endif %}value="Importateurs"/>&nbsp;Importateurs </label>
+                                        <label><input class="positionnement p9" type="checkbox" name="positionnement8[]" {% if 'Représentants agrées' in marque['posi9']  %}checked  {% endif %}value="Représentants agrées"/>&nbsp;Représentants agrées </label>
+                                    </div>
+                                    <div id="g9" style="display: none">
+                                        <input class="input_marque"  type="text" id="marque9"  {% if marque['marq10'] %} value="{{  marque['marq10']}}" {% endif %}readonly placeholder="Marque10"/><br>
+                                        <label><input class="positionnement p10" type="checkbox" name="positionnement9[]" {% if 'Distributeurs' in marque['posi10']  %}checked  {% endif %}value="Distributeurs"/>&nbsp;Distributeurs </label>
+                                        <label><input class="positionnement p10" type="checkbox" name="positionnement9[]" {% if 'Importateurs' in marque['posi10']  %}checked  {% endif %}value="Importateurs"/>&nbsp;Importateurs </label>
+                                        <label><input class="positionnement p10" type="checkbox" name="positionnement9[]" {% if 'Représentants agrées' in marque['posi1']  %}checked  {% endif %}value="Représentants agrées"/>&nbsp;Représentants agrées </label>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
 
 
 
@@ -1187,10 +1322,10 @@
 
 
 
-
                 </div>
             </div>
         </div>
+
 
 
 
@@ -1208,26 +1343,39 @@
 
             <div class="col-md-6">
 
+                <tr><td><input type="number" name="sum2" id="sum2" class="pres_marq" style="display:none;" /></td></tr>
+
+                <td><input type="number"  id="sum3" name="sum3"  class="pres_marq" {% if referencement['sum3'] %} value="{{  referencement['sum3']}}" {% else %} value="0"{% endif %}  style="display:none;" /></td>
+                <td> <input type="number" id="mari" name="mari"  {% if referencement['mari'] %} value="{{  referencement['mari']}}" {% else %} value="0"{% endif %}   style="display: none" ></td>
+                <td> <input type="number" id="marque_pack" name="marque_pack" {% if referencement['marque_pack'] %} value="{{  referencement['marque_pack']}}" {% else %} value="0"{% endif %}  style="display: none" ></td>
+                <td> <input type="number" id="resulta" name="resulta" {% if referencement['resulta'] %} value="{{  referencement['resulta']}}" {% else %} value="0"{% endif %}    style="display: none"></td>
+                <td> <input type="number" id="resulta2" name="resulta2"  {% if referencement['resulta2'] %} value="{{  referencement['resulta2']}}" {% else %} value="0"{% endif %} style="display: none" ></td>
+
+                <td> <input type="number" id="rubd"  name="rubd"     {% if referencement['rubd'] %} value="{{  referencement['rubd']}}" {% else %} value="0"{% endif %} style="display: none"></td>
+                <td><input type="number" id="rania" name="rania"    {% if referencement['rania'] %} value="{{  referencement['rania']}}" {% else %} value="0"{% endif %} style="display: none"></td>
+                <td><input type="number" id="raniad" name="raniad"  {% if referencement['raniad'] %} value="{{  referencement['raniad']}}" {% else %} value="0"{% endif %} style="display: none"></td><br>
 
 
-                <input type="text" id="rub_supp_1"  class="form-control"     value="0"    style="border-radius: -2px;">
-                <input type="text" id="rub_supp_2"  class="form-control"     value="0"    style="border-radius: -2px;">
-                <input type="text" id="rub_supp_3"  class="form-control"     value="0"    style="border-radius: -2px;">
-                <input type="text" id="rub_supp_4"  class="form-control"     value="0"    style="border-radius: -2px ;">
-                <input type="text" id="rub_supp_5"  class="form-control"     value="0"    style="border-radius: -2px;">
-                <input type="text" id="rub_supp_6"  class="form-control"     value="0"    style="border-radius: -2px;">
-                <input type="text" id="rub_supp_7"  class="form-control"     value="0"    style="border-radius: -2px ;">
 
-                <input type="text" id="localiter_supp" class="form-control"  value="0"    style="border-radius: -2px ;">
-                <input type="text" id="localiter_supp1" class="form-control"  value="0"    style="border-radius: -2px ;">
-                <input type="text" id="localiter_supp2" class="form-control"  value="0"    style="border-radius: -2px ;">
-                <input type="text" id="localiter_supp3" class="form-control"  value="0"    style="border-radius: -2px ;">
-                <input type="text" id="localiter_supp4" class="form-control"  value="0"    style="border-radius: -2px ;">
-                <input type="text" id="localiter_supp5" class="form-control"  value="0"    style="border-radius: -2px ;">
-                <input type="text" id="localiter_supp6" class="form-control"  value="0"    style="border-radius: -2px ;">
-                <input type="text" id="localiter_supp7" class="form-control"  value="0"    style="border-radius: -2px ;">
 
-                <input type="text" id="final"  class="form-control"  value="0"    style="border-radius: -2px;">
+                <input type="text" id="rub_supp_1"  class="form-control"     value="0"    style="border-radius: -2px;display:none;">
+                <input type="text" id="rub_supp_2"  class="form-control"     value="0"    style="border-radius: -2px;display:none;">
+                <input type="text" id="rub_supp_3"  class="form-control"     value="0"    style="border-radius: -2px;display:none;">
+                <input type="text" id="rub_supp_4"  class="form-control"     value="0"    style="border-radius: -2px ;display:none;">
+                <input type="text" id="rub_supp_5"  class="form-control"     value="0"    style="border-radius: -2px;display:none;">
+                <input type="text" id="rub_supp_6"  class="form-control"     value="0"    style="border-radius: -2px;display:none;">
+                <input type="text" id="rub_supp_7"  class="form-control"     value="0"    style="border-radius: -2px ;display:none;">
+
+                <input type="text" id="localiter_supp" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
+                <input type="text" id="localiter_supp1" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
+                <input type="text" id="localiter_supp2" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
+                <input type="text" id="localiter_supp3" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
+                <input type="text" id="localiter_supp4" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
+                <input type="text" id="localiter_supp5" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
+                <input type="text" id="localiter_supp6" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
+                <input type="text" id="localiter_supp7" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
+
+                <input type="text" id="final"  class="form-control"  value="0"    style="border-radius: -2px ; display:none;">
 
 
 
@@ -1235,7 +1383,7 @@
                 <div class="form-group">
 
                     <button id="khalila" class="btn black"><span style="color: #ffdb2e;">Budget estimé</span> <br>Référencement</button>
-                    <div id="ref" style="display: none; margin-top: 20px;"><input class="results" type="text" id="fayssal" value="00000000000000000000000000000" readonly="">
+                    <div id="ref" style="display: none; margin-top: 20px;"><input class="results" type="text" id="fayssal" value="0" readonly="">
                     </div>
                 </div>
 
@@ -1251,6 +1399,132 @@
 
 
     </div>
+            </form>
+    </section>
+
+    <script type="text/javascript">
+
+        $("#num2").on("keydown keyup change load", function() {
+            var num2 = document.getElementById('num2').value;
+            var prest =num2/3;
+            var prest = -Math.abs(prest);
+            var prest =Math.floor(prest);
+            var prest = Math.abs(prest);
+            var result2 = Math.ceil(parseInt(num2)/3)  * 1500;
+            document.getElementById("resulta").value = result2 ;
+            document.getElementById("resulta2").value = prest ;
+            if (num2 == 0) {
+                $("#select_rub_prest7").hide();
+                $('.prest8').prop('checked', false);
+            }else
+            {
+                $("#select_rub_prest7").show();
+            }
+            cal();
+            kas();
+        });
+
+        $(document).ready(function() {
+
+
+            $(window,document).on('change load', '.controle-checkbox', function () {
+                var sum_prest= parseInt( $("#sum").val());
+                var num2_prest=  parseInt($("#num2").val());
+                var totale =sum_prest+num2_prest;
+                /* alert(totale);*/
+
+                var t  = $('input.controle-checkbox:checked').length;
+                var t1 = $('input.controle-checkbox:checked');
+
+                $('#p_count').val(t);
+
+                if(t >= totale)
+                {
+                    $('.controle-checkbox').not(t1).prop('disabled',this.checked);
+                }
+                else
+                {
+                    $('.controle-checkbox').not(t1).prop('disabled',false);
+                }
+            });
+
+            $('.loaders').css('display','none');
+        });
+
+        $(document).on('change keydown keyup ', '.mySelect,.prest ', function () {
+
+            $('.loaders').css('display','');
+            form =$('#jsForm');
+            $.ajax({
+                url: '{{ path('referencement_commande_devis_des_rub_fayssal') }}',
+                type: 'POST',
+                data: form.serialize(),
+                statusCode: {
+                    //traitement en cas de succès
+                    200: function (response) {
+                        var successMessage = response;
+
+                        console.log(successMessage);
+                        $('.loaders').css('display','none');
+                    },
+                    //traitement en cas d'erreur (on peut aussi traiter le cas erreur 500...)
+                    412: function (response) {
+                        var errorsForm = response.responseJSON.formErrors;
+                        //on affiche les erreurs...
+                        alert('error');
+                    }
+                }
+            });
+        });
+
+
+        $(document).on('click ', '.positionnement', function () {
+            form =$('#jsForm ');
+            $.ajax({
+                url: '{{ path('referencement_commande_devis_des_marque') }}',
+                type: 'POST',
+                data: form.serialize(),
+                statusCode: {
+                    //traitement en cas de succès
+                    200: function (response) {
+                        var successMessage = response;
+                        console.log(successMessage);
+                        $('.loaders').css('display','none');
+                    },
+                    412: function (response) {
+                        var errorsForm = response.responseJSON.formErrors;
+                        //on affiche les erreurs...
+                        alert('error');
+                    }
+                }
+            });
+        });
+
+
+        $(document).on('keyup', '.input_marque', function () {
+            var marque =   $("#marq").val();
+            var marque1 =  $("#marq1").val();
+            var marque2 =  $("#marq2").val();
+            var marque3 =  $("#marq3").val();
+            var marque4 =  $("#marq4").val();
+            var marque5 =  $("#marq5").val();
+            var marque6 =  $("#marq6").val();
+            var marque7 =  $("#marq7").val();
+            var marque8 =  $("#marq8").val();
+            var marque9 =  $("#marq9").val();
+            document.getElementById('marque').value=marque;
+            document.getElementById('marque1').value=marque1;
+            document.getElementById('marque2').value=marque2;
+            document.getElementById('marque3').value=marque3;
+            document.getElementById('marque4').value=marque4;
+            document.getElementById('marque5').value=marque5;
+            document.getElementById('marque6').value=marque6;
+            document.getElementById('marque7').value=marque7;
+            document.getElementById('marque8').value=marque8;
+            document.getElementById('marque9').value=marque9;
+
+        });
+    </script>
 
     <script src="{{ asset('js/jquery.quicksearch.js') }}  "></script>
 
@@ -1290,6 +1564,141 @@
 
     <script>
 
+
+/*        $(window,"#num1").on("load  ", function() {
+
+
+            var num1 = $("#num1").val();
+
+            document.getElementById('nbr_rubrique').value = num1;
+            if (num1 == 0) {
+
+                $("#rubrique").show();
+                $("#select_rub_prest").hide();
+                $("#select_rub_prest1").hide();
+                $("#select_rub_prest2").hide();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+                $('.r,.r1,.r2,.r3,.r4,.r5,.r6,.prest1,.prest2,.prest3,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+
+            }
+            else
+            if(num1==1)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").hide();
+                $("#select_rub_prest2").hide();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+                $('.r1,.r2,.r3,.r4,.r5,.r6,.prest2,.prest3,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==2)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").hide();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+
+                $('.r2,.r3,.r4,.r5,.r6,.prest3,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==3)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+
+
+                $('.r3,.r4,.r5,.r6,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==4)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+                $('.r4,.r5,.r6,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==5)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+                $('.r5,.r6,.prest6,.prest7').prop('checked', false);
+
+
+            }
+            else
+            if(num1==6)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest5").show();
+                $("#select_rub_prest6").hide();
+                $('.r6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==7)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest5").show();
+                $("#select_rub_prest6").show();
+            }
+
+        });*/
+
+
+/*
+        $("#num1,#num2").on("keydown keyup change load ", function()  {
+
+            var sum = parseInt($('input[name=sum]').val());
+            var num2 = parseInt($('input[name=num2]').val());
+            var nbr_prestattion = Math.ceil(parseInt(sum+num2));
+            document.getElementById("nbr_prestattion").value = nbr_prestattion ;
+
+        });
+*/
 
         $(document).on('click', '#khalila', function (e) {
             e.preventDefault();
@@ -1597,7 +2006,76 @@
 
                 $("#rubrique_view").html(labels);
                 $("#select_rub").hide();
-                $("#rubrique_view").show();}
+                $("#rubrique_view").show();
+
+
+
+
+                var current = 	(this);
+                var rubrique = (this).value;
+                var b = $(current).attr('name');
+                var res = b.substring(5, 6);
+                var vb = 'prest' + res;
+                var addvb = 'addprest' + res;
+                $('#prestaAjax').css('display', '');
+                var data_send = {'rubrique': rubrique};
+                $.ajax({
+                    url: '{{ path('ajax') }}',
+                    type: 'POST',
+                    data: data_send,
+                    statusCode: {
+                        //traitement en cas de succès
+                        200: function (response) {
+                            var successMessage = response;
+                            $(current).closest('.form-group').siblings(".testpres").first().find("div").remove();
+                            $(current).closest('.form-group').siblings(".testpres").first().find("li").remove();
+                            $(current).closest('.form-group').siblings(".testpres").first().append(('<div class="dropdown" id="dropdown"> <button  class="btn dropdown-toggle tata btn_prestattion" type="button" id="dropdownMenu02" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Listing des prestations et produits liés <span class="caret"></span></button> <ul  id="div" class="dropdown-menu testul" aria-labelledby="dropdownMenu2" style="overflow-y:scroll" ><li></li></ul> </div>'));
+                            $.each(JSON.parse(successMessage), function (i, pres) {
+                                if (vb) {
+                                    $(current).closest('.form-group').siblings(".testpres").first().find('ul').append((' <li class="checked li"><label class="label_prest"><input id="prestation"  name="' + vb + '[]"  class="prest controle-checkbox prest1" type="checkbox" value="' + pres.id + '"/>' + pres.prestation + '</label></li> '));
+                                }
+                                else {
+                                    $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li class="checked li"> <label class="label_prest"><input id="prestation"  name="prest[]"  class="prest controle-checkbox prest1"  type="checkbox"  value="' + pres.id + '"/>' + pres.prestation + '</label></li>'));
+                                }
+                                $('#prestaAjax').css('display', 'none');
+                            });
+                            if (addvb) {
+                                $(document).keypress('.input' + addvb + '', function (event) {
+                                    var length_input = $('input.input' + addvb + '').val();
+                                    if (event.which == 13 && $('input.input' + addvb + '').val() != "") {
+                                        var text = $('.input' + addvb + '').val();
+                                        $('#checkboxes' + addvb + '').append('<label class="label_prest"><input  class="prest controle-checkbox prest1" name="' + addvb + '[]"  type="checkbox" value="' + text + '" checked/> ' + text + '</label><br />');
+                                        $('.input' + addvb + '').val(null);
+                                        $('#prestaAjax').css('display', 'none');
+                                    }
+                                });
+                                $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li ><div id="checkboxes' + addvb + '" > </div>Autre <input id="addprestation" name="' + addvb + '[]" class="input' + addvb + ' controle-checkbox length-input prest "   type="text" placeholder="Renseigner la prestation ou le produit souhaité"style="width: 340px!important;height: 40px;!important;"/></li>'));
+                            }
+                            else {
+                                $(document).keypress('.input', function (e) {
+                                    var dInput = $('input.input').val();
+                                    if (e.which == 13 && $('input.input').val() != "") {
+                                        var text = $('.input').val();
+                                        $('#checkboxes').append('<label class="label_prest"><input type="checkbox" id="addprestation" name="addprest[]" class="prest controle-checkbox prest1" value="' + text + '" checked/> ' + text + '</label><br />');
+                                        $(".input").val(null);
+                                        $('#prestaAjax').css('display', 'none');
+                                    }
+                                });
+                                $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li> <div id="checkboxes"></div>Autre <input type="text" id="addprestation" name="addprest" class="input controle-checkbox in prest" placeholder="Renseigner la prestation ou le produit souhaité "style="width: 340px!important;height: 40px;!important;"/> </li>'));
+                            }
+                            $('#prestaAjax').css('display', 'none');
+                        },
+                        412: function (response) {
+                            var errorsForm = response.responseJSON.formErrors;
+                            alert('error');
+                            $('#prestaAjax').css('display', 'none');
+                        }
+                    }
+                });
+                $('.testpres').css('display','');
+
+
+            }
             else{
                 if ($('.r').prop('checked', false)) {
                     /*var current = 	(this);
@@ -1626,6 +2104,71 @@
                 $("#select_rub1").hide();
                 $("#rubrique1_view").show();
 
+
+
+                var current = 	(this);
+                var rubrique = (this).value;
+                var b = $(current).attr('name');
+                var res = b.substring(5, 6);
+                var vb = 'prest' + res;
+                var addvb = 'addprest' + res;
+                $('#prestaAjax').css('display', '');
+                var data_send = {'rubrique': rubrique};
+                $.ajax({
+                    url: '{{ path('ajax') }}',
+                    type: 'POST',
+                    data: data_send,
+                    statusCode: {
+                        //traitement en cas de succès
+                        200: function (response) {
+                            var successMessage = response;
+                            $(current).closest('.form-group').siblings(".testpres").first().find("div").remove();
+                            $(current).closest('.form-group').siblings(".testpres").first().find("li").remove();
+                            $(current).closest('.form-group').siblings(".testpres").first().append(('<div class="dropdown" id="dropdown"> <button  class="btn dropdown-toggle tata btn_prestattion" type="button" id="dropdownMenu02" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Listing des prestations et produits liés <span class="caret"></span></button> <ul  id="div1" class="dropdown-menu testul" aria-labelledby="dropdownMenu2" style="overflow-y:scroll" ><li></li></ul> </div>'));
+                            $.each(JSON.parse(successMessage), function (i, pres) {
+                                if (vb) {
+                                    $(current).closest('.form-group').siblings(".testpres").first().find('ul').append((' <li class="checked li"><label class="label_prest"><input id="prestation"  name="' + vb + '[]"  class="prest controle-checkbox prest2" type="checkbox" value="' + pres.id + '"/>' + pres.prestation + '</label></li> '));
+                                }
+                                else {
+                                    $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li class="checked li"> <label class="label_prest"><input id="prestation"  name="prest[]"  class="prest controle-checkbox prest2"  type="checkbox"  value="' + pres.id + '"/>' + pres.prestation + '</label></li>'));
+                                }
+                                $('#prestaAjax').css('display', 'none');
+                            });
+                            if (addvb) {
+                                $(document).keypress('.input' + addvb + '', function (event) {
+                                    var length_input = $('input.input' + addvb + '').val();
+                                    if (event.which == 13 && $('input.input' + addvb + '').val() != "") {
+                                        var text = $('.input' + addvb + '').val();
+                                        $('#checkboxes' + addvb + '').append('<label class="label_prest"><input  class="prest controle-checkbox prest2" name="' + addvb + '[]"  type="checkbox" value="' + text + '" checked/> ' + text + '</label><br />');
+                                        $('.input' + addvb + '').val(null);
+                                        $('#prestaAjax').css('display', 'none');
+                                    }
+                                });
+                                $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li ><div id="checkboxes' + addvb + '" > </div>Autre <input id="addprestation" name="' + addvb + '[]" class="input' + addvb + ' controle-checkbox length-input prest "   type="text" placeholder="Renseigner la prestation ou le produit souhaité"style="width: 340px!important;height: 40px;!important;"/></li>'));
+                            }
+                            else {
+                                $(document).keypress('.input', function (e) {
+                                    var dInput = $('input.input').val();
+                                    if (e.which == 13 && $('input.input').val() != "") {
+                                        var text = $('.input').val();
+                                        $('#checkboxes').append('<label class="label_prest"><input type="checkbox" id="addprestation" name="addprest[]" class="prest controle-checkbox prest2" value="' + text + '" checked/> ' + text + '</label><br />');
+                                        $(".input").val(null);
+                                        $('#prestaAjax').css('display', 'none');
+                                    }
+                                });
+                                $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li> <div id="checkboxes"></div>Autre <input type="text" id="addprestation" name="addprest" class="input controle-checkbox in prest" placeholder="Renseigner la prestation ou le produit souhaité "style="width: 340px!important;height: 40px;!important;"/> </li>'));
+                            }
+                            $('#prestaAjax').css('display', 'none');
+                        },
+                        412: function (response) {
+                            var errorsForm = response.responseJSON.formErrors;
+                            alert('error');
+                            $('#prestaAjax').css('display', 'none');
+                        }
+                    }
+                });
+                $('.testpres').css('display','');
+
             }
             else{
                 if ($('.r1').prop('checked', false)) {
@@ -1650,7 +2193,77 @@
                         }).get();
                         $("#rubrique2_view").html(labels);
                         $("#select_rub2").hide();
-                        $("#rubrique2_view").show(); }
+                        $("#rubrique2_view").show();
+
+
+
+                        var current = 	(this);
+                        var rubrique = (this).value;
+                        var b = $(current).attr('name');
+
+                        var res = b.substring(5, 6);
+                        var vb = 'prest' + res;
+                        var addvb = 'addprest' + res;
+                        $('#prestaAjax').css('display', '');
+                        var data_send = {'rubrique': rubrique};
+                        $.ajax({
+                            url: '{{ path('ajax') }}',
+                            type: 'POST',
+                            data: data_send,
+                            statusCode: {
+                                //traitement en cas de succès
+                                200: function (response) {
+                                    var successMessage = response;
+                                    $(current).closest('.form-group').siblings(".testpres").first().find("div").remove();
+                                    $(current).closest('.form-group').siblings(".testpres").first().find("li").remove();
+                                    $(current).closest('.form-group').siblings(".testpres").first().append(('<div class="dropdown" id="dropdown"> <button  class="btn dropdown-toggle tata btn_prestattion" type="button" id="dropdownMenu02" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Listing des prestations et produits liés <span class="caret"></span></button> <ul  id="div2" class="dropdown-menu testul" aria-labelledby="dropdownMenu2" style="overflow-y:scroll" ><li></li></ul> </div>'));
+                                    $.each(JSON.parse(successMessage), function (i, pres) {
+                                        if (vb) {
+                                            $(current).closest('.form-group').siblings(".testpres").first().find('ul').append((' <li class="checked li"><label class="label_prest"><input id="prestation"  name="' + vb + '[]"  class="prest controle-checkbox prest3" type="checkbox" value="' + pres.id + '"/>' + pres.prestation + '</label></li> '));
+                                        }
+                                        else {
+                                            $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li class="checked li"> <label class="label_prest"><input id="prestation"  name="prest[]"  class="prest controle-checkbox prest3"  type="checkbox"  value="' + pres.id + '"/>' + pres.prestation + '</label></li>'));
+                                        }
+                                        $('#prestaAjax').css('display', 'none');
+                                    });
+                                    if (addvb) {
+                                        $(document).keypress('.input' + addvb + '', function (event) {
+                                            var length_input = $('input.input' + addvb + '').val();
+                                            if (event.which == 13 && $('input.input' + addvb + '').val() != "") {
+                                                var text = $('.input' + addvb + '').val();
+                                                $('#checkboxes' + addvb + '').append('<label class="label_prest"><input  class="prest controle-checkbox prest3" name="' + addvb + '[]"  type="checkbox" value="' + text + '" checked/> ' + text + '</label><br />');
+                                                $('.input' + addvb + '').val(null);
+                                                $('#prestaAjax').css('display', 'none');
+                                            }
+                                        });
+                                        $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li ><div id="checkboxes' + addvb + '" > </div>Autre <input id="addprestation" name="' + addvb + '[]" class="input' + addvb + ' controle-checkbox length-input prest "   type="text" placeholder="Renseigner la prestation ou le produit souhaité"style="width: 340px!important;height: 40px;!important;"/></li>'));
+                                    }
+                                    else {
+                                        $(document).keypress('.input', function (e) {
+                                            var dInput = $('input.input').val();
+                                            if (e.which == 13 && $('input.input').val() != "") {
+                                                var text = $('.input').val();
+                                                $('#checkboxes').append('<label class="label_prest"><input type="checkbox" id="addprestation" name="addprest[]" class="prest controle-checkbox prest3" value="' + text + '" checked/> ' + text + '</label><br />');
+                                                $(".input").val(null);
+                                                $('#prestaAjax').css('display', 'none');
+                                            }
+                                        });
+                                        $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li> <div id="checkboxes"></div>Autre <input type="text" id="addprestation" name="addprest" class="input controle-checkbox in prest " placeholder="Renseigner la prestation ou le produit souhaité "style="width: 340px!important;height: 40px;!important;"/> </li>'));
+                                    }
+                                    $('#prestaAjax').css('display', 'none');
+                                },
+                                412: function (response) {
+                                    var errorsForm = response.responseJSON.formErrors;
+                                    alert('error');
+                                    $('#prestaAjax').css('display', 'none');
+                                }
+                            }
+                        });
+                        $('.testpres').css('display','');
+
+
+
+                    }
 
                     else
                     {
@@ -1671,12 +2284,88 @@
 
                     if(($(".r3").is(":checked"))) {
 
+
+
+
                         var labels = $('#myTable3 :checked').map(function () {
                             return $(this).closest('label').text();
                         }).get();
                         $("#rubrique3_view").html(labels);
                         $("#select_rub3").hide();
-                        $("#rubrique3_view").show(); }
+                        $("#rubrique3_view").show();
+
+
+
+
+
+
+                        var current = 	(this);
+                        var rubrique = (this).value;
+                        var b = $(current).attr('name');
+                        var res = b.substring(5, 6);
+                        var vb = 'prest' + res;
+                        var addvb = 'addprest' + res;
+                        $('#prestaAjax').css('display', '');
+                        var data_send = {'rubrique': rubrique};
+                        $.ajax({
+                            url: '{{ path('ajax') }}',
+                            type: 'POST',
+                            data: data_send,
+                            statusCode: {
+                                //traitement en cas de succès
+                                200: function (response) {
+                                    var successMessage = response;
+                                    $(current).closest('.form-group').siblings(".testpres").first().find("div").remove();
+                                    $(current).closest('.form-group').siblings(".testpres").first().find("li").remove();
+                                    $(current).closest('.form-group').siblings(".testpres").first().append(('<div class="dropdown" id="dropdown"> <button  class="btn dropdown-toggle tata btn_prestattion" type="button" id="dropdownMenu02" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Listing des prestations et produits liés <span class="caret"></span></button> <ul  id="div3" class="dropdown-menu testul" aria-labelledby="dropdownMenu2" style="overflow-y:scroll" ><li></li></ul> </div>'));
+                                    $.each(JSON.parse(successMessage), function (i, pres) {
+                                        if (vb) {
+                                            $(current).closest('.form-group').siblings(".testpres").first().find('ul').append((' <li class="checked li"><label class="label_prest"><input id="prestation"  name="' + vb + '[]"  class="prest controle-checkbox prest4" type="checkbox" value="' + pres.id + '"/>' + pres.prestation + '</label></li> '));
+                                        }
+                                        else {
+                                            $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li class="checked li"> <label class="label_prest"><input id="prestation"  name="prest[]"  class="prest controle-checkbox prest4"  type="checkbox"  value="' + pres.id + '"/>' + pres.prestation + '</label></li>'));
+                                        }
+                                        $('#prestaAjax').css('display', 'none');
+                                    });
+                                    if (addvb) {
+                                        $(document).keypress('.input' + addvb + '', function (event) {
+                                            var length_input = $('input.input' + addvb + '').val();
+                                            if (event.which == 13 && $('input.input' + addvb + '').val() != "") {
+                                                var text = $('.input' + addvb + '').val();
+                                                $('#checkboxes' + addvb + '').append('<label class="label_prest"><input  class="prest controle-checkbox prest4" name="' + addvb + '[]"  type="checkbox" value="' + text + '" checked/> ' + text + '</label><br />');
+                                                $('.input' + addvb + '').val(null);
+                                                $('#prestaAjax').css('display', 'none');
+                                            }
+                                        });
+                                        $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li ><div id="checkboxes' + addvb + '" > </div>Autre <input id="addprestation" name="' + addvb + '[]" class="input' + addvb + ' controle-checkbox length-input prest "   type="text" placeholder="Renseigner la prestation ou le produit souhaité"style="width: 340px!important;height: 40px;!important;"/></li>'));
+                                    }
+                                    else {
+                                        $(document).keypress('.input', function (e) {
+                                            var dInput = $('input.input').val();
+                                            if (e.which == 13 && $('input.input').val() != "") {
+                                                var text = $('.input').val();
+                                                $('#checkboxes').append('<label class="label_prest"><input type="checkbox" id="addprestation" name="addprest[]" class="prest controle-checkbox prest4" value="' + text + '" checked/> ' + text + '</label><br />');
+                                                $(".input").val(null);
+                                                $('#prestaAjax').css('display', 'none');
+                                            }
+                                        });
+                                        $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li> <div id="checkboxes"></div>Autre <input type="text" id="addprestation" name="addprest" class="input controle-checkbox in prest" placeholder="Renseigner la prestation ou le produit souhaité "style="width: 340px!important;height: 40px;!important;"/> </li>'));
+                                    }
+                                    $('#prestaAjax').css('display', 'none');
+                                },
+                                412: function (response) {
+                                    var errorsForm = response.responseJSON.formErrors;
+                                    alert('error');
+                                    $('#prestaAjax').css('display', 'none');
+                                }
+                            }
+                        });
+                        $('.testpres').css('display','');
+
+
+
+
+                    }
 
                     else
                     {
@@ -1703,7 +2392,72 @@
                         }).get();
                         $("#rubrique4_view").html(labels);
                         $("#select_rub4").hide();
-                        $("#rubrique4_view").show(); }
+                        $("#rubrique4_view").show();
+
+
+                        var current = 	(this);
+                        var rubrique = (this).value;
+                        var b = $(current).attr('name');
+                        var res = b.substring(5, 6);
+                        var vb = 'prest' + res;
+                        var addvb = 'addprest' + res;
+                        $('#prestaAjax').css('display', '');
+                        var data_send = {'rubrique': rubrique};
+                        $.ajax({
+                            url: '{{ path('ajax') }}',
+                            type: 'POST',
+                            data: data_send,
+                            statusCode: {
+                                //traitement en cas de succès
+                                200: function (response) {
+                                    var successMessage = response;
+                                    $(current).closest('.form-group').siblings(".testpres").first().find("div").remove();
+                                    $(current).closest('.form-group').siblings(".testpres").first().find("li").remove();
+                                    $(current).closest('.form-group').siblings(".testpres").first().append(('<div class="dropdown" id="dropdown"> <button  class="btn dropdown-toggle tata btn_prestattion" type="button" id="dropdownMenu02" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">Listing des prestations et produits liés <span class="caret"></span></button> <ul  id="div4" class="dropdown-menu testul" aria-labelledby="dropdownMenu2" style="overflow-y:scroll" ><li></li></ul> </div>'));
+                                    $.each(JSON.parse(successMessage), function (i, pres) {
+                                        if (vb) {
+                                            $(current).closest('.form-group').siblings(".testpres").first().find('ul').append((' <li class="checked li"><label class="label_prest"><input id="prestation"  name="' + vb + '[]"  class="prest controle-checkbox prest5" type="checkbox" value="' + pres.id + '"/>' + pres.prestation + '</label></li> '));
+                                        }
+                                        else {
+                                            $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li class="checked li"> <label class="label_prest"><input id="prestation"  name="prest[]"  class="prest controle-checkbox prest5"  type="checkbox"  value="' + pres.id + '"/>' + pres.prestation + '</label></li>'));
+                                        }
+                                        $('#prestaAjax').css('display', 'none');
+                                    });
+                                    if (addvb) {
+                                        $(document).keypress('.input' + addvb + '', function (event) {
+                                            var length_input = $('input.input' + addvb + '').val();
+                                            if (event.which == 13 && $('input.input' + addvb + '').val() != "") {
+                                                var text = $('.input' + addvb + '').val();
+                                                $('#checkboxes' + addvb + '').append('<label class="label_prest"><input  class="prest controle-checkbox prest5" name="' + addvb + '[]"  type="checkbox" value="' + text + '" checked/> ' + text + '</label><br />');
+                                                $('.input' + addvb + '').val(null);
+                                                $('#prestaAjax').css('display', 'none');
+                                            }
+                                        });
+                                        $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li ><div id="checkboxes' + addvb + '" > </div>Autre <input id="addprestation" name="' + addvb + '[]" class="input' + addvb + ' controle-checkbox length-input prest "   type="text" placeholder="Renseigner la prestation ou le produit souhaité"style="width: 340px!important;height: 40px;!important;"/></li>'));
+                                    }
+                                    else {
+                                        $(document).keypress('.input', function (e) {
+                                            var dInput = $('input.input').val();
+                                            if (e.which == 13 && $('input.input').val() != "") {
+                                                var text = $('.input').val();
+                                                $('#checkboxes').append('<label class="label_prest"><input type="checkbox" id="addprestation" name="addprest[]" class="prest controle-checkbox prest5" value="' + text + '" checked/> ' + text + '</label><br />');
+                                                $(".input").val(null);
+                                                $('#prestaAjax').css('display', 'none');
+                                            }
+                                        });
+                                        $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li> <div id="checkboxes"></div>Autre <input type="text" id="addprestation" name="addprest" class="input controle-checkbox in prest" placeholder="Renseigner la prestation ou le produit souhaité "style="width: 340px!important;height: 40px;!important;"/> </li>'));
+                                    }
+                                    $('#prestaAjax').css('display', 'none');
+                                },
+                                412: function (response) {
+                                    var errorsForm = response.responseJSON.formErrors;
+                                    alert('error');
+                                    $('#prestaAjax').css('display', 'none');
+                                }
+                            }
+                        });
+                        $('.testpres').css('display','');
+                    }
 
                     else
                     {
@@ -1998,7 +2752,6 @@
             calculate_rubrique_total();
 
         });
-
 
 
 
@@ -2965,9 +3718,187 @@
             }
         }
 
+        $("#num1,#num2").on("keydown keyup change load ", function()  {
 
+            var sum = parseInt($('input[name=sum]').val());
+            var num2 = parseInt($('input[name=num2]').val());
+            var nbr_prestattion = Math.ceil(parseInt(sum+num2));
+            document.getElementById("nbr_prestattion").value = nbr_prestattion ;
 
+        });
         $("#num1").on("keydown keyup change load  ", function() {
+            var num1 = $("#num1").val();
+            document.getElementById('nbr_rubrique').value = num1;
+            if (num1 == 0) {
+                $("#rubrique").show();
+                $("#select_rub_prest").hide();
+                $("#select_rub_prest1").hide();
+                $("#select_rub_prest2").hide();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+                $('.r,.r1,.r2,.r3,.r4,.r5,.r6,.prest1,.prest2,.prest3,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+
+            }
+            else
+            if(num1==1)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").hide();
+                $("#select_rub_prest2").hide();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+                $('.r1,.r2,.r3,.r4,.r5,.r6,.prest2,.prest3,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==2)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").hide();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+
+                $('.r2,.r3,.r4,.r5,.r6,.prest3,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==3)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+
+
+                $('.r3,.r4,.r5,.r6,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==4)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+                $('.r4,.r5,.r6,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==5)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+                $('.r5,.r6,.prest6,.prest7').prop('checked', false);
+
+
+            }
+            else
+            if(num1==6)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest5").show();
+                $("#select_rub_prest6").hide();
+                $('.r6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==7)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest5").show();
+                $("#select_rub_prest6").show();
+            }
+            $('.loaders').css('display','');
+            var nbr_rub =$('input[name=num1]').val();
+            /*alert(nbr_rub)*/
+            var data_send  = {'nbr_rub':nbr_rub};
+            $.ajax({
+                url: '{{ path('referencement_commande_devis_des_rub_nbr_rub') }}',
+                type: 'POST',
+                data: data_send,
+                statusCode: {
+                    //traitement en cas de succès
+                    200: function (response) {
+                        var successMessage = response;
+
+                        console.log(successMessage);
+                        /*  $('#prestation').children("option").remove();*/
+                        //on vide les champs formulaires ou on le supprime ou ...
+                        //on retire le loader...
+                        //window.location.href = "http://localhost/ecommerce/web/app_dev.php/devis_affichage";
+
+                        $('.loaders').css('display','none');
+                    },
+                    //traitement en cas d'erreur (on peut aussi traiter le cas erreur 500...)
+                    412: function (response) {
+                        var errorsForm = response.responseJSON.formErrors;
+                        //on affiche les erreurs...
+                        alert('error');
+                    }
+                }
+            });
+            /*else
+             {
+             $("#rubrique").show();
+             $("#select_rub_prest").show();
+             $("#select_rub_prest1").show();
+             }*/
+
+            $('#prestaAjax').css('display','');
+            if($('.region').is(':checked')){
+                Reg();
+                $('#prestaAjax').css('display','none');
+            }
+            else if('.my-activitys') {
+                rub();
+                $('#prestaAjax').css('display','none');
+            }
+            else{
+                $('input[id=rubd]').val(0);
+            }
+            var num1 = document.getElementById('num1').value;
+            var result = parseInt(num1) * 3;
+            document.getElementById('sum').value = result;
+            cal();
+            kas();
+
+        });
+
+/*        $("#num1").on("keydown keyup change load  ", function() {
             var num1 = $("#num1").val();
             document.getElementById('nbr_rubrique').value = num1;
             if (num1 == 0) {
@@ -3068,7 +3999,7 @@
                 $("#select_rub_prest5").show();
                 $("#select_rub_prest6").show();
             }
-        });
+        });*/
 
 
 
@@ -3845,5 +4776,643 @@
 
 
 
+        function cal(){
 
+            if($(".my-activity").is(":checked")) {
+                var totald = +$("#raniad").val() || 0;
+
+            }
+            else{
+                var totald =0;
+            }
+            if($(".region").is(":checked")) {
+
+                var total = +$("#rania").val() || 0;
+            }
+            else{
+                var total = 0;
+            }
+
+            /* if($(".profession").is(":checked")) {
+             var totalp = +$("#prix").val() || 0;
+             }
+             else{
+             var totalp = 0;
+             }
+             */
+
+
+
+            var vat = +$("#mari").val() || 0;
+            var vard = +$("#rubd").val() || 0;
+            var final = +$("#resulta").val() || 0;
+            var prixp = +$("#prix").val() || 0;
+
+
+            console.log(totald) ;
+            /*   alert(vat);
+             alert(total);
+             alert(vard);*/
+
+            if($(".my-activitys").is(":checked") == true ){
+                //do something
+
+                console.log('profesion test prix',prixp);
+                if($(".region").is(":checked")) {
+                    var t1=(vat+ total+vard+final).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                    $("#fayssal").val(t1);
+                }
+                else{
+
+                    var t1=(vat+vard+final+totald+prixp).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                    console.log('rrrrrrrrrrrrr',t1);
+                    $("#fayssal").val(t1);
+                    /* prof();*/
+                }
+
+            }
+            else if($(".region").is(":checked") == true){
+                //do something
+
+
+                if($(".region").is(":checked")) {
+                    console.log('rrrrrrr',prixp);
+
+                    var t1=(vat+ total+vard+final+prixp).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                    $("#fayssal").val(t1 );
+
+                }
+                else{
+                    var t1=(vat+vard+final+totald).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                    $("#fayssal").val(t1 );
+                    prof();
+                }
+            }
+            else if($(".profession").is(":checked") === true){
+                //do something
+                console.log('testtttttttttt',vat+vard+final)
+                if($(".profession").is(":checked")  ) {
+                    var t1=(vat+vard+final+prixp).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                    $("#fayssal").val(t1 );
+                }
+                else{
+                    var t1=(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                    $("#fayssal").val(t1 );
+                }
+            }
+            else{
+
+                $("#rania").val(0);
+                $("#raniad").val(0);
+                $("#fayssal").val(0);
+            }
+
+
+
+        }
+
+
+
+        function kas(){
+
+            cal();
+
+            $('.loaders').css('display', '');
+            var fayssal1 = $("#fayssal").val();
+            var fayssal = fayssal1.replace(/[^0-9\.]/g, '');
+
+            form = $('#jsForm ');
+            var data_send = {'nbr': fayssal};
+            $.ajax({
+                url: '{{ path('referencement_commande_devis_ref') }}',
+                type: 'POST',
+                data: data_send,
+                statusCode: {
+                    //traitement en cas de succès
+                    200: function (response) {
+                        var successMessage = response;
+
+
+                        console.log(successMessage);
+                        /*  $('#prestation').children("option").remove();*/
+                        //on vide les champs formulaires ou on le supprime ou ...
+                        //on retire le loader...
+
+                        $('.loaders').css('display', 'none');
+
+//                    window.location.href = "http://localhost/ecommerce/web/app_dev.php/devis_affichage";
+                    },
+                    //traitement en cas d'erreur (on peut aussi traiter le cas erreur 500...)
+                    412: function (response) {
+                        var errorsForm = response.responseJSON.formErrors;
+                        //on affiche les erreurs...
+                        alert('error');
+
+                    }
+                }
+            });
+            sendajax();
+        }
+
+        function sendajax(){
+
+
+            $('.loaders').css('display','');
+            form =$('#jsForm ');
+            $.ajax({
+                url: '{{ path('referencement_commande_ajax_send') }}',
+                type: 'POST',
+                data: form.serialize(),
+                statusCode: {
+                    //traitement en cas de succès
+                    200: function (response) {
+                        var successMessage = response;
+
+                        /*  $('#prestation').children("option").remove();*/
+                        //on vide les champs formulaires ou on le supprime ou ...
+                        //on retire le loader...
+                        $('.loaders').css('display','none');
+
+                    },
+                    //traitement en cas d'erreur (on peut aussi traiter le cas erreur 500...)
+                    412: function (response) {
+                        var errorsForm = response.responseJSON.formErrors;
+                        //on affiche les erreurs...
+                        alert('error');
+                    }
+                }
+            });
+
+
+        }
+
+
+
+
+/*
+        $("#num1").on("keydown keyup change load  ", function() {
+            var num1 = $("#num1").val();
+            document.getElementById('nbr_rubrique').value = num1;
+            if (num1 == 0) {
+                $("#rubrique").show();
+                $("#select_rub_prest").hide();
+                $("#select_rub_prest1").hide();
+                $("#select_rub_prest2").hide();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+                $('.r,.r1,.r2,.r3,.r4,.r5,.r6,.prest1,.prest2,.prest3,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+
+            }
+            else
+            if(num1==1)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").hide();
+                $("#select_rub_prest2").hide();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+                $('.r1,.r2,.r3,.r4,.r5,.r6,.prest2,.prest3,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==2)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").hide();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+
+                $('.r2,.r3,.r4,.r5,.r6,.prest3,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==3)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").hide();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+
+
+                $('.r3,.r4,.r5,.r6,.prest4,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==4)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").hide();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+
+                $('.r4,.r5,.r6,.prest5,.prest6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==5)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest5").hide();
+                $("#select_rub_prest6").hide();
+                $('.r5,.r6,.prest6,.prest7').prop('checked', false);
+
+
+            }
+            else
+            if(num1==6)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest5").show();
+                $("#select_rub_prest6").hide();
+                $('.r6,.prest7').prop('checked', false);
+            }
+            else
+            if(num1==7)
+            {
+                $("#rubrique").show();
+                $("#select_rub_prest").show();
+                $("#select_rub_prest1").show();
+                $("#select_rub_prest2").show();
+                $("#select_rub_prest3").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest4").show();
+                $("#select_rub_prest5").show();
+                $("#select_rub_prest6").show();
+            }
+            $('.loaders').css('display','');
+            var nbr_rub =$('input[name=num1]').val();
+            /!*alert(nbr_rub)*!/
+            var data_send  = {'nbr_rub':nbr_rub};
+            $.ajax({
+                url: '{{ path('referencement_commande_devis_des_rub_nbr_rub') }}',
+                type: 'POST',
+                data: data_send,
+                statusCode: {
+                    //traitement en cas de succès
+                    200: function (response) {
+                        var successMessage = response;
+
+                        console.log(successMessage);
+                        /!*  $('#prestation').children("option").remove();*!/
+                        //on vide les champs formulaires ou on le supprime ou ...
+                        //on retire le loader...
+                        //window.location.href = "http://localhost/ecommerce/web/app_dev.php/devis_affichage";
+
+                        $('.loaders').css('display','none');
+                    },
+                    //traitement en cas d'erreur (on peut aussi traiter le cas erreur 500...)
+                    412: function (response) {
+                        var errorsForm = response.responseJSON.formErrors;
+                        //on affiche les erreurs...
+                        alert('error');
+                    }
+                }
+            });
+            /!*else
+             {
+             $("#rubrique").show();
+             $("#select_rub_prest").show();
+             $("#select_rub_prest1").show();
+             }*!/
+
+            $('#prestaAjax').css('display','');
+
+       /!*     if($('.region').is(':checked')){
+                Reg();
+                $('#prestaAjax').css('display','none');
+            }
+            else if('.my-activitys') {
+                rub();
+                $('#prestaAjax').css('display','none');
+            }
+            else{
+                $('input[id=rubd]').val(0);
+            }*!/
+
+            var num1 = document.getElementById('num1').value;
+            var result = parseInt(num1) * 3;
+            document.getElementById('sum').value = result;
+            cal();
+            kas();
+
+        });
+*/
+
+
+
+        function rub() {
+            var num1 = document.getElementById('num1').value;
+            if (num1 >=2) {
+                var ctar = 'RV';
+                console.log("CHANGE rubrique AND prestation sssss ....................");
+                var select = jQuery(this);
+                var rub = $('input[name=num1]').val();
+                var rubdes = $('option[name=r_count]:selected').val();
+
+                var v = $('input[name=villes]:checked').val();
+                var o = $('input[class=my-activity]:checked').val();
+                $('#prestaAjax').show();
+                console.log('ville : ', v, 'opt1 :', o, 'rubrique: ',rub, 'rubrique description: ',rubdes );
+                var data_send = {'ville': v, 'opt1': o, 'region': v, 'ctar': ctar};
+                $.ajax({
+                    url: '{{ path('ajaxRef') }}',
+                    type: 'POST',
+                    data: data_send,
+                    statusCode: {
+                        //traitement en cas de succès
+                        200: function (response) {
+                            var successMessage = response.nom.VAR;
+                            var rubrique = (rub - 1) * successMessage;
+                            console.log(rubrique);
+                            $('input[id=rubd]').val(rubrique);
+
+                            $('#prestaAjax').hide();
+                            kas();
+                        },
+                        412: function (response) {
+                            var errorsForm = response.responseJSON.formErrors;
+                            //on affiche les erreurs...
+                            alert('error');
+                            $('#prestaAjax').hide();
+                        }
+                    }
+                });
+            }
+            else{
+                $('input[id=rubd]').val(0);
+            }
+        }
+        function Reg() {
+            var num1 = document.getElementById('num1').value;
+            if (num1 >=2) {
+                var ctar = 'RL';
+                console.log("CHANGE rubrique AND prestation sssss .reg...................");
+                var select = jQuery(this);
+                var rub = $('input[name=num1]').val();
+
+                var v = $('input[name=regions]:checked').val();
+                var o = $('input[class=region]:checked').val();
+
+                console.log('ville : ', v, 'opt1 :', o, 'rubrique: ',rub);
+                var data_send = {'ville': v, 'opt1': o, 'region': v, 'ctar': ctar};
+                $.ajax({
+                    url: '{{ path('ajaxRef') }}',
+                    type: 'POST',
+                    data: data_send,
+                    statusCode: {
+                        //traitement en cas de succès
+                        200: function (response) {
+                            var successMessage = response.nom.VAR;
+                            var rubrique = (rub - 1) * successMessage;
+                            console.log(rubrique);
+                            $('input[id=rubd]').val(rubrique);
+                            cal();
+                            kas();
+                        },
+                        412: function (response) {
+                            var errorsForm = response.responseJSON.formErrors;
+                            //on affiche les erreurs...
+                            alert('error');
+                        }
+                    }
+                });
+            }
+            else{
+                $('input[id=rubd]').val(0);
+            }
+        }
+
+
+
+        $("#num3").on("keydown keyup change load", function() {
+
+
+
+            var marq = $("#num3").val();
+            var marque =marq/3;
+            var marque = -Math.abs(marque);
+            var marque =Math.floor(marque);
+            var marque = Math.abs(marque);
+            var num3 = document.getElementById('num3').value;
+            var result3 = Math.ceil(parseInt(num3)/3)  * 1500;
+            document.getElementById("mari").value = result3;
+            document.getElementById("marque_pack").value = marque;
+
+            if (marq == 0) {
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8,.m9").hide();
+                $("#g,#g1,#g2,#g3,#g4,#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p1,.p2,.p3,.p4,.p5,.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq","marq1","marq2","marq3","marq4","marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque","marque1","marque2","marque3","marque4","marque5","marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==1){
+                $(".marques,.m").show();$(".m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8,.m9").hide();
+                $("#g").show();$("#g1,#g2,#g3,#g4,#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p2,.p3,.p4,.p5,.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq1","marq2","marq3","marq4","marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque1","marque2","marque3","marque4","marque5","marque6","marque7","marque8","marque9").value = null;
+
+            }
+            else
+            if(marq==2){
+                $(".marques,.m,.m1").show();$(".m2,.m3,.m4,.m5,.m6,.m7,.m8,.m9").hide();
+                $("#g,#g1").show();$("#g2,#g3,#g4,#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p3,.p4,.p5,.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq2","marq3","marq4","marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque2","marque3","marque4","marque5","marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==3){
+                $(".marques,.m,.m1,.m2").show();$(".m3,.m4,.m5,.m6,.m7,.m8,.m9").hide();
+                $("#g,#g1,#g2").show();$("#g3,#g4,#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p4,.p5,.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq3","marq4","marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque3","marque4","marque5","marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==4){
+                $(".marques,.m,.m1,.m2,.m3").show();$(".m4,.m5,.m6,.m7,.m8,.m9").hide();
+                $("#g,#g1,#g2,#g3").show();$("#g4,#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p5,.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq4","marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque4","marque5","marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==5){
+                $(".marques,.m,.m1,.m2,.m3,.m4").show();$(".m5,.m6,.m7,.m8,.m9").hide();
+                $("#g,#g1,#g2,#g3,#g4").show();$("#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque5","marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==6){
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5").show();$(".m6,.m7,.m8,.m9").hide();
+                $("#g,#g1,#g2,#g3,#g4,#g5").show();$("#g6,#g7,#g8,#g9").hide();
+                $('.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if (marq==7) {
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5,.m6").show();$(".m7,.m8,.m9").hide();
+                $("#g,#g1,#g2,#g3,#g4,#g5,#g6").show();$("#g7,#g8,#g9").hide();
+                $('.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq7","marq8","marq9").value = null;
+                document.getElementById("marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==8){
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8").show();$(".m8,.m9").hide();
+                $("#g,#g1,#g2,#g3,#g4,#g5,#g6,#g7").show();$("#g8,#g9").hide();
+                $('.p9,.p10').prop('checked', false);
+                document.getElementById("marq8","marq9").value = null;
+                document.getElementById("marque8","marque9").value = null;
+            }
+            else
+            if(marq==9){
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8,.m8").show();$(".m9").hide();
+                $("#g,#g1,#g2,#g3,#g4,#g5,#g6,#g7,#g8").show();$("#g9").hide();
+                $('.p10').prop('checked', false);
+                document.getElementById("marq9").value = null;
+                document.getElementById("marque9").value = null;
+            }
+            else
+            if(marq==10){
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8,.m8,.m9").show();
+                $("#g,#g1,#g2,#g3,#g4,#g5,#g6,#g7,#g8,#g9").show();
+            }
+
+            cal();
+            kas();
+        });
+
+
+
+        $(window,"#num3").on("load", function() {
+
+            var marq = $("#num3").val();
+            var marque =marq/3;
+            var marque = -Math.abs(marque);
+            var marque =Math.floor(marque);
+            var marque = Math.abs(marque);
+            var num3 = document.getElementById('num3').value;
+            var result3 = Math.ceil(parseInt(num3)/3)  * 1500;
+            document.getElementById("mari").value = result3;
+            document.getElementById("marque_pack").value = marque;
+
+            if (marq == 0) {
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8,.m9").hide();
+                $("#g,#g1,#g2,#g3,#g4,#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p1,.p2,.p3,.p4,.p5,.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq","marq1","marq2","marq3","marq4","marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque","marque1","marque2","marque3","marque4","marque5","marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==1){
+                $(".marques,.m").show();$(".m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8,.m9").hide();
+                $("#g").show();$("#g1,#g2,#g3,#g4,#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p2,.p3,.p4,.p5,.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq1","marq2","marq3","marq4","marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque1","marque2","marque3","marque4","marque5","marque6","marque7","marque8","marque9").value = null;
+
+            }
+            else
+            if(marq==2){
+                $(".marques,.m,.m1").show();$(".m2,.m3,.m4,.m5,.m6,.m7,.m8,.m9").hide();
+                $("#g,#g1").show();$("#g2,#g3,#g4,#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p3,.p4,.p5,.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq2","marq3","marq4","marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque2","marque3","marque4","marque5","marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==3){
+                $(".marques,.m,.m1,.m2").show();$(".m3,.m4,.m5,.m6,.m7,.m8,.m9").hide();
+                $("#g,#g1,#g2").show();$("#g3,#g4,#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p4,.p5,.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq3","marq4","marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque3","marque4","marque5","marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==4){
+                $(".marques,.m,.m1,.m2,.m3").show();$(".m4,.m5,.m6,.m7,.m8,.m9").hide();
+                $("#g,#g1,#g2,#g3").show();$("#g4,#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p5,.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq4","marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque4","marque5","marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==5){
+                $(".marques,.m,.m1,.m2,.m3,.m4").show();$(".m5,.m6,.m7,.m8,.m9").hide();
+                $("#g,#g1,#g2,#g3,#g4").show();$("#g5,#g6,#g7,#g8,#g9").hide();
+                $('.p6,.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq5","marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque5","marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==6){
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5").show();$(".m6,.m7,.m8,.m9").hide();
+                $("#g,#g1,#g2,#g3,#g4,#g5").show();$("#g6,#g7,#g8,#g9").hide();
+                $('.p7,.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq6","marq7","marq8","marq9").value = null;
+                document.getElementById("marque6","marque7","marque8","marque9").value = null;
+            }
+            else
+            if (marq==7) {
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5,.m6").show();$(".m7,.m8,.m9").hide();
+                $("#g,#g1,#g2,#g3,#g4,#g5,#g6").show();$("#g7,#g8,#g9").hide();
+                $('.p8,.p9,.p10').prop('checked', false);
+                document.getElementById("marq7","marq8","marq9").value = null;
+                document.getElementById("marque7","marque8","marque9").value = null;
+            }
+            else
+            if(marq==8){
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8").show();$(".m8,.m9").hide();
+                $("#g,#g1,#g2,#g3,#g4,#g5,#g6,#g7").show();$("#g8,#g9").hide();
+                $('.p9,.p10').prop('checked', false);
+                document.getElementById("marq8","marq9").value = null;
+                document.getElementById("marque8","marque9").value = null;
+            }
+            else
+            if(marq==9){
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8,.m8").show();$(".m9").hide();
+                $("#g,#g1,#g2,#g3,#g4,#g5,#g6,#g7,#g8").show();$("#g9").hide();
+                $('.p10').prop('checked', false);
+                document.getElementById("marq9").value = null;
+                document.getElementById("marque9").value = null;
+            }
+            else
+            if(marq==10){
+                $(".marques,.m,.m1,.m2,.m3,.m4,.m5,.m6,.m7,.m8,.m8,.m9").show();
+                $("#g,#g1,#g2,#g3,#g4,#g5,#g6,#g7,#g8,#g9").show();
+            }
+        });
     </script>

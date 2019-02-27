@@ -91,6 +91,11 @@ referencement_commande_devis_code_rp:
 referencement_commande_devis_des_rub:
     pattern:  /des_rub
     defaults: { _controller: EcommerceBundle:Referencement:desrub}
+
+referencement_commande_devis_des_rub_fayssal:
+    pattern:  /des_rub_fayssal
+    defaults: { _controller: EcommerceBundle:Referencement:desrubfayssal}
+
 referencement_commande_devis_des_rub_nbr_rub:
     pattern:  /nbr_rub
     defaults: { _controller: EcommerceBundle:Referencement:nbrrub}
