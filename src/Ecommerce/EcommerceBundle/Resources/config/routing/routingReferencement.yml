@@ -75,6 +75,9 @@ modalite_paiement:
 facture_sec:
     pattern:  /sec
     defaults: { _controller: EcommerceBundle:Referencement:sec }
+facture_sec_fayssal:
+    pattern:  /sec-test
+    defaults: { _controller: EcommerceBundle:Referencement:secfayssal }
 
 referencement_commande_devis_fn_pdf:
     pattern:  /pdf

@@ -91,7 +91,7 @@
 </div>
         <div style="margin-left: 41px;">
 
-            <button class="plus_details"  id="rubrique" type="button" data-toggle="collapse" data-target="#demo-10">
+            <button class="plus_details"  id="rubrique" type="button" data-toggle="collapse" style="display: inline-block;" data-target="#demo-10">
                 Plus de détails
             </button>
             <br><br>
@@ -102,12 +102,12 @@
                 <div id="contenu_lists">
 
                     <form id="rub_prest"  action="" method="GET">
-
+                        <div id="select_rub_prest" >
                         <div class="row">
 
                         <div class="col-md-3">
 
-                            <div id="select_rub_prest" >
+
                                 <div  class="form-group" >
                                     <div class="dropdown">
                                         <button class="btn dropdown-toggle multiselect" type="button" style="width: 400px;" id="rubrique1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -139,7 +139,7 @@
                             </div>
 
 
-                        </div>
+
                         <div class="col-md-3">
                             <div  class="form-group" >
                                 <div class="dropdown">
@@ -309,6 +309,7 @@
 
 
                     </div>
+                        </div>
                     <div id="select_rub_prest1" >
                         <div class="row">
 
@@ -1190,7 +1191,22 @@
                         </div>
                     </div>
 
+                        <div id="select_rub_prest7" >
+                            <div  class="form-group" >
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle multiselect" type="button" style="width: 400px;" id="rubrique1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Listing des prestations supplémentaires
+                                        <span class="caret"></span></button>
+                                    <ul class=" dropdown-menu  mySelect ul_rub " id="select-rubrique"  >
+                                        <li></li>
+                                        <li ><div id="checkboxes" > </div> <input id="addprestation" name="prestsupp[]" class="input controle-checkbox length-input"   type="text" placeholder="Renseigner la prestation supplémentaire"style="width: 340px!important;height: 40px;!important;"/></li>
 
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
         </form>
 
                     {# ------------------- selectionner marque-----------------#}
@@ -1451,7 +1467,7 @@
             $('.loaders').css('display','none');
         });
 
-        $(document).on('change keydown keyup ', '.mySelect,.prest ', function () {
+        $(document).on('change keydown keyup ', '.mySelect,.prest,.select_rub  ', function () {
 
             $('.loaders').css('display','');
             form =$('#jsForm');

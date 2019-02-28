@@ -216,6 +216,7 @@ class ReferencementController extends Controller
 
                 );
         $rubriques = $em->getRepository('EcommerceBundle:Rubrique')->findAll();
+
         $raison =$session->get('raison');
 
         $villes = $em->getRepository('EcommerceBundle:Ville')->findBy(array(), array('libelle' => 'asc'));
@@ -455,6 +456,241 @@ class ReferencementController extends Controller
         $result =(intval($aff)+intval($con)+intval($ref)/*+intval($prof)*/);
 
         return $this->render('EcommerceBundle:Default:produits/layout/contact.html.twig', array('raison'=>$raison, 'referencement' => $referencement,'contenu' => $panier,'affichage' => $affichage,'somme'=>$result,'paiement' =>$paiement,'desrubref'=>$desrubref,'profession'=>$profession,'code'=>$code,'nbr_rub'=>$nbr_rub,'marque'=>$marque,'visbilite_header'=>$visbilite_header));
+
+
+    }
+
+
+
+
+
+
+    public function secfayssalAction(/*Categories $categorie = null*/)
+    {
+        $session = $this ->getRequest()->getSession();
+
+        if ($session->has('affichage'))
+
+            $affichage = $session->get('affichage');
+
+        else
+            $affichage =array(
+
+                'villes'=>NULL,
+                'regions'=>NULL,
+                'cat1'=> NULL,
+                'cat2r'=>  NULL,
+                'cat2f'=>  NULL,
+                'cat2ma'=>  NULL,
+                'cat2me'=>  NULL,
+                'cat2ag'=> NULL,
+                'cat3k'=>  NULL,
+                'cat3o'=>  NULL,
+                'cat3e'=>  NULL,
+                'cat3sa'=>  NULL,
+                'cat3se'=>  NULL,
+                'cat3te'=>  NULL,
+                'cat4'=>    NULL,
+                'pro_du_jour' => NULL,
+                'promo'  => NULL,
+                'vignette_acc_video_nbr'=>NULL,
+                'vign_ac' => NULL,
+                'habil'   => NULL,
+                'banniere_nombr' =>NULL,
+                'bann_up_engin' =>NULL,
+                'bann_down_engin' =>NULL,
+                'bann_up_customer' =>NULL,
+                'bann_down_customer'=>NULL,
+
+                'thematique_name' => NULL,
+                'localite_name' => NULL,
+                'pfjour_name' => NULL,
+                'promo_name' =>NULL,
+                'total1_name' => NULL,
+                'habillage_name' => NULL,
+                'banniere_name' => NULL,
+
+
+            );
+
+
+
+        if ($session->has('referencement'))
+            $referencement = $session->get('referencement');
+        else
+            $referencement =array(
+                'rubrique'=>NULL,
+                'prest'=>NULL,
+                'prest_sup'=> NULL,
+                'marque'=>NULL,
+                'sum3'=>NULL ,
+                'mari'=> NULL,
+                'marque_pack'=> NULL,
+                'resulta'=> NULL,
+                'resulta2'=> NULL,
+                'rubd'=> NULL,
+                'rania'=> NULL,
+                'raniad'=> NULL,
+                'villes'=>NULL,
+                'regions'=>NULL,
+                'villes_sup'=>NULL,
+                'regions_sup'=>NULL,
+                'r_count'=>NULL,
+                'rubrique1'=>NULL,
+                'r_count'=>NULL,
+            );
+
+
+
+        if ($session->has('contenu'))
+            $panier = $session->get('contenu');
+        else
+            $panier = array('catalogue'=>NULL,'catalogue_ref'=>NULL,'video'=> NULL,'page'=>NULL,'site_web'=>NULL);
+
+
+        if ($session->has('paiement'))
+            $paiement = $session->get('paiement');
+        else
+            $paiement =
+                array(
+                    'montantttc'=>NULL,
+                    'accompte'=>NULL,
+                    'reste'=> NULL,
+                    'nbr'=>NULL,
+                    'montant1'=>NULL,
+                    'montant2'=>NULL,
+                    'montant3'=>NULL,
+                    'montant4'=>NULL,
+                    'montant4'=>NULL,
+                    'montant5'=>NULL,
+                    'dateP1'=>NULL,
+                    'dateP2'=>NULL,
+                    'dateP3'=>NULL,
+                    'dateP4'=>NULL,
+                    'dateP5'=>NULL,
+                );
+
+
+        if ($session->has('desrubref'))
+            $desrubref = $session->get('desrubref');
+
+        else
+            $desrubref =
+                array(
+                    'rub1'=>NULL,
+                    'rub2'=>NULL,
+                    'rub3'=>NULL,
+                    'rub4'=>NULL,
+                    'rub5'=>NULL,
+                    'rub6'=>NULL,
+                    'rub7'=>NULL,
+                    'prest1'=>NULL,
+                    'prest2'=>NULL,
+                    'prest3'=>NULL,
+                    'prest4'=>NULL,
+                    'prest5'=>NULL,
+                    'prest6'=>NULL,
+                    'prest7'=>NULL,
+                    'r_count'=>NULL,
+
+                );
+
+        if ($session->has('profession'))
+            $profession = $session->get('profession');
+
+        else
+            $profession =
+                array(
+                    'villesp'=>NULL,
+                    'profession'=>NULL,
+                    'prix'=>NULL,
+
+                );
+        if ($session->has('code'))
+            $code = $session->get('code');
+
+        else
+            $code =
+                array(
+                    'nature_remise'=>NULL,
+                    'montant_remise'=>NULL,
+                    'offre'=>NULL,
+                    'pourcentage'=>NULL,
+                    'montant_r'=>NULL,
+                    'montant_rem'=>NULL,
+                    'tva'=>NULL,
+
+                );
+
+
+        if ($session->has('nbr_rub'))
+            $nbr_rub = $session->get('nbr_rub');
+        else
+            $nbr_rub =
+                array(
+                    'nbr_rub'=>NULL,
+                );
+
+        if ($session->has('marque'))
+            $marque = $session->get('marque');
+        else
+            $marque =
+                array(
+
+                    'marq1'=>null,
+                    'marq2'=>null,
+                    'marq3'=>null,
+                    'marq4'=>null,
+                    'marq5'=>null,
+                    'marq6'=>null,
+                    'marq7'=>null,
+                    'marq8'=>null,
+                    'marq9'=>null,
+                    'marq10'=>null,
+                    'positionnement'=>null,
+                    'positionnement1'=>null,
+                    'positionnement2'=>null,
+                    'positionnement3'=>null,
+                    'positionnement4'=>null,
+                    'positionnement5'=>null,
+                    'positionnement6'=>null,
+                    'positionnement7'=>null,
+                    'positionnement8'=>null,
+                    'positionnement9'=>null,
+                );
+        if ($session->has('visbilite_header'))
+            $visbilite_header = $session->get('visbilite_header');
+        else
+            $visbilite_header =
+                array(
+                    'proposition'=>null,
+                    'ordre'=>null,
+                    'bon_commande'=>null,
+                );
+        if($session->has('raison'))
+            $raison =$session->get('raison');
+        else
+            $raison =array(
+                'rs'=>NULL,
+                'cfirme'=>NULL,
+                'civi'=>NULL,
+                'sign'=>NULL,
+                'profession'=>NULL,
+
+            );
+
+        $ref =$session->get('ref');
+        $con =$session->get('cont');
+        $aff =$session->get('aff');
+        /* $prof =$session->get('prof');*/
+
+        /*$raison =$session->get('raison');*/
+
+        /*var_dump($desrubref);
+        die();*/
+        $result =(intval($aff)+intval($con)+intval($ref)/*+intval($prof)*/);
+
+        return $this->render('EcommerceBundle:Default:produits/layout/contactfayssal.html.twig', array('raison'=>$raison, 'referencement' => $referencement,'contenu' => $panier,'affichage' => $affichage,'somme'=>$result,'paiement' =>$paiement,'desrubref'=>$desrubref,'profession'=>$profession,'code'=>$code,'nbr_rub'=>$nbr_rub,'marque'=>$marque,'visbilite_header'=>$visbilite_header));
 
 
     }
@@ -3961,63 +4197,149 @@ class ReferencementController extends Controller
     public function desrubfayssalAction(Request $request)
     {
         $rub1 = $request->request->get('check');
-        $rub1=explode('|',$rub1);
+       if ($rub1){
+        $rub1=explode('|',$rub1);}
 
         $prest1 = $request->request->get('prest');
         $addprest1 = $request->request->get('addprest');
         $villes1 = $request->request->get('villes');
+
+        $villes1=explode('|',$villes1);
+
+
         $villes_panier1 = $request->request->get('villes_panier');
 
+        $arr1='';
+        if ($villes_panier1){
+            foreach($villes_panier1 as $value) {
+                $values=explode('|',$value);
+                $arr1.= $values[1].', ';
+            }
+        }
+
+
         $rub2 = $request->request->get('check1');
+
+        $rub2=explode('|',$rub2);
+
         $prest2 = $request->request->get('prest1');
         $addprest2 = $request->request->get('addprest1');
         $villes2 = $request->request->get('villes1');
+
+        $villes2=explode('|',$villes2);
         $villes_panier2 = $request->request->get('villes_panier1');
 
 
+
+        $arr2='';
+        if ($villes_panier2){
+            foreach($villes_panier2 as $value) {
+                $values=explode('|',$value);
+                $arr2.= $values[1].', ';
+            }
+        }
+
+
+
         $rub3 = $request->request->get('check2');
+        $rub3=explode('|',$rub3);
+
         $prest3 = $request->request->get('prest2');
         $addprest3 = $request->request->get('addprest2');
 
         $villes3 = $request->request->get('villes2');
+
+        $villes3=explode('|',$villes3);
         $villes_panier3 = $request->request->get('villes_panier2');
 
 
+        $arr3='';
+        if ($villes_panier3){
+            foreach($villes_panier3 as $value) {
+                $values=explode('|',$value);
+                $arr3.= $values[1].', ';
+            }
+        }
+
+
+
+
         $rub4 = $request->request->get('check3');
+        $rub4=explode('|',$rub4);
         $prest4 = $request->request->get('prest3');
         $addprest4 = $request->request->get('addprest3');
         $villes4 = $request->request->get('villes3');
+        $villes4=explode('|',$villes4);
+
         $villes_panier4 = $request->request->get('villes_panier3');
 
+        $arr4='';
+        if ($villes_panier4){
+            foreach($villes_panier4 as $value) {
+                $values=explode('|',$value);
+                $arr4.= $values[1].', ';
+            }
+        }
 
 
 
         $rub5 = $request->request->get('check4');
+        $rub5=explode('|',$rub5);
+
         $prest5 = $request->request->get('prest4');
         $addprest5 = $request->request->get('addprest4');
         $villes5 = $request->request->get('villes4');
+        $villes5=explode('|',$villes5);
+
         $villes_panier5 = $request->request->get('villes_panier4');
 
 
+        $arr5='';
+        if ($villes_panier5){
+            foreach($villes_panier5 as $value) {
+                $values=explode('|',$value);
+                $arr5.= $values[1].', ';
+            }
+        }
 
 
         $rub6 = $request->request->get('check5');
+        $rub6=explode('|',$rub6);
+
         $prest6 = $request->request->get('prest5');
         $addprest6 = $request->request->get('addprest5');
 
         $villes6 = $request->request->get('villes5');
+        $villes6=explode('|',$villes6);
         $villes_panier6 = $request->request->get('villes_panier5');
 
+        $arr6='';
+        if ($villes_panier6){
+            foreach($villes_panier6 as $value) {
+                $values=explode('|',$value);
+                $arr6.= $values[1].', ';
+            }
+        }
 
 
         $rub7 = $request->request->get('check6');
+        $rub7=explode('|',$rub7);
+
         $prest7 = $request->request->get('prest6');
         $addprest7 = $request->request->get('addprest6');
 
         $villes7 = $request->request->get('villes6');
+        $villes7=explode('|',$villes7);
         $villes_panier7 = $request->request->get('villes_panier6');
 
 
+        $arr7='';
+        if ($villes_panier7){
+            foreach($villes_panier7 as $value) {
+                $values=explode('|',$value);
+                $arr7.= $values[1].', ';
+            }
+        }
 
 
 
@@ -4025,8 +4347,7 @@ class ReferencementController extends Controller
 
 
 
-        $desrubref =array('villes_panier7'=>$villes_panier7,'villes_panier6'=>$villes_panier6,'villes_panier5'=>$villes_panier5,'villes_panier4'=>$villes_panier4,'villes_panier3'=>$villes_panier3,'villes_panier2'=>$villes_panier2,'villes_panier1'=>$villes_panier1,'villes7'=>$villes7,'villes6'=>$villes6,'villes5'=>$villes5,'villes4'=>$villes4,'villes3'=>$villes3,'villes2'=>$villes2,'villes1'=>$villes1,'rub1'=>$rub1[0],'prest1'=>$prest1,'addprest1'=>$addprest1,'rub2'=>$rub2,'prest2'=>$prest2,'addprest2'=>$addprest2,'rub3'=>$rub3,'prest3'=>$prest3,'addprest3'=>$addprest3,'rub4'=>$rub4,'prest4'=>$prest4,'addprest4'=>$addprest4,'rub5'=>$rub5,'prest5'=>$prest5,'addprest5'=>$addprest5,'rub6'=>$rub6,'prest6'=>$prest6,'addprest6'=>$addprest6,'rub7'=>$rub7,'prest7'=>$prest7,'addprest7'=>$addprest7,'prestsupp'=>$prestsupp);
-
+        $desrubref =array('villes_panier7'=>$arr7,'villes_panier6'=>$arr6,'villes_panier5'=>$arr5,'villes_panier4'=>$arr4,'villes_panier3'=>$arr3,'villes_panier2'=>$arr2,'villes_panier1'=>$arr1,'villes7'=>$villes7[0],'villes6'=>$villes6[0],'villes5'=>$villes5[0],'villes4'=>$villes4[0],'villes3'=>$villes3[0],'villes2'=>$villes2[0],'villes1'=>$villes1[0],'rub1'=>$rub1[0],'prest1'=>$prest1,'addprest1'=>$addprest1,'rub2'=>$rub2[0],'prest2'=>$prest2,'addprest2'=>$addprest2,'rub3'=>$rub3[0],'prest3'=>$prest3,'addprest3'=>$addprest3,'rub4'=>$rub4[0],'prest4'=>$prest4,'addprest4'=>$addprest4,'rub5'=>$rub5[0],'prest5'=>$prest5,'addprest5'=>$addprest5,'rub6'=>$rub6[0],'prest6'=>$prest6,'addprest6'=>$addprest6,'rub7'=>$rub7[0],'prest7'=>$prest7,'addprest7'=>$addprest7,'prestsupp'=>$prestsupp);
 
 
 
