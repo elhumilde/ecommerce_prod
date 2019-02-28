@@ -72,6 +72,12 @@ class ReferencementController extends Controller
             $panier = array(
 
                 'villes'=>NULL,
+                'villes1'=>NULL,
+                'villes2'=>NULL,
+                'villes3'=>NULL,
+                'villes4'=>NULL,
+                'villes5'=>NULL,
+                'villes6'=>NULL,
                 'regions'=>NULL,
                 'cat1'=>  NULL,
                 'cat2r'=>  NULL,
@@ -139,6 +145,12 @@ class ReferencementController extends Controller
                 'rub7'=>NULL,
                 'sel'=>NULL,
                 'sel1'=>NULL,
+                'villes1'=>NULL,
+                'villes2'=>NULL,
+                'villes3'=>NULL,
+                'villes4'=>NULL,
+                'villes5'=>NULL,
+                'villes6'=>NULL,
 
             );
         if ($session->has('profession'))
@@ -182,6 +194,20 @@ class ReferencementController extends Controller
                     'addprest7'=>NULL,
                     'prestsupp'=>NULL,
                     'r_count'=>NULL,
+                    'villes1'=>NULL,
+                    'villes2'=>NULL,
+                    'villes3'=>NULL,
+                    'villes4'=>NULL,
+                    'villes5'=>NULL,
+                    'villes6'=>NULL,
+                    'villes7'=>NULL,
+                    'villes_panier1'=>NULL,
+                    'villes_panier2'=>NULL,
+                    'villes_panier3'=>NULL,
+                    'villes_panier4'=>NULL,
+                    'villes_panier5'=>NULL,
+                    'villes_panier6'=>NULL,
+                    'villes_panier7'=>NULL,
 
 
                 );
@@ -219,7 +245,7 @@ class ReferencementController extends Controller
 
         $raison =$session->get('raison');
 
-        $villes = $em->getRepository('EcommerceBundle:Ville')->findBy(array(), array('libelle' => 'asc'));
+        $villes = $em->getRepository('EcommerceBundle:VilleD')->findBy(array(), array('libelle' => 'asc'));
 
         return $this->render('EcommerceBundle:Default:produits/layout/moteur.html.twig', array('rubriques' => $rubriques,'villes' => $villes,
                 'referencement' => $panier,
@@ -302,7 +328,12 @@ class ReferencementController extends Controller
                 'regions_sup'=>NULL,
                 'r_count'=>NULL,
                 'rubrique1'=>NULL,
-                'r_count'=>NULL,
+                'villes1'=>NULL,
+                'villes2'=>NULL,
+                'villes3'=>NULL,
+                'villes4'=>NULL,
+                'villes5'=>NULL,
+                'villes6'=>NULL,
             );
 
 
@@ -357,6 +388,12 @@ class ReferencementController extends Controller
                     'prest6'=>NULL,
                     'prest7'=>NULL,
                     'r_count'=>NULL,
+                    'villes1'=>NULL,
+                    'villes2'=>NULL,
+                    'villes3'=>NULL,
+                    'villes4'=>NULL,
+                    'villes5'=>NULL,
+                    'villes6'=>NULL,
 
                 );
 
@@ -4110,7 +4147,7 @@ class ReferencementController extends Controller
 
     public function professionAction(Request $request)
     {
-        $villes     = $request->request->get('villes');
+        $villes     = $request->request->get('villesp');
         $prof      = $request->request->get('profession');
         $prix      = $request->request->get('prix');
 
@@ -4209,11 +4246,14 @@ class ReferencementController extends Controller
 
         $villes_panier1 = $request->request->get('villes_panier');
 
-        $arr1='';
+
         if ($villes_panier1){
+            $arr1=array();
+            $i=0;
             foreach($villes_panier1 as $value) {
                 $values=explode('|',$value);
-                $arr1.= $values[1].', ';
+                $arr1[$i]= $values[0];
+                $i++ ;
             }
         }
 
@@ -4231,14 +4271,19 @@ class ReferencementController extends Controller
 
 
 
-        $arr2='';
+        $arr2=array();
+
         if ($villes_panier2){
+
+
+
+            $i=0;
             foreach($villes_panier2 as $value) {
                 $values=explode('|',$value);
-                $arr2.= $values[1].', ';
+                $arr2[$i]= $values[0];
+                $i++ ;
             }
         }
-
 
 
         $rub3 = $request->request->get('check2');
@@ -4253,14 +4298,19 @@ class ReferencementController extends Controller
         $villes_panier3 = $request->request->get('villes_panier2');
 
 
-        $arr3='';
+
+
+        $arr3=array();
         if ($villes_panier3){
+
+
+            $i=0;
             foreach($villes_panier3 as $value) {
                 $values=explode('|',$value);
-                $arr3.= $values[1].', ';
+                $arr3[$i]= $values[0];
+                $i++ ;
             }
         }
-
 
 
 
@@ -4273,11 +4323,14 @@ class ReferencementController extends Controller
 
         $villes_panier4 = $request->request->get('villes_panier3');
 
-        $arr4='';
+        $arr4=array();
         if ($villes_panier4){
+
+            $i=0;
             foreach($villes_panier4 as $value) {
                 $values=explode('|',$value);
-                $arr4.= $values[1].', ';
+                $arr4[$i]= $values[0];
+                $i++ ;
             }
         }
 
@@ -4293,12 +4346,16 @@ class ReferencementController extends Controller
 
         $villes_panier5 = $request->request->get('villes_panier4');
 
-
-        $arr5='';
+        $arr5=array();
         if ($villes_panier5){
+
+
+
+            $i=0;
             foreach($villes_panier5 as $value) {
                 $values=explode('|',$value);
-                $arr5.= $values[1].', ';
+                $arr5[$i]= $values[0];
+                $i++ ;
             }
         }
 
@@ -4313,13 +4370,18 @@ class ReferencementController extends Controller
         $villes6=explode('|',$villes6);
         $villes_panier6 = $request->request->get('villes_panier5');
 
-        $arr6='';
+        $arr6=array();
         if ($villes_panier6){
+
+
+            $i=0;
             foreach($villes_panier6 as $value) {
                 $values=explode('|',$value);
-                $arr6.= $values[1].', ';
+                $arr6[$i]= $values[0];
+                $i++ ;
             }
         }
+
 
 
         $rub7 = $request->request->get('check6');
@@ -4332,12 +4394,15 @@ class ReferencementController extends Controller
         $villes7=explode('|',$villes7);
         $villes_panier7 = $request->request->get('villes_panier6');
 
-
-        $arr7='';
+        $arr7=array();
         if ($villes_panier7){
+
+
+            $i=0;
             foreach($villes_panier7 as $value) {
                 $values=explode('|',$value);
-                $arr7.= $values[1].', ';
+                $arr7[$i]= $values[0];
+                $i++ ;
             }
         }
 

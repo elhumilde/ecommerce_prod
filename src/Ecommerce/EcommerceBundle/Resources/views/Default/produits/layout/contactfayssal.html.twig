@@ -221,7 +221,9 @@
                             {% endfor %}#}
                             <div style="width: 350px!important;background-color: #f9f1c9">
                                 <strong style="font-weight: 500;font-size: 14px;"> •&nbsp; {{ desrubref['rub1']|rub.libelle }} </br>
-                                    {% if  desrubref['villes1'] %}    apparution : {{ desrubref['villes1']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier1'] %}, {{ desrubref['villes_panier1'] }} {% endif %}</strong>
+                                    {% if  desrubref['villes1'] %}    visibilité sur : {{ desrubref['villes1']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier1'] %},                                    {% for ville in desrubref['villes_panier1'] %}
+                                        {{ ville|somme.libelle }},
+                                    {% endfor %}{% endif %}</strong>
                             </div>
                         </th>
 
@@ -244,7 +246,9 @@
                                     •&nbsp; {{ desrubref['rub2']|rub.libelle  }}
 
                                     </br>
-                                    {% if  desrubref['villes2'] %}    apparution : {{ desrubref['villes2']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier2'] %}, {{ desrubref['villes_panier2'] }} {% endif %}
+                                    {% if  desrubref['villes2'] %}    visibilité sur : {{ desrubref['villes2']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier2'] %},                                     {% for ville in desrubref['villes_panier2'] %}
+                                        {{ ville|somme.libelle }},
+                                    {% endfor %}{% endif %}
                                 </strong><br>
                              </div>
                             {% endif %}
@@ -252,7 +256,9 @@
                             {% if desrubref['rub3']!=null  %}
                              <div style="width: 350px!important;background-color: #f9f1c9;margin-top: 4px;">
                                 <strong style="font-weight: 500;font-size: 14px;">   •&nbsp; {{ desrubref['rub3']|rub.libelle  }} </br>
-                                    {% if  desrubref['villes3'] %}    apparution : {{ desrubref['villes3']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier3'] %}, {{ desrubref['villes_panier3'] }} {% endif %}
+                                    {% if  desrubref['villes3'] %}    visibilité sur : {{ desrubref['villes3']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier3'] %},                                     {% for ville in desrubref['villes_panier3'] %}
+                                        {{ ville|somme.libelle }},
+                                    {% endfor %} {% endif %}
 
                                 </strong>
                              </div>
@@ -261,7 +267,11 @@
                             {% if desrubref['rub4']!=null  %}
                         <div style="width: 350px!important;background-color: #f9f1c9;margin-top: 4px;">
                                 <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; {{ desrubref['rub4']|rub.libelle  }} </br>
-                                    {% if  desrubref['villes4'] %}    apparution : {{ desrubref['villes4']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier4'] %}, {{ desrubref['villes_panier4'] }} {% endif %}
+                                    {% if  desrubref['villes4'] %}    visibilité sur : {{ desrubref['villes4']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier4'] %},
+                                    {% for ville in desrubref['villes_panier4'] %}
+                                        {{ ville|somme.libelle }},
+                                    {% endfor %}
+                                    {% endif %}
                                 </strong>
                         </div>
                             {% endif %}
@@ -270,7 +280,9 @@
                                 <div style="width: 350px!important;background-color: #f9f1c9;margin-top: 4px;">
                                         <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; {{ desrubref['rub5']|rub.libelle  }}<br>
 
-                                            {% if  desrubref['villes5'] %}    apparution : {{ desrubref['villes5']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier5'] %}, {{ desrubref['villes_panier5'] }} {% endif %}
+                                            {% if  desrubref['villes5'] %}    visibilité sur : {{ desrubref['villes5']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier5'] %},                                     {% for ville in desrubref['villes_panier5'] %}
+                                                {{ ville|somme.libelle }},
+                                            {% endfor %}{% endif %}
                                         </strong>
                                 </div>
                             {% endif %}
@@ -280,7 +292,9 @@
                                         <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; {{ desrubref['rub6']|rub.libelle  }}<br>
 
 
-                                            {% if  desrubref['villes6'] %}    apparution : {{ desrubref['villes6']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier6'] %}, {{ desrubref['villes_panier6'] }} {% endif %}
+                                            {% if  desrubref['villes6'] %}    visibilité sur : {{ desrubref['villes6']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier6'] %},                                    {% for ville in desrubref['villes_panier6'] %}
+                                                {{ ville|somme.libelle }},
+                                            {% endfor %} {% endif %}
                                         </strong>
                                 </div>
                             {% endif %}
@@ -290,7 +304,9 @@
                                         <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; {{ desrubref['rub7']|rub.libelle  }}<br>
 
 
-                                            {% if  desrubref['villes7'] %}    apparution : {{ desrubref['villes7']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier7'] %}, {{ desrubref['villes_panier7'] }} {% endif %}
+                                            {% if  desrubref['villes7'] %}    visibilité sur : {{ desrubref['villes7']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier7'] %},                     {% for ville in desrubref['villes_panier7'] %}
+                                                {{ ville|somme.libelle }},
+                                            {% endfor %} {% endif %}
                                         </strong>
                                 </div>
                             {% endif %}
