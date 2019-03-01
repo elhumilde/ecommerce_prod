@@ -4266,9 +4266,9 @@ class ReferencementController extends Controller
 
         $villes_panier1 = $request->request->get('villes_panier');
 
-
+        $arr1=array();
         if ($villes_panier1){
-            $arr1=array();
+
             $i=0;
             foreach($villes_panier1 as $value) {
                 $values=explode('|',$value);
@@ -4452,7 +4452,6 @@ class ReferencementController extends Controller
         $localiter_supp7 = $request->request->get('localiter_supp7');
 
 
-$fayssal=$rub_supp_1+$rub_supp_2 + $rub_supp_3 + $rub_supp_4 + $rub_supp_5 +$rub_supp_6 + $rub_supp_7 + $localiter_supp + $localiter_supp1 + $localiter_supp2 + $localiter_supp3 + $localiter_supp4 + $localiter_supp5 + $localiter_supp6 + $localiter_supp7 +$final;
 
 
 

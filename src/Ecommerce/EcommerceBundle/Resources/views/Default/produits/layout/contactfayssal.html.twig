@@ -220,7 +220,7 @@
                             - <h7 style="font-weight: 500;font-size: 16px;">{{ rubrique.sel|rub.libelle }}</h7>
                             {% endfor %}#}
                             <div style="width: 350px!important;background-color: #f9f1c9">
-                                <strong style="font-weight: 500;font-size: 14px;"> •&nbsp; {{ desrubref['rub1']|rub.libelle }} </br>
+                                <strong style="font-weight: 500;font-size: 14px;"> •&nbsp; <span style="font-weight: 700;font-size: 14px;">{{ desrubref['rub1']|rub.libelle }} </span></br>
                                     {% if  desrubref['villes1'] %}    visibilité sur : {{ desrubref['villes1']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier1'] %},                                    {% for ville in desrubref['villes_panier1'] %}
                                         {{ ville|somme.libelle }},
                                     {% endfor %}{% endif %}</strong>
@@ -243,7 +243,7 @@
                             {% if desrubref['rub2']!=null  %}
                              <div style="width: 350px!important;background-color: #f9f1c9">
                                 <strong style="font-weight: 500;font-size: 14px;">
-                                    •&nbsp; {{ desrubref['rub2']|rub.libelle  }}
+                                    •&nbsp;  <span style="font-weight: 700;font-size: 14px;">{{ desrubref['rub2']|rub.libelle  }}</span>
 
                                     </br>
                                     {% if  desrubref['villes2'] %}    visibilité sur : {{ desrubref['villes2']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier2'] %},                                     {% for ville in desrubref['villes_panier2'] %}
@@ -255,7 +255,7 @@
 
                             {% if desrubref['rub3']!=null  %}
                              <div style="width: 350px!important;background-color: #f9f1c9;margin-top: 4px;">
-                                <strong style="font-weight: 500;font-size: 14px;">   •&nbsp; {{ desrubref['rub3']|rub.libelle  }} </br>
+                                <strong style="font-weight: 500;font-size: 14px;">   •&nbsp; <span style="font-weight: 700;font-size: 14px;"> {{ desrubref['rub3']|rub.libelle  }}</span> </br>
                                     {% if  desrubref['villes3'] %}    visibilité sur : {{ desrubref['villes3']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier3'] %},                                     {% for ville in desrubref['villes_panier3'] %}
                                         {{ ville|somme.libelle }},
                                     {% endfor %} {% endif %}
@@ -266,7 +266,7 @@
 
                             {% if desrubref['rub4']!=null  %}
                         <div style="width: 350px!important;background-color: #f9f1c9;margin-top: 4px;">
-                                <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; {{ desrubref['rub4']|rub.libelle  }} </br>
+                                <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; <span style="font-weight: 700;font-size: 14px;"> {{ desrubref['rub4']|rub.libelle  }} </span></br>
                                     {% if  desrubref['villes4'] %}    visibilité sur : {{ desrubref['villes4']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier4'] %},
                                     {% for ville in desrubref['villes_panier4'] %}
                                         {{ ville|somme.libelle }},
@@ -278,7 +278,7 @@
 
                             {% if desrubref['rub5']!=null  %}
                                 <div style="width: 350px!important;background-color: #f9f1c9;margin-top: 4px;">
-                                        <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; {{ desrubref['rub5']|rub.libelle  }}<br>
+                                        <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; <span style="font-weight: 700;font-size: 14px;"> {{ desrubref['rub5']|rub.libelle  }} </span><br>
 
                                             {% if  desrubref['villes5'] %}    visibilité sur : {{ desrubref['villes5']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier5'] %},                                     {% for ville in desrubref['villes_panier5'] %}
                                                 {{ ville|somme.libelle }},
@@ -289,7 +289,7 @@
 
                             {% if desrubref['rub6']!=null  %}
                                 <div style="width: 350px!important;background-color: #f9f1c9;margin-top: 4px;">
-                                        <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; {{ desrubref['rub6']|rub.libelle  }}<br>
+                                        <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp;  <span style="font-weight: 700;font-size: 14px;">{{ desrubref['rub6']|rub.libelle  }} </span><br>
 
 
                                             {% if  desrubref['villes6'] %}    visibilité sur : {{ desrubref['villes6']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier6'] %},                                    {% for ville in desrubref['villes_panier6'] %}
@@ -301,7 +301,7 @@
 
                             {% if desrubref['rub7']!=null    %}
                                 <div style="width: 350px!important;background-color: #f9f1c9;margin-top: 4px;">
-                                        <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; {{ desrubref['rub7']|rub.libelle  }}<br>
+                                        <strong style="font-weight: 500;font-size: 14px;background-color: #f9f1c9">   •&nbsp; <span style="font-weight: 700;font-size: 14px;"> {{ desrubref['rub7']|rub.libelle  }}</span><br>
 
 
                                             {% if  desrubref['villes7'] %}    visibilité sur : {{ desrubref['villes7']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier7'] %},                     {% for ville in desrubref['villes_panier7'] %}
@@ -319,13 +319,13 @@
                     <td>{{ (referencement['rubd']/(referencement['rubrique']-1))|number_format|replace(',',' ') }}</td>
                     <td>{{ (referencement['rubrique']-1) }}</td>
                     <td>   {#{{ referencement['rubd']|number_format|replace(',',' ')  }}#}
-
-                        {% if desrubref['rub2']!=null  %}        {{ ( desrubref['rub_supp_1']+ desrubref['localiter_supp1'])|number_format|replace(',',' ') }}</br>{% endif %}
-                        {% if desrubref['rub3']!=null  %}         {{ ( desrubref['rub_supp_2']+ desrubref['localiter_supp2'])|number_format|replace(',',' ') }}</br>{% endif %}
-                        {% if desrubref['rub4']!=null  %}        {{ ( desrubref['rub_supp_3']+ desrubref['localiter_supp3'])|number_format|replace(',',' ') }}</br>{% endif %}
-                        {% if desrubref['rub5']!=null  %}        {{ ( desrubref['rub_supp_4']+ desrubref['localiter_supp4'])|number_format|replace(',',' ') }}</br>{% endif %}
-                        {% if desrubref['rub6']!=null  %}      {{ ( desrubref['rub_supp_5']+ desrubref['localiter_supp5'])|number_format|replace(',',' ') }}</br>{% endif %}
-                        {% if desrubref['rub7']!=null  %}        {{ ( desrubref['rub_supp_6']+ desrubref['localiter_supp6'])|number_format|replace(',',' ') }}</br>{% endif %}
+</br>
+                        {% if desrubref['rub2']!=null  %}        {{ ( desrubref['rub_supp_1']+ desrubref['localiter_supp1'])|number_format|replace(',',' ') }}</br></br>{% endif %}
+                        {% if desrubref['rub3']!=null  %}         {{ ( desrubref['rub_supp_2']+ desrubref['localiter_supp2'])|number_format|replace(',',' ') }}</br></br>{% endif %}
+                        {% if desrubref['rub4']!=null  %}        {{ ( desrubref['rub_supp_3']+ desrubref['localiter_supp3'])|number_format|replace(',',' ') }}</br></br>{% endif %}
+                        {% if desrubref['rub5']!=null  %}        {{ ( desrubref['rub_supp_4']+ desrubref['localiter_supp4'])|number_format|replace(',',' ') }}</br></br>{% endif %}
+                        {% if desrubref['rub6']!=null  %}      {{ ( desrubref['rub_supp_5']+ desrubref['localiter_supp5'])|number_format|replace(',',' ') }}</br></br>{% endif %}
+                        {% if desrubref['rub7']!=null  %}        {{ ( desrubref['rub_supp_6']+ desrubref['localiter_supp6'])|number_format|replace(',',' ') }}</br></br>{% endif %}
 
 
 
