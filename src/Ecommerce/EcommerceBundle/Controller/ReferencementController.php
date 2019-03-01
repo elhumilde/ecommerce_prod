@@ -850,7 +850,40 @@ class ReferencementController extends Controller
                         'prest7'=>NULL,
                         'prestsupp'=>NULL,
                         'r_count'=>NULL,
+                        'villes1'=>NULL,
+                        'villes2'=>NULL,
+                        'villes3'=>NULL,
+                        'villes4'=>NULL,
+                        'villes5'=>NULL,
+                        'villes6'=>NULL,
+                        'villes7'=>NULL,
+                        'villes_panier1'=>NULL,
+                        'villes_panier2'=>NULL,
+                        'villes_panier3'=>NULL,
+                        'villes_panier4'=>NULL,
+                        'villes_panier5'=>NULL,
+                        'villes_panier6'=>NULL,
+                        'villes_panier7'=>NULL,
 
+                        'rub_supp_1'=>0,
+                        'rub_supp_2'=>0,
+                        'rub_supp_3'=>0,
+                        'rub_supp_4'=>0,
+                        'rub_supp_5'=>0,
+                        'rub_supp_6'=>0,
+                        'rub_supp_7'=>0,
+
+                        'localiter_supp'=>0,
+                        'localiter_supp2'=>0,
+                        'localiter_supp3'=>0,
+                        'localiter_supp4'=>0,
+                        'localiter_supp5'=>0,
+                        'localiter_supp6'=>0,
+                        'localiter_supp7'=>0,
+                        'localiter_supp1'=>0,
+
+                        'final'=>0,
+                        'fayssal'=>0,
                     );
 
             if ($session->has('marque'))
@@ -1481,6 +1514,40 @@ class ReferencementController extends Controller
                     'prest7'=>NULL,
                     'prestsupp'=>NULL,
                     'r_count'=>NULL,
+                    'villes1'=>NULL,
+                    'villes2'=>NULL,
+                    'villes3'=>NULL,
+                    'villes4'=>NULL,
+                    'villes5'=>NULL,
+                    'villes6'=>NULL,
+                    'villes7'=>NULL,
+                    'villes_panier1'=>NULL,
+                    'villes_panier2'=>NULL,
+                    'villes_panier3'=>NULL,
+                    'villes_panier4'=>NULL,
+                    'villes_panier5'=>NULL,
+                    'villes_panier6'=>NULL,
+                    'villes_panier7'=>NULL,
+
+                    'rub_supp_1'=>0,
+                    'rub_supp_2'=>0,
+                    'rub_supp_3'=>0,
+                    'rub_supp_4'=>0,
+                    'rub_supp_5'=>0,
+                    'rub_supp_6'=>0,
+                    'rub_supp_7'=>0,
+
+                    'localiter_supp'=>0,
+                    'localiter_supp2'=>0,
+                    'localiter_supp3'=>0,
+                    'localiter_supp4'=>0,
+                    'localiter_supp5'=>0,
+                    'localiter_supp6'=>0,
+                    'localiter_supp7'=>0,
+                    'localiter_supp1'=>0,
+
+                    'final'=>0,
+                    'fayssal'=>0,
 
 
                 );
@@ -2199,7 +2266,40 @@ class ReferencementController extends Controller
                     'prest7'=>NULL,
                     'prestsupp'=>NULL,
                     'r_count'=>NULL,
+                    'villes1'=>NULL,
+                    'villes2'=>NULL,
+                    'villes3'=>NULL,
+                    'villes4'=>NULL,
+                    'villes5'=>NULL,
+                    'villes6'=>NULL,
+                    'villes7'=>NULL,
+                    'villes_panier1'=>NULL,
+                    'villes_panier2'=>NULL,
+                    'villes_panier3'=>NULL,
+                    'villes_panier4'=>NULL,
+                    'villes_panier5'=>NULL,
+                    'villes_panier6'=>NULL,
+                    'villes_panier7'=>NULL,
 
+                    'rub_supp_1'=>0,
+                    'rub_supp_2'=>0,
+                    'rub_supp_3'=>0,
+                    'rub_supp_4'=>0,
+                    'rub_supp_5'=>0,
+                    'rub_supp_6'=>0,
+                    'rub_supp_7'=>0,
+
+                    'localiter_supp'=>0,
+                    'localiter_supp2'=>0,
+                    'localiter_supp3'=>0,
+                    'localiter_supp4'=>0,
+                    'localiter_supp5'=>0,
+                    'localiter_supp6'=>0,
+                    'localiter_supp7'=>0,
+                    'localiter_supp1'=>0,
+
+                    'final'=>0,
+                    'fayssal'=>0,
 
                 );
 
@@ -2928,7 +3028,40 @@ class ReferencementController extends Controller
                     'prest7'=>NULL,
                     'prestsupp'=>NULL,
                     'r_count'=>NULL,
+                    'villes1'=>NULL,
+                    'villes2'=>NULL,
+                    'villes3'=>NULL,
+                    'villes4'=>NULL,
+                    'villes5'=>NULL,
+                    'villes6'=>NULL,
+                    'villes7'=>NULL,
+                    'villes_panier1'=>NULL,
+                    'villes_panier2'=>NULL,
+                    'villes_panier3'=>NULL,
+                    'villes_panier4'=>NULL,
+                    'villes_panier5'=>NULL,
+                    'villes_panier6'=>NULL,
+                    'villes_panier7'=>NULL,
 
+                    'rub_supp_1'=>0,
+                    'rub_supp_2'=>0,
+                    'rub_supp_3'=>0,
+                    'rub_supp_4'=>0,
+                    'rub_supp_5'=>0,
+                    'rub_supp_6'=>0,
+                    'rub_supp_7'=>0,
+
+                    'localiter_supp'=>0,
+                    'localiter_supp2'=>0,
+                    'localiter_supp3'=>0,
+                    'localiter_supp4'=>0,
+                    'localiter_supp5'=>0,
+                    'localiter_supp6'=>0,
+                    'localiter_supp7'=>0,
+                    'localiter_supp1'=>0,
+
+                    'final'=>0,
+                    'fayssal'=>0,
 
                 );
 
@@ -4167,7 +4300,7 @@ class ReferencementController extends Controller
 
     public function professionAction(Request $request)
     {
-        $villes     = $request->request->get('villesp');
+        $villes     = $request->request->get('villes');
         $prof      = $request->request->get('profession');
         $prix      = $request->request->get('prix');
 
