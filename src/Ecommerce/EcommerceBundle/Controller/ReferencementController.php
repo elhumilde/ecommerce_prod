@@ -209,6 +209,26 @@ class ReferencementController extends Controller
                     'villes_panier6'=>NULL,
                     'villes_panier7'=>NULL,
 
+                    'rub_supp_1'=>0,
+                    'rub_supp_2'=>0,
+                    'rub_supp_3'=>0,
+                    'rub_supp_4'=>0,
+                    'rub_supp_5'=>0,
+                    'rub_supp_6'=>0,
+                    'rub_supp_7'=>0,
+
+                    'localiter_supp'=>0,
+                    'localiter_supp2'=>0,
+                    'localiter_supp3'=>0,
+                    'localiter_supp4'=>0,
+                    'localiter_supp5'=>0,
+                    'localiter_supp6'=>0,
+                    'localiter_supp7'=>0,
+                    'localiter_supp1'=>0,
+
+                    'final'=>0,
+                    'fayssal'=>0,
+
 
                 );
 
@@ -4410,9 +4430,35 @@ class ReferencementController extends Controller
 
         $prestsupp = $request->request->get('prestsupp');
 
+        $final = $request->request->get('final');
+
+        $fayssal = $request->request->get('fayssal');
+
+        $rub_supp_1 = $request->request->get('rub_supp_1');
+        $rub_supp_2 = $request->request->get('rub_supp_2');
+        $rub_supp_3 = $request->request->get('rub_supp_3');
+        $rub_supp_4 = $request->request->get('rub_supp_4');
+        $rub_supp_5 = $request->request->get('rub_supp_5');
+        $rub_supp_6 = $request->request->get('rub_supp_6');
+        $rub_supp_7 = $request->request->get('rub_supp_7');
+
+        $localiter_supp  = $request->request->get('localiter_supp');
+        $localiter_supp1 = $request->request->get('localiter_supp1');
+        $localiter_supp2 = $request->request->get('localiter_supp2');
+        $localiter_supp3 = $request->request->get('localiter_supp3');
+        $localiter_supp4 = $request->request->get('localiter_supp4');
+        $localiter_supp5 = $request->request->get('localiter_supp5');
+        $localiter_supp6 = $request->request->get('localiter_supp6');
+        $localiter_supp7 = $request->request->get('localiter_supp7');
 
 
-        $desrubref =array('villes_panier7'=>$arr7,'villes_panier6'=>$arr6,'villes_panier5'=>$arr5,'villes_panier4'=>$arr4,'villes_panier3'=>$arr3,'villes_panier2'=>$arr2,'villes_panier1'=>$arr1,'villes7'=>$villes7[0],'villes6'=>$villes6[0],'villes5'=>$villes5[0],'villes4'=>$villes4[0],'villes3'=>$villes3[0],'villes2'=>$villes2[0],'villes1'=>$villes1[0],'rub1'=>$rub1[0],'prest1'=>$prest1,'addprest1'=>$addprest1,'rub2'=>$rub2[0],'prest2'=>$prest2,'addprest2'=>$addprest2,'rub3'=>$rub3[0],'prest3'=>$prest3,'addprest3'=>$addprest3,'rub4'=>$rub4[0],'prest4'=>$prest4,'addprest4'=>$addprest4,'rub5'=>$rub5[0],'prest5'=>$prest5,'addprest5'=>$addprest5,'rub6'=>$rub6[0],'prest6'=>$prest6,'addprest6'=>$addprest6,'rub7'=>$rub7[0],'prest7'=>$prest7,'addprest7'=>$addprest7,'prestsupp'=>$prestsupp);
+$fayssal=$rub_supp_1+$rub_supp_2 + $rub_supp_3 + $rub_supp_4 + $rub_supp_5 +$rub_supp_6 + $rub_supp_7 + $localiter_supp + $localiter_supp1 + $localiter_supp2 + $localiter_supp3 + $localiter_supp4 + $localiter_supp5 + $localiter_supp6 + $localiter_supp7 +$final;
+
+
+
+        $desrubref =array('final'=>$final,'fayssal'=>$fayssal,'rub_supp_1'=>$rub_supp_1,'rub_supp_2'=>$rub_supp_2,'rub_supp_3'=>$rub_supp_3,'rub_supp_4'=>$rub_supp_4,'rub_supp_5'=>$rub_supp_5,'rub_supp_6'=>$rub_supp_6,'rub_supp_7'=>$rub_supp_7,
+            'localiter_supp'=>$localiter_supp,'localiter_supp1'=>$localiter_supp1,'localiter_supp2'=>$localiter_supp2,'localiter_supp3'=>$localiter_supp3,'localiter_supp4'=>$localiter_supp4,'localiter_supp5'=>$localiter_supp5,'localiter_supp6'=>$localiter_supp6,'localiter_supp7'=>$localiter_supp7,
+            'villes_panier7'=>$arr7,'villes_panier6'=>$arr6,'villes_panier5'=>$arr5,'villes_panier4'=>$arr4,'villes_panier3'=>$arr3,'villes_panier2'=>$arr2,'villes_panier1'=>$arr1,'villes7'=>$villes7[0],'villes6'=>$villes6[0],'villes5'=>$villes5[0],'villes4'=>$villes4[0],'villes3'=>$villes3[0],'villes2'=>$villes2[0],'villes1'=>$villes1[0],'rub1'=>$rub1[0],'prest1'=>$prest1,'addprest1'=>$addprest1,'rub2'=>$rub2[0],'prest2'=>$prest2,'addprest2'=>$addprest2,'rub3'=>$rub3[0],'prest3'=>$prest3,'addprest3'=>$addprest3,'rub4'=>$rub4[0],'prest4'=>$prest4,'addprest4'=>$addprest4,'rub5'=>$rub5[0],'prest5'=>$prest5,'addprest5'=>$addprest5,'rub6'=>$rub6[0],'prest6'=>$prest6,'addprest6'=>$addprest6,'rub7'=>$rub7[0],'prest7'=>$prest7,'addprest7'=>$addprest7,'prestsupp'=>$prestsupp);
 
 
 

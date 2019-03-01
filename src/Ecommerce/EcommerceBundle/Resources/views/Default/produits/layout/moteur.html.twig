@@ -1427,24 +1427,24 @@
 
 
 
-                    <input type="text" id="rub_supp_1"  class="form-control"     value="0"    style="border-radius: -2px;display:none;">
-                    <input type="text" id="rub_supp_2"  class="form-control"     value="0"    style="border-radius: -2px;display:none;">
-                    <input type="text" id="rub_supp_3"  class="form-control"     value="0"    style="border-radius: -2px;display:none;">
-                    <input type="text" id="rub_supp_4"  class="form-control"     value="0"    style="border-radius: -2px ;display:none;">
-                    <input type="text" id="rub_supp_5"  class="form-control"     value="0"    style="border-radius: -2px;display:none;">
-                    <input type="text" id="rub_supp_6"  class="form-control"     value="0"    style="border-radius: -2px;display:none;">
-                    <input type="text" id="rub_supp_7"  class="form-control"     value="0"    style="border-radius: -2px ;display:none;">
+                    <input type="text" id="rub_supp_1" name="rub_supp_1"  class="form-control"     {% if desrubref['rub_supp_1'] %} value="{{  desrubref['rub_supp_1']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px;display:block;">
+                    <input type="text" id="rub_supp_2"  name="rub_supp_2" class="form-control"  {% if desrubref['rub_supp_2'] %} value="{{  desrubref['rub_supp_2']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:block;">
+                    <input type="text" id="rub_supp_3" name="rub_supp_3"  class="form-control"   {% if desrubref['rub_supp_3'] %} value="{{  desrubref['rub_supp_3']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:block;">
+                    <input type="text" id="rub_supp_4"  name="rub_supp_4"  class="form-control"  {% if desrubref['rub_supp_4'] %} value="{{  desrubref['rub_supp_4']}}" {% else %} value="0"{% endif %}         style="border-radius: -2px ;display:block;">
+                    <input type="text" id="rub_supp_5"  name="rub_supp_5"  class="form-control"  {% if desrubref['rub_supp_5'] %} value="{{  desrubref['rub_supp_5']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:block;">
+                    <input type="text" id="rub_supp_6" name="rub_supp_6" class="form-control"   {% if desrubref['rub_supp_6'] %} value="{{  desrubref['rub_supp_6']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:block;">
+                    <input type="text" id="rub_supp_7" name="rub_supp_7"  class="form-control"   {% if desrubref['rub_supp_7'] %} value="{{  desrubref['rub_supp_7']}}" {% else %} value="0"{% endif %}       style="border-radius: -2px ;display:block;">
 
-                    <input type="text" id="localiter_supp" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp1" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp2" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp3" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp4" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp5" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp6" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp7" class="form-control"  value="0"    style="border-radius: -2px ;display:none;">
+                    <input type="text" id="localiter_supp" name="localiter_supp" class="form-control"  {% if desrubref['localiter_supp'] %} value="{{  desrubref['localiter_supp']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:block;">
+                    <input type="text" id="localiter_supp1"  name="localiter_supp1" class="form-control"  {% if desrubref['localiter_supp1'] %} value="{{  desrubref['localiter_supp1']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:block;">
+                    <input type="text" id="localiter_supp2" name="localiter_supp2" class="form-control"  {% if desrubref['localiter_supp2'] %} value="{{  desrubref['localiter_supp2']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:block;">
+                    <input type="text" id="localiter_supp3" name="localiter_supp3" class="form-control"   {% if desrubref['localiter_supp3'] %} value="{{  desrubref['localiter_supp3']}}" {% else %} value="0"{% endif %}    style="border-radius: -2px ;display:block;">
+                    <input type="text" id="localiter_supp4" name="localiter_supp4" class="form-control"   {% if desrubref['localiter_supp4'] %} value="{{  desrubref['localiter_supp4']}}" {% else %} value="0"{% endif %}      style="border-radius: -2px ;display:block;">
+                    <input type="text" id="localiter_supp5" name="localiter_supp5" class="form-control"  {% if desrubref['localiter_supp5'] %} value="{{  desrubref['localiter_supp5']}}" {% else %} value="0"{% endif %}    style="border-radius: -2px ;display:block;">
+                    <input type="text" id="localiter_supp6" name="localiter_supp6" class="form-control"  {% if desrubref['localiter_supp6'] %} value="{{  desrubref['localiter_supp6']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:block;">
+                    <input type="text" id="localiter_supp7" name="localiter_supp7" class="form-control"   {% if desrubref['localiter_supp7'] %} value="{{  desrubref['localiter_supp7']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:block;">
 
-                    <input type="text" id="final"  class="form-control"  value="0"    style="border-radius: -2px ; display:none;">
+                    <input type="text" id="final"  name="final"  class="form-control"  {% if desrubref['final'] %} value="{{  desrubref['final']}}" {% else %} value="0"{% endif %}      style="border-radius: -2px ; display:block;">
 
 
 
@@ -1452,8 +1452,10 @@
                     <div class="form-group">
 
                         <button id="khalila" class="btn black"><span style="color: #ffdb2e;">Budget estimé</span> <br>Référencement</button>
-                        <div id="ref" style="display: none; margin-top: 20px;"><input class="results" type="text" id="fayssal" value="0" readonly="">
+
+                        <div id="ref" style="display: none; margin-top: 20px;"><input class="results" type="text" name="fayssal" id="fayssal"  value="0"  readonly="">
                         </div>
+
                     </div>
 
                 </div>
@@ -1604,6 +1606,7 @@
 
 
     $("#num2").on("keydown keyup change load", function() {
+
         var num2 = document.getElementById('num2').value;
         var prest =num2/3;
         var prest = -Math.abs(prest);
@@ -1612,6 +1615,7 @@
         var result2 = Math.ceil(parseInt(num2)/3)  * 1500;
         document.getElementById("resulta").value = result2 ;
         document.getElementById("resulta2").value = prest ;
+        alert(prest);
         if (num2 == 0) {
             $("#select_rub_prest7").hide();
             $('.prest8').prop('checked', false);
@@ -2159,7 +2163,7 @@
     }
 
 
-    $(document).on('click load', '.armss', function () {
+    $(document).on('click', '.armss', function () {
 
 
 
@@ -2217,7 +2221,7 @@
 
 
 
-    $(document).on('click load', '.armss1', function () {
+    $(document).on('click ', '.armss1', function () {
 
 
 
@@ -2272,7 +2276,7 @@
     });
 
 
-    $(document).on('click , load', '.armss2', function () {
+    $(document).on('click ', '.armss2', function () {
 
 
 
@@ -2326,7 +2330,7 @@
 
     });
 
-    $(document).on('click , load', '.armss3', function () {
+    $(document).on('click ', '.armss3', function () {
 
 
 
@@ -2383,7 +2387,7 @@
 
 
 
-    $(document).on('click , load', '.armss4', function () {
+    $(document).on('click', '.armss4', function () {
 
 
 
@@ -4873,8 +4877,13 @@
 
         $('input[id="fayssal"]').val(total);
 
-        var fayssal1 = $("#fayssal").val();
-        var fayssal = fayssal1.replace(/[^0-9\.]/g, '');
+        alert(total);
+
+
+ /*       var fayssal1 = $("#fayssal").val();
+        var fayssal = fayssal1.replace(/[^0-9\.]/g, '');*/
+
+        kas();
     }
 
 
@@ -5322,8 +5331,8 @@
         cal();
 
         $('.loaders').css('display', '');
-        var fayssal1 = $("#fayssal").val();
-        var fayssal = fayssal1.replace(/[^0-9\.]/g, '');
+        var fayssal = $("#fayssal").val();
+//        var fayssal = fayssal1.replace(/[^0-9\.]/g, '');
 
         form = $('#jsForm ');
         var data_send = {'nbr': fayssal};

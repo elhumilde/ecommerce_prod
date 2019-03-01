@@ -229,7 +229,7 @@
 
                         <td>-</td>
                         <td>1</td>
-                        <td>-</td>
+                        <td>{{ ( desrubref['final']+ desrubref['localiter_supp'])|number_format|replace(',',' ')  }}</td>
                     </tr>
 
 
@@ -318,7 +318,18 @@
 
                     <td>{{ (referencement['rubd']/(referencement['rubrique']-1))|number_format|replace(',',' ') }}</td>
                     <td>{{ (referencement['rubrique']-1) }}</td>
-                    <td>{{ referencement['rubd']|number_format|replace(',',' ')  }}</td>
+                    <td>   {#{{ referencement['rubd']|number_format|replace(',',' ')  }}#}
+
+                        {% if desrubref['rub2']!=null  %}        {{ ( desrubref['rub_supp_1']+ desrubref['localiter_supp1'])|number_format|replace(',',' ') }}</br>{% endif %}
+                        {% if desrubref['rub3']!=null  %}         {{ ( desrubref['rub_supp_2']+ desrubref['localiter_supp2'])|number_format|replace(',',' ') }}</br>{% endif %}
+                        {% if desrubref['rub4']!=null  %}        {{ ( desrubref['rub_supp_3']+ desrubref['localiter_supp3'])|number_format|replace(',',' ') }}</br>{% endif %}
+                        {% if desrubref['rub5']!=null  %}        {{ ( desrubref['rub_supp_4']+ desrubref['localiter_supp4'])|number_format|replace(',',' ') }}</br>{% endif %}
+                        {% if desrubref['rub6']!=null  %}      {{ ( desrubref['rub_supp_5']+ desrubref['localiter_supp5'])|number_format|replace(',',' ') }}</br>{% endif %}
+                        {% if desrubref['rub7']!=null  %}        {{ ( desrubref['rub_supp_6']+ desrubref['localiter_supp6'])|number_format|replace(',',' ') }}</br>{% endif %}
+
+
+
+                    </td>
                 </tr>
 
             {% endif %}
