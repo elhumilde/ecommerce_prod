@@ -4916,7 +4916,7 @@
         var localiter_supp6   =  parseInt($('input[id=localiter_supp6]').val());
         var localiter_supp7   =  parseInt($('input[id=localiter_supp7]').val());
 
-        var total = final + rub_supp_1 + rub_supp_2 + rub_supp_3 + rub_supp_4 + rub_supp_5 + rub_supp_6 + rub_supp_7 + localiter_supp + localiter_supp1  + localiter_supp2  + localiter_supp3 + localiter_supp4 + localiter_supp5 + localiter_supp6 + localiter_supp7 + parseInt($("#resulta").val()) +parseInt($("#mari").val())  ;;
+        var total = final + rub_supp_1 + rub_supp_2 + rub_supp_3 + rub_supp_4 + rub_supp_5 + rub_supp_6 + rub_supp_7 + localiter_supp + localiter_supp1  + localiter_supp2  + localiter_supp3 + localiter_supp4 + localiter_supp5 + localiter_supp6 + localiter_supp7 + parseInt($("#resulta").val()) +parseInt($("#mari").val())  ;
 
         $('input[id="fayssal"]').val(total);
 
@@ -5374,7 +5374,7 @@
 //        cal();
 
         $('.loaders').css('display', '');
-        var fayssal = parseInt($("#fayssal").val() ) + parseInt($("#resulta").val()) +parseInt($("#mari").val())  ;
+        var fayssal = parseInt($("#fayssal").val() ) ;
 //        var fayssal = fayssal1.replace(/[^0-9\.]/g, '');
 
         form = $('#jsForm ');
@@ -5809,7 +5809,7 @@
             $("#g,#g1,#g2,#g3,#g4,#g5,#g6,#g7,#g8,#g9").show();
         }
         calculate_rubrique_total();
-        cal();
+
         kas();
     });
 
