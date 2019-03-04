@@ -1,57 +1,1307 @@
-
-{% trans_default_domain 'FOSUserBundle' %}
-
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    {#<script src="http://radio-virtuelle.fr/Caranille/Design/js/bootstrap.min.js"></script>
-    <script src="http://radio-virtuelle.fr/Caranille/Design/js/jquery.js"></script>#}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {# <script src="http://radio-virtuelle.fr/Caranille/Design/js/bootstrap.min.js"></script>
+     <script src="http://radio-virtuelle.fr/Caranille/Design/js/jquery.js"></script>#}
+
     <link rel="icon" type="image/x-icon" href="{{ asset('Logo-econtact-2.png') }}" />
-    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}" />
+
+    <style>
+        .dropdown-menu {
+            margin-left: 217px;
+            /*margin-left: 83px;*/
+            width: 149px;
+            color: white;
+            position: absolute;
+            top: 62%;
+            left: 0;
+            z-index: 1000;
+            display: none;
+            /* float: left; */
+            min-width: 129px;
+            padding: 5px 8px;
+            /* margin: 2px 0 0; */
+            /* list-style: none; */
+            background-color: #ffffff;
+            /* border: 1px solid #ccc; */
+            /* border: 1px solid rgba(0, 0, 0, 0.2); */
+            /* -webkit-border-radius: 6px; */
+            -moz-border-radius: 6px;
+            border-radius: 0px;
+            -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            -webkit-background-clip: padding-box;
+            -moz-background-clip: padding;
+            background-clip: padding-box;
+            color: #5f5d5d;
+        }
+        hr {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            border: 0;
+            border-top: 1px solid #d8d3d3;
+        }
+        .navbar .btn, .navbar .btn-group {
+            margin-top: 21px;
+        }
+        .btn1 {
+            width: 95px;
+            height: 44px;
+            display: inline-block;
+            padding: 10px 1px;
+            margin-bottom: 0;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.42857143;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -ms-touch-action: manipulation;
+            touch-action: manipulation;
+            cursor: pointer;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            background-image: none;
+            border: 1px solid #ffdb2e;
+            border-radius: 4px;
+            float: right;
+            background-color: #ffdb2e;
+            margin: 20px;
+            font-weight: bold;
+        }
+        a {
+            color: #000000;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #000000;
+            text-decoration: none;
+        }
 
 
+        #fond-1 {
+            background-image:url('https://image.noelshack.com/fichiers/2018/13/4/1522339957-background1.jpg');
+            left: 0;
+            height: 1250px;
+        }
+
+
+
+        #fond-1 .logo {
+
+            margin-left: 20px;
+            margin-top: 20px;
+            z-index: 1;
+            Position: Absolute;
+        }
+
+        .next {
+            margin-right: 20px;
+            margin-top: 180px;
+            z-index: 1;
+            position: relative;
+            float: right!important;
+        }
+
+        #fond-1 .header {
+            background-color: black;
+            color: white;
+            padding-top: 20px;
+            padding-bottom: 10px;
+            display: black;
+            margin-top: 400px;
+            letter-spacing: 2px;
+            font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+            border-radius: 5px;
+            font-size: 25px;
+        }
+
+        #fond-1 .well {
+            background-color: #ffdb2e;
+            border: 0;
+            height:380px;
+            margin-top: 22px;
+        }
+
+        #fond-1 .avatar {
+            margin-top: 50px;
+        }
+
+        #fond-1 .texte1 {
+            font-size: 16px;
+        }
+
+
+        #fond-1 .titre {
+            width: 260px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            font-size: 18px;
+            padding-top: 7px;
+        }
+
+        #fond-1 .presentation {
+            background-color: white;
+            height:320px;
+            width: 260px;
+            overflow-y:scroll;
+            padding: 20px;
+            text-align: left;
+            font-size: 16px;
+        }
+
+
+
+        #fond-4 {
+            background-color: black;
+            left: 0;
+            height: 260px;
+        }
+
+        #fond-4 #content-4 .texte {
+            font-size: 28px;
+            font-weight: lighter;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        #fond-4 #content-4 #pourquoi {
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        #fond-4, #fond-5 #content-4, h1 {
+            color: #ffdb2e;
+            padding-top: 36px;
+            letter-spacing: 1px;
+        }
+
+        #fond-4 #content-4 p {
+            color: white;
+            font-size: 23px;
+            font-weight: normal;
+            letter-spacing: 2px;
+        }
+
+        #fond-5 {
+            background-color: black;
+            left: 0;
+            height: 650px;
+        }
+
+        #fond-5 #content-4 .texte {
+            font-size: 28px;
+            font-weight: lighter;
+            color: white;
+            letter-spacing: 2px;
+        }
+
+        #fond-5 #content-4 #pourquoi {
+            color: white;
+            letter-spacing: 2px;
+        }
+
+
+
+        #fond-3 {
+            background-color: white;
+            left: 0;
+            height: 1000px;
+        }
+
+
+        #fond-6 {
+            background-color: white;
+            left: 0;
+            height: 740px;
+        }
+
+        #fond-7 {
+            background-image:url('https://image.noelshack.com/fichiers/2018/13/3/1522248185-construison-ensemble-2.jpg');
+            left: 0;
+            height: 300px;
+        }
+
+        #fond-7 .titre {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 940px;
+            height: 200px;
+            border-radius: 0;
+            margin-top: 50px;
+        }
+
+        #fond-7 .titre .acroche {
+            color: white;
+            letter-spacing: 2px;
+            line-height: 1.4;
+        }
+
+
+
+        #fond-8 {
+            background-color: white;
+            left: 0;
+            height: 650px;
+        }
+
+
+        #image-marketing {
+            height: 300px;
+            padding: 0;
+        }
+
+        .img-responsive {
+            width: 100%;
+            height: 300px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        #texte-marketing {
+            padding: 80px 80px 20px 80px;
+        }
+
+        .rectangle {
+            width: 290px;
+            height: 70px;
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            padding-top: 15px;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        .ligne {
+            width: 100%;
+            height: 6px;
+            background-color: white;
+            padding: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            Position: Absolute;
+
+        }
+
+        .tiret {
+            width: 100px;
+            height: 10px;
+            background-color: white;
+        }
+
+
+        #fond-5 .titre {
+            background-color: #ffdb2e;
+            width: 600px;
+            height: 80px;
+            border-radius: 5px;
+            margin-top: 260px;
+        }
+
+        .vide {
+            height: 760px;
+            background-color: white;
+        }
+
+
+        #fond-6 #content-6 .icone {
+            padding-top: 50px;
+            padding-bottom: 5px;
+        }
+
+        #fond-6 #content-6 .list-group .titre {
+            width: 350px;
+            height: 74px;
+            background-color: black;
+            font-size: 24px;
+            border: 0;
+            color: white;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        #fond-6 #content-6 .list-group .content {
+            color: black;
+            padding-left: 40px;
+            font-size: 20px;
+        }
+
+        #fond-6 #content-6 .list-group {
+            width: 350px;
+        }
+
+        #fond-6 #content-6 .colone-1 .list-group #jaune {
+            background-color: #ffdb2e;
+        }
+
+
+
+        #fond-8 #content-8 .bouton-1 {
+            width: 460px;
+            height: 80px;
+            margin-top: 100px;
+            background-color: black;
+            border: 0;
+            font-size: 36px;
+            letter-spacing: 2px;
+        }
+
+
+        span.glyphicon-triangle-bottom {
+            font-size: 32px;
+            color: #ffdb2e;
+        }
+
+        span.glyphicon-triangle-right {
+            font-size: 20px;
+            vertical-align: -2px;
+        }
+
+        span.glyphicon-zoom-in {
+            float: right;
+        }
+
+
+        #fond-8 #content-8 .bouton-2 .btn-info {
+            background-color: #ffdb2e;
+            margin: 50px 15px 10px 15px;
+            width: 340px;
+            height: 60px;
+            border: 0;
+            font-size: 25px;
+            padding: 8px 0 0 0;
+            color: black;
+        }
+
+        #fond-8 #content-8 #bouton-3 {
+            background-color: black;
+            padding-top: 10px;
+            color: #ffdb2e;
+        }
+
+        #fond-8 #content-8 .bouton-2 .btn-info .icone {
+            width: 50px;
+            height: 50px;
+            padding: 0;
+        }
+
+        /*.btn-info {
+            color: #000;
+            background-color: #ffdb2e;
+            border-color: #ffdb2e;
+            margin-top: -6px;
+        }*/
+
+        /*amal*/
+
+        @media (min-width: 1440px){
+            #fond-1 .header {
+                margin-top: 150px;
+            }
+            #fond-1 {
+                height: 960px;
+            }
+            #fond-1 .well {
+                height: 377px !important;
+            }
+
+            #fond-3 {
+                height: 700px;
+            }
+            .vide {
+                height: 310px;;
+
+            }
+            /* .next {
+                 margin-right: 176px;
+                 margin-top: auto;
+             }*/
+            /*#fond-1*/ .suivant {
+                            width: 123px;
+                            height: 44px;
+                            background-color: #ffdb2e!important;
+                            color: black;
+                            font-size: 18px;
+                            margin: 30px;
+                            padding-top: 10px;
+                            float: right;
+                            margin-top: -100px;
+
+                        }
+
+
+            .btn3{
+                margin-top: 69px;
+            }
+            .btn5{
+                margin-top: 281px;
+            }
+        }
+
+
+
+
+        @media (max-width: 1400px)and  (min-width: 1224px) {
+            /*accueil*/
+            .dropdown-menu {
+                margin-left: 217px;
+            }
+            #fond-1 .header {
+                margin-top: -15px;
+            }
+
+
+            #fond-1 {
+                height: 700px;
+            }
+
+            #fond-1 .presentation {
+                width: 260px;
+                /*width: 230px;*/
+                height: 266px;
+            }
+
+            #fond-1 .titre {
+                width: 260px;
+                width: 260px;
+            }
+
+            #fond-1 .well {
+                height: 326px;
+            }
+
+            #fond-1 .avatar {
+                margin-top: 7px;
+            }
+
+
+            #fond-3 {
+                height: 520px;
+            }
+
+            #fond-4 {
+                height: 180px;
+            }
+
+            #fond-5 {
+                height: 500px;
+            }
+
+            .vide5 {
+                height: 200px !important;
+            }
+
+            #fond-4, #fond-5 #content-4, h1 {
+                color: #ffdb2e;
+                padding-top: 10px !important;
+                letter-spacing: 1px;
+            }
+
+            #texte-marketing {
+                padding: 20px 80px 20px 80px;
+            }
+
+            .btn2 {
+                margin-right: 60px;
+                margin-top: -14px;
+            }
+
+            .btn3 {
+                margin-right: 60px;
+                margin-top: -30px;
+            }
+
+            .btn5 {
+                margin-right: 60px;
+                margin-top: 90px;
+            }
+
+            .vide {
+                height: 378px;
+            }
+            #fond-6 #content-6 .list-group .content {
+                width: 309px;
+            }
+            #fond-6 #content-6 .list-group .titre {
+                width: 309px;
+            }
+            #fond-7 .titre {
+                background-color: rgba(0, 0, 0, 0.5);
+                width: 870px;
+                height: 190px;
+                border-radius: 0;
+                margin-top: 60px;
+            }
+            #fond-1 .avatar {
+                margin-top: 60px;
+            }
+
+
+            /*#fond-6 #content-6 .list-group .titre {
+                    width: 237px;
+                }
+            .list-group-item {
+                    width: 237px;
+                }*/
+            .suivant {
+                width: 123px;
+                height: 44px;
+                background-color: #ffdb2e !important;
+                color: black;
+                font-size: 18px;
+                margin: 30px;
+                padding-top: 10px;
+                float: right;
+                /*margin-top: -100px;*/
+                margin-top: -89px;
+            }
+
+            .form-group {
+                margin-top: 20px;
+            }
+
+
+        }
+
+        @media (max-width: 1223px)and  (min-width: 990px) {
+            /*accueil*/
+            .dropdown-menu {
+                margin-left: 217px;
+            }
+            #fond-1 .header {
+                margin-top: -15px;
+            }
+
+
+            #fond-1 {
+                height: 700px;
+            }
+
+            #fond-1 .presentation {
+
+                width: 220px;
+                height: 266px;
+            }
+
+            #fond-1 .titre {
+
+                width: 220px;
+            }
+
+            #fond-1 .well {
+                height: 326px;
+            }
+
+            #fond-1 .avatar {
+                margin-top: 7px;
+            }
+
+
+            #fond-3 {
+                height: 520px;
+            }
+
+            #fond-4 {
+                height: 180px;
+            }
+
+            #fond-5 {
+                height: 500px;
+            }
+
+            .vide5 {
+                height: 200px !important;
+            }
+
+            #fond-4, #fond-5 #content-4, h1 {
+                color: #ffdb2e;
+                padding-top: 10px !important;
+                letter-spacing: 1px;
+            }
+
+            #texte-marketing {
+                padding: 20px 80px 20px 80px;
+            }
+
+            .btn2 {
+                margin-right: 60px;
+                margin-top: -14px;
+            }
+
+            .btn3 {
+                margin-right: 60px;
+                margin-top: -30px;
+            }
+
+            .btn5 {
+                margin-right: 60px;
+                margin-top: 90px;
+            }
+
+            .vide {
+                height: 378px;
+            }
+            #fond-6 #content-6 .list-group .content {
+                width: 309px;
+            }
+            #fond-6 #content-6 .list-group .titre {
+                width: 309px;
+            }
+            #fond-7 .titre {
+                background-color: rgba(0, 0, 0, 0.5);
+                width: 870px;
+                height: 190px;
+                border-radius: 0;
+                margin-top: 60px;
+            }
+            #fond-1 .avatar {
+                margin-top: 60px;
+            }
+
+            /*#fond-6 #content-6 .list-group .titre {
+                    width: 237px;
+                }
+            .list-group-item {
+                    width: 237px;
+                }*/
+            .suivant {
+                width: 123px;
+                height: 44px;
+                background-color: #ffdb2e !important;
+                color: black;
+                font-size: 18px;
+                margin: 30px;
+                padding-top: 10px;
+                float: right;
+                /*margin-top: -100px;*/
+                margin-top: -89px;
+            }
+
+            .form-group {
+                margin-top: 20px;
+            }
+
+
+        }
+
+        @media (max-width: 990px)
+        {
+            #fond-1 {
+                height: 1160px;
+            }
+            #fond-1 .presentation {
+                width: 219px;
+            }
+            #fond-1 .titre {
+                width: 219px;
+            }
+            #fond-1 .header {
+                margin-top: 80px;
+            }
+            #fond-1 .well {
+                height: 299px;
+            }
+            /*.next {
+                    margin-right: 60px;
+                    margin-top: 80px;
+                }*/
+
+            .btn2 {
+                margin-right: 60px;
+                margin-top: 67px;
+            }
+            #fond-3 {
+                height: 900px;
+            }
+            .btn3 {
+                margin-right: 60px;
+                margin-top: 0px;
+            }
+            #fond-4, #fond-5 #content-4, h1 {
+                padding-top: 0px!important;
+
+            }
+            #fond-5 {
+
+                height: 634px;
+            }
+            .btn5 {
+                margin-right: 60px;
+                margin-top: 420px;
+            }
+            .vide {
+                height: 520px;
+            }
+
+
+            #fond-6 #content-6 .list-group {
+                width: 220px;
+            }
+            #fond-6 #content-6 .list-group .titre {
+                width: 220px!important;
+            }
+            .list-group-item {
+                width: 220px!important;
+            }
+            #fond-6 #content-6 .list-group .content {
+                color: black;
+                padding-left:5px;
+                font-size: 15px;
+                font-weight: bold;
+            }
+            #fond-7 .titre {
+                width: 700px;
+                height: 164px;
+                margin-top: 70px;
+
+            }
+
+
+            .form-inline .form-control {
+
+                width: 187px;
+            }
+            .suivant {
+                width: 123px;
+                height: 44px;
+                background-color: #ffdb2e !important;
+                color: black;
+                font-size: 18px;
+                margin: 30px;
+                padding-top: 10px;
+                float: right;
+                margin-top: -100px;
+            }
+
+        }
+
+
+        @media (max-width: 768px)
+        {
+            .col-sm-6 {
+                width: 33%;
+            }
+
+            #fond-1 .col-xs-12 {
+                width: 33%;
+            }
+
+            #fond-1 .header {
+                width: 60%;
+                margin-left: 197px;
+            }
+            #from-label
+            {
+
+                font-size: 18px;
+                float: none!important;
+            }
+
+            #fond-6 #content-6 .list-group .content {
+                margin-left: 36px;
+            }
+
+            #fond-6 #content-6 .list-group .titre {
+
+                margin-left: 36px;
+            }
+
+
+        }
+
+        @media (min-width: 768px) and (max-width:  992px)
+        {
+            .col-sm-6 {
+                width: 33%;
+            }
+
+        }
+
+
+        #from-label
+        {
+            font-size: 18px;
+            float: left
+        }
+
+
+
+    </style>
+    <style>
+
+        body {
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: 0;
+        }
+
+        section {
+            width:100%;
+            background-size: cover;
+            padding: 0;
+            margin: 0;
+        }
+
+
+        #fond-2 {
+            background-image:url('https://image.noelshack.com/fichiers/2019/08/5/1550830885-fon-2.jpg');
+            left: 0;
+        }
+
+
+        #fond-2 .header {
+            color: white;
+            padding: 40px 40px 0 40px;
+            letter-spacing: 2px;
+            font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+            font-size: 35px;
+        }
+
+
+        #fond-2 .presentation {
+            padding: 20px;
+            text-align: left;
+            font-size: 19px;
+        }
+        ol, ul {
+            margin-bottom: 0;
+        }
+
+
+        #fond-2 .texte1 {
+            font-size: 20px;
+        }
+
+
+        #fond-2 .titre {
+            color: black;
+            font-size: 24px;
+            padding-top: 46px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+        }
+        #fond-2 .ligne-titre {
+            height: 2px;
+            width: 20%;
+            background-color: black;
+            margin: 15px;
+        }
+
+
+        #fond-2 .texte {
+            text-align: left;
+            font-size: 16px;
+        }
+
+        #fond-2 .exp {
+            height: 572px;
+            background-color: #ffdb2e;
+        }
+
+
+        #fond-2 .col-whith {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+
+        #fond-2 .site {
+            background-color: #ffdb2e;
+            padding: 19px;
+        }
+
+        #fond-2 .site .telecontact-ma {
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        #fond-2 .count {
+            color: white;
+            font-size: 25px;
+        }
+
+        #fond-2 .chiffres {
+            display: inline;
+            color: #ffdb2e;
+        }
+
+        #fond-2 #chiffre-conter {
+            padding: 16px 0 16px 100px;
+        }
+
+        #fond-2 .reference {
+            width: 60px;
+            height: 60px;
+            margin: 20px;
+        }
+
+
+        #fond-2 .reference img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (max-width: 1199px) and (min-width: 992px) {
+            #fond-2 .site {
+                padding: 39px 0 31px 0;
+            }
+        }
+
+        @media screen and (min-width: 992px) {
+            #fond-2 #align-left {
+                float: left;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            #fond-2 #align-left {
+                float: none;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            #fond-2 .exp {
+                height: 280px;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            #fond-2 #chiffre-conter {
+                padding: 16px 0 16px 10px;
+            }
+        }
+
+
+
+
+
+
+        #texte-marketing {
+            padding: 80px 80px 20px 80px;
+        }
+
+
+        .rectangle {
+            width: 290px;
+            height: 70px;
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            padding-top: 15px;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+
+
+
+        #fond-9 {
+            padding: 0 0 60px 0 ;
+        }
+
+        #fond-9 .titre-3 {
+            color: black;
+            letter-spacing: 1px;
+            background-color: #ffdb2e;
+            padding: 30px;
+            font-size: 36px
+        }
+
+        #fond-9 .container img {
+            width: 60px;
+            height: 60px;
+            margin: 50px 0 20px 0;
+        }
+
+        #fond-9 .container .texte {
+            height: 60px;
+        }
+
+        #fond-9 .container .texte h4 {
+            line-height: 24px;
+        }
+
+        #fond-9 .container button {
+            color: white;
+            background-color: #3d494f;
+            font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding: 20px;
+            font-family: "Open Sans";
+            letter-spacing: 1px;
+            width: 100%;
+        }
+
+
+        #fond-9 .container p {
+            font-family: "Open Sans";
+            font-size: 16px;
+            padding: 10px;
+            margin-bottom: 50px;
+            height: 100px;
+            margin-bottom: 0;
+        }
+
+        .ligne-separation {
+            width: 100%;
+            height: 8px;
+            background-color: black;
+        }
+
+        #fond-10 {
+            padding: 20px 0 60px 0 ;
+        }
+
+        #fond-10 .titre-3 {
+            color: black;
+            letter-spacing: 1px;
+            padding: 30px;
+            font-size: 36px
+        }
+
+        #fond-10 .button {
+            background-color: #818b91;
+            margin: 16px;
+            width: 80%;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        #fond-10 #button-5 {
+            width: 40%;
+        }
+
+        #fond-10 .question .chiffre {
+            color: white;
+            font-size: 60px;
+            font-family: "Open Sans";
+            display: inline-block;
+            font-weight: 600;
+            padding-right: 10px;
+        }
+
+        #fond-10 .question p {
+            color: white;
+            font-size: 20px;
+            font-family: "Open Sans";
+            text-align: left;
+            display: inline-block;
+            letter-spacing: 1px;
+        }
+
+        #fond-10 .question {
+            position: absolute;
+            width: 100%;
+            padding-top: 26px;
+        }
+
+
+        #fond-10 .reponse {
+            background-color: #ffdb2e;
+            position: relative;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            padding: 18px 15px 10px 24px;
+        }
+
+        #fond-10 .question, .reponse {
+            display: inline-block;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+        #fond-10 .reponse p {
+            color: black;
+            font-size: 15px;
+            letter-spacing: 0;
+            line-height: 26px;
+        }
+
+        #fond-10 .button.hover .question {
+            -webkit-transform: translateX(-200px);
+            -moz-transform: translateX(-200px);
+            transform: translateX(-200px);
+            opacity: 0;
+        }
+
+        #fond-10 .button.hover .reponse {
+            -webkit-transform: translateX(-0px);
+            -moz-transform: translateX(-0px);
+            transform: translateX(-0px);
+            opacity: 1;
+        }
+
+        @media screen and (min-width: 1199px) {
+            #fond-10 .reponse-1 {
+                padding-bottom: 34px ;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            #fond-10 #button-5 {
+                width: 76%;
+            }
+        }
+
+        @media screen and (max-width: 1199px) and (min-width: 992px) {
+            #fond-10 #button-5 {
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 1199px) and (min-width: 992px) {
+            #fond-10 .button {
+                width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1199px) and (min-width: 992px) {
+            #fond-10 .reponse-1 {
+                padding-bottom: 36px ;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+        #fond-11 {
+            padding: 20px 0 60px 0 ;
+            background-image:url('https://image.noelshack.com/fichiers/2019/09/4/1551353967-background11.jpg');
+            left: 0;
+        }
+
+        #fond-11 .titre-3 {
+            color: white;
+            letter-spacing: 1px;
+            padding: 30px;
+            font-size: 36px
+        }
+
+        #fond-11 .button {
+            background-color: white;
+            margin: 16px;
+            width: 80%;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            -webkit-transition: all 0.3s ease;
+            -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+
+        #fond-11 .question p {
+            color: #3d494f;
+            font-size: 20px;
+            font-family: "Open Sans";
+            text-align: left;
+            display: inline-block;
+        }
+
+        #fond-11 .question {
+            position: absolute;
+            width: 100%;
+            padding-top: 34px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+
+        #fond-11 .reponse {
+            background-color: #ffdb2e;
+            position: relative;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            padding: 18px 15px 10px 24px;
+        }
+
+        #fond-11 .question, .reponse {
+            display: inline-block;
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+        }
+
+        #fond-11 .reponse p {
+            color: black;
+            font-size: 18px;
+            letter-spacing: 0;
+            line-height: 32px;
+        }
+
+        #fond-11 .button.hover .question {
+            -webkit-transform: translateX(-200px);
+            -moz-transform: translateX(-200px);
+            transform: translateX(-200px);
+            opacity: 0;
+        }
+
+        #fond-11 .button.hover .reponse {
+            -webkit-transform: translateX(-0px);
+            -moz-transform: translateX(-0px);
+            transform: translateX(-0px);
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 1199px) and (min-width: 992px) {
+            #fond-11 .button {
+                width: 100%;
+            }
+        }
+
+    </style>
 </head>
-<style>
-    .alert-success {
-        display: none;
-    }
-    @media (min-width: 768px)
-    {
-        .col-sm-3 {
-            width: 33%;
-        }
-    }
 
-    @media (min-width: 992px)
-    {
-        .col-md-3 {
-            width: 25%!important;
-        }
-    }
 
-    .col-xs-3 {
-        width: 33%;
-    }
 
-    @media (max-width: 768px){
-        .navbar-collapse.collapse {
-            display: block!important;
-            height: auto!important;
-            padding-bottom: 0;
-            overflow: visible!important;
-        }
-    }
-
-</style>
 
 
 <div class="container-fluid" id="fond-1" style="min-width: 900px; margin: 0 auto;">
+
     <section id="fond-1">
         <img class="logo" src="https://image.noelshack.com/fichiers/2018/07/4/1518687555-logo-econtact-2.png" alt="logo">
 
@@ -84,7 +1334,7 @@
 
                 {% elseif app.user.id == '66' %}
                     <ul class="navbar-nav ">
-                        <div class=" mr-auto">
+                        <di class=" mr-auto">
                             <a class="nav-link dropdown-toggle btn suivant " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 50px">
                                 <span class="glyphicon glyphicon glyphicon-user" style="font-size:  20px"></span>
                             </a>
@@ -97,7 +1347,7 @@
                                     <span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;Déconnexion
                                 </a>
                             </div>
-                        </div>
+                        </di>
                         <a href="{{ path('acceuil') }}" role="button" class="btn1 " >
                             Back Office
                         </a>
@@ -105,14 +1355,13 @@
                             Mes DEVIS
                         </a>
                     </ul>
-
-                {% elseif app.user.id == '77' or app.user.id == '25' or app.user.id == '32' or app.user.id == '52' or app.user.id == '9' %}
+                {% elseif app.user.id == '4' or app.user.id == '25' or app.user.id == '32' or app.user.id == '52' or app.user.id == '4'  %}
                     <ul class="navbar-nav ">
                         <di class=" mr-auto">
                             <a class="nav-link dropdown-toggle btn suivant " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 50px">
                                 <span class="glyphicon glyphicon glyphicon-user" style="font-size:  20px"></span>
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" {#align="right"#} style=" margin-left: 217px;">
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown" {#align="right"#} style="margin-left: 82px;">
                                 &nbsp;<a href="{{ path('fos_user_change_password') }}" role="button" {#class="btn1 "#} style="color: #4a4646">
                                     <span class="glyphicon glyphicon-refresh"></span>&nbsp;&nbsp;Changer PWD
                                 </a>
@@ -123,7 +1372,7 @@
                             </div>
                         </di>
                         <a href="{{ path('Email_group') }}" role="button" class="btn1 " >
-                            Mon équipe
+                            Mon groupe
                         </a>
                         <a href="{{ path('Email') }}" role="button" class="btn1 " >
                             Mes DEVIS
@@ -171,20 +1420,25 @@
 
                 <div align=center class="col-md-3 col-md-12">
                     <div class="well" style="">
+
                         {% if user.path is  not null %}
                             <img class="avatar" src="{{ asset('uploads/' ~user.path) }}" alt="icone-avatar" width="130" height="130" style=" -moz-border-radius: 50px!important;-webkit-border-radius: 50px!important;border-radius: 100%!important; margin: 0 auto;margin-top: 50px;">
                         {% else %}
                             <img class="avatar" src="https://image.noelshack.com/fichiers/2018/16/1/1523885196-1518715813-icone-avatar.png" alt="icone-avatar" width="130" height="130" style=" -moz-border-radius: 50px!important;-webkit-border-radius: 50px!important;border-radius: 100%!important; margin: 0 auto;margin-top: 50px;">
+
                         {% endif %}
                         {# <img class="avatar" src="{{ asset('uploads/' ~user.path) }}" alt="icone-avatar" #}{#width="80" height="80"#}{# #}{#style="
                                             -moz-border-radius: 50px!important;
                                             -webkit-border-radius: 50px!important;
                                             border-radius: 100%!important; margin: 0 auto"#}{#>#}
-                        <h4> <p style="text-align: center;Font-Weight: Bold;"> {{ user.nom }}</h4>
+
+                        <h4> <p style="text-align: center;Font-Weight: Bold;"> {{ user.username }}</h4>
                         <p class="texte1"></b>{{ user.profil|raw }}</p>
                     </div>
                 </div>
-                <div align=center class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+
+                <div align=center class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="titre">Expertise Métier</div>
                     <br>
                     <div align=center class="presentation">
@@ -193,16 +1447,16 @@
                 </div>
 
 
-                <div align=center class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div align=center class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="titre">Expérience</div>
                     <br>
                     <div align=center class="presentation">
-                        {#<b>{{ user.nbrAnnee }} </b> #} {{ user.experiececontenu|raw }}
+                        <b>{{ user.nbrAnnee }} </b>  {{ user.experiececontenu|raw }}
                     </div>
                 </div>
 
 
-                <div align=center class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div align=center class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="titre">
                         Références Clients
                     </div>
@@ -232,292 +1486,584 @@
 
     </section>
 
-
     <a href="#fond-2" role="button" class="btn suivant">
         Suivant &nbsp;   <span class="glyphicon glyphicon-triangle-right"></span>
     </a>
+</div>
+<br>
+
+
+
+<section id="fond-2">
+
+    <div align=center class="header col-xl-12 col-md-12 col-sm-12 col-xs-12">
+        <p>Précurseur du business connecté au Maroc</p>
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
 
-    <section id="fond-2">
-        <div class="container" id="#content-1">
 
+
+    <div class="container-fluid" style="background-color: white;">
+
+        <div class="container" id="#content-2">
 
             <div class="row">
 
-                <div class="col-md-3 col-sm-2 "></div>
-                <div align=center class="header col-md-6 col-sm-8 {#col-xs-12#}">
-                    <p class="text-uppercase">telecontact.ma</p>
-                </div>
-                <div class="col-md-3 col-sm-2 "></div>
 
-            </div>
-
-
-            <div class="row" style="margin-top: 50px;">
-
-                <div align=center class="col-md-3 col-md-12">
-                    <div class="well" {#style="height:380px;"#}>
-
-                        <p class="texte1"><p style="text-align: center;"> {{ user.teleconatct.titre|raw }}</p>
-                        <br>
-                        <br>
-                        <img class="avatar" style="img-responsive;" src="https://image.noelshack.com/fichiers/2018/12/2/1521536251-pc.png">
-                    </div>
-                </div>
-
-
-                <div align=center class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div align=center class="col-xl-4 col-md-4 col-sm-12 col-xs-12 col-whith">
                     <div class="titre">Expertise Métier</div>
+                    <div class="ligne-titre"></div>
                     <br>
                     <div align=center class="presentation">
-                        {{ user.teleconatct.contenu|raw }}
+                        <ul>
+                            <li>Véritable outil de mise en relation entre professionnels au niveau national, régional ou local.</li>
+                            <br>
+                            <li>Expert en solutions de communication digitale.</li>
+                            <br>
+                            <li>Une gamme de services
+                                <br>digitaux et print :
+                                <br>- Présence digitale
+                                <br>- Publicité digitale
+                                <br>- Site internet
+                                <br>- Réseaux sociaux
+                                <br>- Affichage print</li>
+                        </ul>
                     </div>
                 </div>
 
 
-                <div align=center class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                    <div class="titre">Expérience</div>
-                    <br>
-                    <div align=center class="presentation">
-                        {#<b>{{ user.teleconatct.nbrAnnee  }}  </b>#}
-                        {{ user.teleconatct.experiececontenu|raw }}
+                <div align=center class="col-xl-4 col-md-4 col-sm-12 col-xs-12 col-whith">
+
+                    <div class="exp">
+                        <div class="titre">Expérience</div>
+                        <div class="ligne-titre"></div>
+
+                        <br>
+                        <div align=center class="presentation">
+                            <ul>
+                                <li>30 ans à collaborer avec l'ensemble des professionnels du Maroc et d'innovations pour leur apporter des solutions efficaces à leur développement.</li>
+                            </ul>
+                        </div>
                     </div>
+
                 </div>
 
 
-                <div align=center class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                    <div class="titre">
-                        Références Clients
-                    </div>
+                <div align=center class="col-xl-4 col-md-4 col-sm-12 col-xs-12 col-whith">
+                    <div class="titre">Références Clients</div>
+                    <div class="ligne-titre"></div>
                     <br>
                     <div align=center class="presentation">
                         <div class="row">
-                            {% for en in user.teleconatct.nosclient %}
-                                <div class="col-md-6 col-sm-5">
-                                    <img style="margin: 10px 10px 10px 10px;" src="{{ asset('http://www.telecontact.ma/pubs/logos/L'~en.cfirme~'.png') }}" width="60" height="60" >
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="https://image.noelshack.com/fichiers/2018/07/4/1518714870-logo-tijari.jpg">
                                 </div>
-                            {% endfor %}
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L3282662.png">
+                                </div>
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L3183186.png">
+                                </div>
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L3278256.png">
+                                </div>
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L3152313.png">
+                                </div>
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L3247196.png">
+                                </div>
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L3173343.png">
+                                </div>
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L2100086.png">
+                                </div>
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L3174670.png">
+                                </div>
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L3311161.png">
+                                </div>
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L3035378.png">
+                                </div>
+                            </div>
+                            <div align=center class="col-xl-4 col-md-4 col-sm-4 col-xs-4">
+                                <div class="reference">
+                                    <img src="http://www.telecontact.ma/pubs/logos/L3211272.png">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-
             </div>
         </div>
-        {#<a href="#fond-2" class="btn next"><img src="https://image.noelshack.com/fichiers/2018/13/3/1522253637-btn-suivant.png"></a>#}
-
-    </section>
-
-
-
-    <a href="#fond-4" role="button" class="btn suivant">
-        Suivant &nbsp;   <span class="glyphicon glyphicon-triangle-right"></span>
-    </a>
-
-
-
-    <section  id="fond-4">
-
-
-        <div align=center class="container" id="content-4">
-
-            <div class="row">
-
-                <div class="col-md-12 col-sm-12 {#col-xs-12#}">
-                    <h1 >AGENCE DIGITAL MARKETING, FULL-SERVICES</h1>
-                    <p>Exploitez tout le potentiel du web avec notre expertise dans le marketing digital</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section id="fond-3">
-
-        <div class="container" id="#content-3">
-
-            <div class="row">
-
-                <div align=center class="col-md-12 col-sm-12" id="texte-marketing">
-                    <p style="font-size: 25px; text-align: center">Développer vos ventes, dynamiser votre réseau,  diffuser vos informations, faire connaitre vos produits / services à plus grande échelle !<br><br>
-                        Nous sommes là pour vous accompagner et à intégrer le marketing digital dans la stratégie commerciale de votre entreprise.
-                    </p>
-
-
-
-                </div>
-
-            </div>
-
-            <div class="row">
-
-                <div align=center class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="rectangle">
-                        <p style="font-size: 22px;">Référencement</p>
-                    </div>
-                    <div class="rectangle">
-                        <p style="font-size: 22px;">Réseaux sociaux</p>
-                    </div>
-                </div>
-
-                <div align=center class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="rectangle">
-                        <p style="font-size: 22px;">Gestion de Contenu</p>
-                    </div>
-                    <div class="rectangle">
-                        <p style="font-size: 22px;">Audit de site</p>
-                    </div>
-                </div>
-
-                <div align=center class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="rectangle">
-                        <p style="font-size: 22px;">Affichage</p>
-                    </div>
-                    <div class="rectangle">
-                        <p style="font-size: 22px;">Inbound Marketing</p>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        {#<a href="#fond-5" class="btn btn3 next" #}{#style="margin-top: 50px;"#}{#><img src="https://image.noelshack.com/fichiers/2018/13/3/1522253637-btn-suivant.png"></a><br>
-        <br>#}
-    </section>
-
-    <a href="#fond-5" role="button" class="btn suivant">
-        Suivant &nbsp;   <span class="glyphicon glyphicon-triangle-right"></span>
-    </a>
-
-
-
-    <section  id="fond-5">
-
-
-        <div align=center class="container" id="content-4">
-
-            <div class="row">
-
-                <div class="col-md-12 col-sm-12 {#col-xs-12#}">
-                    <h1 style="font-size: 60px;">telecontact.ma</h1>
-                    <div style="height: 4px; width: 426px; background-color: #ffdb2e;"></div>
-                    <br>
-                    <br>
-                    <p class="texte"><span style="color: #ffdb2e"><strong>+de 70 %</strong></span> du chiffre d'affaires est réalisé dans le digital</p>
-                    <p class="texte"><span style="color: #ffdb2e"><strong>+2000</strong></span> entreprises nous ont déja fait confiance en 2018</p>
-                    <p class="texte"><span style="color: #ffdb2e"><strong>73 870</strong></span> visites/jour et <span style="color: #ffdb2e"><strong>6,5 millions </strong></span>de pages vus/mois </p>
-
-                    <h1 id="pourquoi">Et vous
-                        <br>
-                        <br> Où, en êtes vous ? ...</h1>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    <div class="vide vide5">
-        {#<a href="#fond-7" class="btn btn5 next" #}{#style="margin-top: 250px"#}{#><img src="https://image.noelshack.com/fichiers/2018/13/3/1522253637-btn-suivant.png"></a><br>#}
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div align="center" class="col-telecontact-ma col-xl-4 col-md-4 col-sm-12 col-xs-12 col-whith">
+                <div class="site">
+                    <p class="telecontact-ma">telecontact.ma</p>
+                    <p>Réseau d'Experts, Moteur d'Affaires</p>
+                </div>
+            </div>
+            <div align="center" class="col-xl-4 col-md-4 col-sm-12 col-xs-12 col-whith" style="padding: 16px 0 16px 0;">
+                <div class="mu-single-counter">
+                    <div id="shiva">
+                        <p class="chiffres">+</p>
+                        <span class="count chiffres">70</span>
+                        <p class="chiffres">%</p>
+                        <p class="chiffres" style="color: white;">du Chiffre d'affaires est réalisé dans le digital</p>
+                    </div>
+                </div>
+                <div class="mu-single-counter">
+                    <div id="shiva">
+                        <p class="chiffres">+</p>
+                        <span class="count chiffres">2</span>
+                        <span class="count chiffres">300</span>
+                        <p class="chiffres" style="color: white;">Entreprises  nous ont fait confiance en 2018</p>
+                    </div>
+                </div>
+
+            </div>
+            <div align="center" class="col-xl-4 col-md-4 col-sm-12 col-xs-12 col-whith" id="chiffre-conter">
+                <div class="mu-single-counter" id="align-left">
+                    <div id="shiva">
+                        <p class="chiffres">+</p>
+                        <span class="count chiffres">73</span>
+                        <span class="count chiffres">870</span>
+                        <p class="chiffres" style="color: white;">Visites / jour</p>
+                    </div>
+                </div>
+                <div class="mu-single-counter" id="align-left">
+                    <div id="shiva">
+                        <p class="chiffres">+</p>
+                        <span class="count chiffres">6</span>
+                        <p class="chiffres">,</p>
+                        <span class="count chiffres">5</span>
+                        <p class="chiffres">millions</p>
+                        <p class="chiffres" style="color: white;">Pages vus / mois</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+<a href="#fond-9" role="button" class="btn suivant">
+    Suivant &nbsp;   <span class="glyphicon glyphicon-triangle-right"></span>
+</a>
+
+<br>
+
+<section  id="fond-9" align=center>
+
+    <div class="row">
+
+        <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12" align=center>
+            <div class="titre-3">
+                <p>Comment consolider votre stratégie de
+                    <br><b>communication digitale ?</b></p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="container">
+            <div class="col-xl-3 col-md-3 col-sm-6 col-xs-6" align=center>
+                <img src="https://image.noelshack.com/fichiers/2019/09/2/1551186506-icone1.png" alt="image">
+                <div class="texte">
+                    <h4>Renforcer votre visibilité sur les moteurs de recherche</h4>
+                </div>
+                <button type="button" class="btn btn-primary">Présence digitale</button>
+                <p>Référencement de  votre entreprise par activité, raison sociale, prestations et marques</p>
+            </div>
+            <div class="col-xl-3 col-md-3 col-sm-6 col-xs-6" align=center>
+                <img src="https://image.noelshack.com/fichiers/2019/09/2/1551186506-icone2.png" alt="image">
+                <div class="texte">
+                    <h4>Développer votre notoriété, trafic et ventes</h4>
+                </div>
+
+                <button type="button" class="btn btn-primary">Publicité digitale</button>
+                <p>Affichage dynamique de vos campagnes en ligne : Bannière, vignette, habillage</p>
+            </div>
+            <div class="col-xl-3 col-md-3 col-sm-6 col-xs-6" align=center>
+                <img src="https://image.noelshack.com/fichiers/2019/09/2/1551186507-icone3.png" alt="image">
+                <div class="texte">
+                    <h4> Gagner en visibilité avec un site internet</h4>
+                </div>
+                <button type="button" class="btn btn-primary">Site internet</button>
+                <p>Solutions pour  site web Création d'un site internet Audit et SEO de votre site</p>
+            </div>
+            <div class="col-xl-3 col-md-3 col-sm-6 col-xs-6" align=center>
+                <img src="https://image.noelshack.com/fichiers/2019/09/2/1551186506-icone4.png" alt="image">
+                <div class="texte">
+                    <h4>Optimiser votre communication en la relayant sur les réseaux sociaux
+                </div>
+                </h4>
+                <button type="button" class="btn btn-primary">Réseaux sociaux</button>
+                <p>Gestion de vos campagnes Facebook ADS :Social clic, social vidéo, social contact </p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<div class="ligne-separation"></div>
+
+
+<a href="#fond-10" role="button" class="btn suivant">
+    Suivant &nbsp;   <span class="glyphicon glyphicon-triangle-right"></span>
+</a>
+
+<section  id="fond-10" align=center>
+
+    <div class="row">
+
+        <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12" align=center>
+            <div class="titre-3">
+                <p>Comment <b>réussir</b> sa communication
+                    <br>sur <b>internet</b> en <b>5 étapes ?</b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+
+            <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12" align=center>
+                <button type="button" name="button" class="button" align=center>
+
+                    <div class="question">
+                        <p class="chiffre">1</p>
+                        <p>Faites le bilan de votre
+                            <br>visibilité sur internet</p>
+                    </div>
+
+                    <div class="reponse reponse-1">
+                        <p>Êtes-vous visible sur Internet ?
+                            <br>Est-ce que vos clients, prospects peuvent vous trouver ?
+                            <br>Que voient-ils de vous ? Comment faire pour le savoir ?
+                        </p>
+                    </div>
+
+                </button>
+            </div>
+
+            <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12" align=center>
+                <button type="button" name="button" class="button" align=center>
+
+                    <div class="question">
+                        <p class="chiffre">2</p>
+                        <p>Découvrez que font
+                            <br>vos concurrents</p>
+                    </div>
+
+                    <div class="reponse">
+                        <p>Qui sont vos concurrents ?
+                            <br>Comment est-ce qu'ils communiquent ?
+                            <br>Sur quelles cibles, sont-ils très visibles ?
+                            <br>Quels sont vos points forts et faibles ?
+                        </p>
+                    </div>
+
+                </button>
+            </div>
+
+            <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12" align=center>
+                <button type="button" name="button" class="button" align=center>
+
+                    <div class="question">
+                        <p class="chiffre">3</p>
+                        <p>Définissez votre besoin par
+                            <br>rapport à votre marché</p>
+                    </div>
+
+                    <div class="reponse">
+                        <p>Faire connaître votre entreprise ?
+                            <br>Trouver de nouveaux clients ?
+                            <br>Vendre sur internet, auprès de qui ?
+                            <br>Pour mettre en avant quelles activités, quels messages ?
+                        </p>
+                    </div>
+
+                </button>
+            </div>
+
+            <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12" align=center>
+                <button type="button" name="button" class="button" align=center>
+
+                    <div class="question">
+                        <p class="chiffre">4</p>
+                        <p>Testez et regardez
+                            <br>si ça marche !</p>
+                    </div>
+
+                    <div class="reponse">
+                        <p>Il n'y a pas de réponse magique !
+                            <br>Mais il y en a forcément une qui marchera pour vous ! Pensez à essayer plusieurs actions pour trouver ce qui fonctionnera le mieux.
+                        </p>
+                    </div>
+
+                </button>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12" align=center>
+                    <button type="button" name="button" class="button" align=center id="button-5">
+
+                        <div class="question">
+                            <p class="chiffre">5</p>
+                            <p>Choisissez le prestataire
+                                <br>le plus efficace</p>
+                        </div>
+
+                        <div class="reponse">
+                            <p>C'est bon de pouvoir s'appuyer sur un partenaire fiable ! Un expert local, qui comprend vos problématiques métiers et qui vous propose le plan de communication le plus performant en fonction de vos besoins.
+                            </p>
+                        </div>
+
+                    </button>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    </div>
+
+
+
+</section>
+
+<section  id="fond-11" align=center>
+
+    <div class="row">
+
+        <div class="col-xl-12 col-md-12 col-sm-12 col-xs-12" align=center>
+            <div class="titre-3">
+                <p><b><samp style="color: #ffdb2e;">telecontact.ma,</samp></b> une offre complète
+                    <br>qui s'articule sur <b><samp style="color: #ffdb2e;">4 volets</samp></b></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="container">
+
+            <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12" align=center>
+                <button type="button" name="button" class="button" align=center>
+
+                    <div class="question">
+                        <p>Présence digitale</p>
+                    </div>
+
+                    <div class="reponse reponse-1">
+                        <p>Référencement de  votre entreprise par activité, raison sociale, prestations et marques
+                        </p>
+                    </div>
+
+                </button>
+            </div>
+
+            <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12" align=center>
+                <button type="button" name="button" class="button" align=center>
+
+                    <div class="question">
+                        <p>Publicité digitale</p>
+                    </div>
+
+                    <div class="reponse">
+                        <p>Affichage dynamique de vos campagnes en ligne : Bannière, vignette, habillage
+                        </p>
+                    </div>
+
+                </button>
+            </div>
+
+            <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12" align=center>
+                <button type="button" name="button" class="button" align=center>
+
+                    <div class="question">
+                        <p>Site internet & Contenu digital</p>
+                    </div>
+
+                    <div class="reponse">
+                        <p>Solutions pour  site web : Création d'un site internet Audit et SEO de votre site
+                        </p>
+                    </div>
+
+                </button>
+            </div>
+
+            <div class="col-xl-6 col-md-6 col-sm-12 col-xs-12" align=center>
+                <button type="button" name="button" class="button" align=center>
+
+                    <div class="question">
+                        <p>Réseaux Sociaux</p>
+                    </div>
+
+                    <div class="reponse">
+                        <p>Gestion de vos campagnes Facebook ADS : Social clic, social vidéo, social contact</p>
+                    </div>
+
+                </button>
+            </div>
+
+
+        </div>
+    </div>
+
+
 
     <a href="#fond-7" role="button" class="btn suivant">
         Suivant &nbsp;   <span class="glyphicon glyphicon-triangle-right"></span>
     </a>
+</section>
 
 
-    <section  id="fond-7" align=center>
+
+<div class="ligne-separation" style="background-color: white"></div>
 
 
-        <div  class="container" id="content-4">
+<section  id="fond-7" align=center>
 
-            <div class="row" >
 
-                <div class="col-md-12 col-sm-12 {#col-xs-12#} "  align=center >
-                    <div class="titre">
-                        <h1 class="acroche "><strong>Construisons ensemble
+    <div  class="container" id="content-4">
 
-                                les piliers de votre <span style="color: #ffdb2e">communication digitale</span>
-                            </strong></h1>
-                    </div>
+        <div class="row" >
+
+            <div class="col-md-12 col-sm-12 {#col-xs-12#} "  align=center >
+                <div class="titre">
+                    <h1 class="acroche "><strong>Construisons ensemble
+
+                            les piliers de votre <span style="color: #ffdb2e">communication digitale</span>
+                        </strong></h1>
                 </div>
-
             </div>
 
         </div>
 
+    </div>
 
-    </section>
 
-    <br>
+</section>
 
-    <section  id="fond-6">
+<br>
 
-        <div class="container" id="content-6">
+<section  id="fond-6">
 
-            <div class="row">
+    <div class="container" id="content-6">
 
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                    <div class="colone-1">
-                        <div align=center>
-                            <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-3.png" alt="icone-3">
-                        </div>
-                        <div class="list-group">
-                            <a class="list-group-item active titre" style="padding-top: 20px;">Référencement </a>
-                            <a href="{{ path('prestation') }}"   target="_blank" class="list-group-item content">Prestations <span class="glyphicon glyphicon-zoom-in"></span></a></a>
-                            <a href="{{ path('marque') }}"     target="_blank" class="list-group-item content">Marques <span class="glyphicon glyphicon-zoom-in"></span></a></a>
-                            <a href="{{ path('rubrique') }}" target="_blank" class="list-group-item content">Rubriques <span class="glyphicon glyphicon-zoom-in"></span></a></a>
-                            <a href="{{ path('profession') }}" target="_blank" class="list-group-item content">Profession libérale <span class="glyphicon glyphicon-zoom-in"></span></a></a>
-                            <a href="{{ path('carte_visite') }}"  target="_blank" class="list-group-item content" id="jaune">Carte de visite
-                                &nbsp;
+        <div class="row">
 
-                                <img src="https://image.noelshack.com/fichiers/2018/08/5/1519388845-icone-hand.png" style="float: right" alt="icone-hand">
-                            </a>
-                        </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="colone-1">
+                    <div align=center>
+                        <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-3.png" alt="icone-3">
+                    </div>
+                    <div class="list-group">
+                        <a class="list-group-item active titre" style="padding-top: 20px;">Référencement </a>
+                        <a href="{{ path('prestation') }}"   target="_blank" class="list-group-item content">Prestations <span class="glyphicon glyphicon-zoom-in"></span></a></a>
+                        <a href="{{ path('marque') }}"     target="_blank" class="list-group-item content">Marques <span class="glyphicon glyphicon-zoom-in"></span></a></a>
+                        <a href="{{ path('rubrique') }}" target="_blank" class="list-group-item content">Rubriques <span class="glyphicon glyphicon-zoom-in"></span></a></a>
+                        <a href="{{ path('profession') }}" target="_blank" class="list-group-item content">Profession libérale <span class="glyphicon glyphicon-zoom-in"></span></a></a>
+                        <a href="{{ path('carte_visite') }}"  target="_blank" class="list-group-item content" id="jaune">Carte de visite
+                            &nbsp;
+
+                            <img src="https://image.noelshack.com/fichiers/2018/08/5/1519388845-icone-hand.png" style="float: right" alt="icone-hand">
+                        </a>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                    <div class="colone-2">
-                        <div align=center>
-                            <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icona-2.png" alt="icone-3">
-                        </div>
-                        <div class="list-group">
-                            <a class="list-group-item active titre" style="padding-top: 20px;">Gestion de Contenu</a>
-                            <a href="{{ path('site_internet') }}" target="_blank" class="list-group-item content">Site internet &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                            <a href="{{ path('video') }} " target="_blank" class="list-group-item content">Vidéos &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                            <a href="{{ path('catalogue_ref') }}" target="_blank" class="list-group-item content">Catalogues en ligne&nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                            <a href="{{ path('pvi') }}" target="_blank" class="list-group-item content"> PVI&nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-
-                        </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="colone-2">
+                    <div align=center>
+                        <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icona-2.png" alt="icone-3">
+                    </div>
+                    <div class="list-group">
+                        <a class="list-group-item active titre" style="padding-top: 20px;">Gestion de Contenu</a>
+                        <a href="{{ path('site_internet') }}" target="_blank" class="list-group-item content">Site internet &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a href="{{ path('video') }} " target="_blank" class="list-group-item content">Vidéos &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a href="{{ path('catalogue_ref') }}" target="_blank" class="list-group-item content">Catalogues en ligne&nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a href="{{ path('pvi') }}" target="_blank" class="list-group-item content"> PVI&nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
                     </div>
                 </div>
+            </div>
 
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
-                    <div class="colone-3">
-                        <div align=center>
-                            <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-1.png" alt="icone-3">
-                        </div>
-                        <div class="list-group">
-                            <a class="list-group-item active titre" style="padding-top: 20px;">Affichage</a>
-                            <a href="{{ path('banniere') }}" target="_blank" class="list-group-item content">Bannières classiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                            <a href="{{ path('vignette_thematique') }}" target="_blank" class="list-group-item content">Vignettes thématiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                            <a href="{{ path('vignette_localte') }}" target="_blank" class="list-group-item content">Vignettes localités &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                            <a href="{{ path('vignette_accueil_video') }}" target="_blank" class="list-group-item content">Vignettes classiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                            <a href="{{ path('professionnels') }}" target="_blank" class="list-group-item content">Professionnels du jour &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                            <a href="{{ path('espace_promo') }}" target="_blank" class="list-group-item content">Espace Promo &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                            <a href="{{ path('habillage') }}" target="_blank" class="list-group-item content">Habillage &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-
-                        </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="colone-3">
+                    <div align=center>
+                        <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-1.png" alt="icone-3">
                     </div>
+                    <div class="list-group">
+                        <a class="list-group-item active titre" style="padding-top: 20px;">Affichage</a>
+                        <a href="{{ path('banniere') }}" target="_blank" class="list-group-item content">Bannières classiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a href="{{ path('vignette_thematique') }}" target="_blank" class="list-group-item content">Vignettes thématiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a href="{{ path('vignette_localte') }}" target="_blank" class="list-group-item content">Vignettes localités &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a href="{{ path('vignette_accueil_video') }}" target="_blank" class="list-group-item content">Vignettes classiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a href="{{ path('professionnels') }}" target="_blank" class="list-group-item content">Professionnels du jour &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a href="{{ path('espace_promo') }}" target="_blank" class="list-group-item content">Espace Promo &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a href="{{ path('habillage') }}" target="_blank" class="list-group-item content">Habillage &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
 
+                    </div>
                 </div>
+            </div>
 
-                <div class="col-md-12 col-sm-12 col-xs-12" align="center">
+        </div>
+    </div>
+</section>
 
+<section  id="fond-8" align=center>
+
+    <div class="container" id="content-8">
+
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12">
+
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12" align="center">
+                <form >
                     <div class="form-inline">
                         <div class="form-group test " >
                             <label id="from-label">Raison sociale</label> <br> <input  placeholder="raison sociale" name="rs" {% if raison['rs']  %} {{raison['rs']|capitalize }} value="{{ raison['rs'] }}" {% endif %} id="raison" class="form-control " type="text" style=" height: 37px;width: 290px"/>
@@ -545,172 +2091,81 @@
 
                             </div>
                         </div>
-
-                        <div class="form-group test" style="margin-left: 63px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="form-group test" >
                             <label id="from-label" >Nom du signataire  </label> <br><input id="sign" name="sign" {% if raison['sign']  %} {{raison['sign']|capitalize }} value="{{ raison['sign'] }}"  {% endif %}  placeholder="Mr Albert " class="form-control " type="text" style=" height: 37px;width: 290px"/>
                         </div><br>
                     </div>
                     <br>
                     <div class="form-inline">
-                        <div class="form-group test" style="margin-left: 250px;float: left;">
+                        <div class="form-group test" >
                             <label id="from-label"> profession libérale</label> <br><br>
-                            <div style="margin-left: -63px;">
+                            <div>
                                 <label class="radio-inline" >
                                     <input class="profession" type="radio" name="profession" id="profession" value="oui" {% if raison['profession'] =='oui' %} checked  {% endif %} >Oui
                                 </label>
                                 <label class="radio-inline">
-                                    <input class="profession" type="radio" name="profession" id="profession" value="non" {% if raison['profession'] =='non' %} checked  {% endif %}  >Non
+                                    <input class="profession" type="radio" name="profession" id="profession" value="non" {% if raison['profession'] =='non' %} checked  {% endif %}  >Non&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </label>
                             </div>
                         </div>
-
+                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="form-group test" >
 
                         </div><br>
                     </div>
-                </div>
+
+
+
+
+
+                </form>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
 
             </div>
-        </div>
 
-    </section>
-
-
-    {#<section  id="fond-8" align=center>
-
-        <div class="container" id="content-8">
-
-            <div class="row">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-
-                </div>
-
-                <div class="col-md-12 col-sm-12 col-xs-12" align="center">
-
-                        <div class="form-inline">
-                            <div class="form-group test " >
-                                <label id="from-label">Raison sociale</label> <br> <input  placeholder="raison sociale" name="rs" {% if raison['rs']  %} {{raison['rs']|capitalize }} value="{{ raison['rs'] }}" {% endif %} id="raison" class="form-control " type="text" style=" height: 37px;width: 290px"/>
-                            </div>
-                            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                            <div class="form-group test " >
-                                <label id="from-label" >Code Firme </label> <br><input id="firme"  placeholder="code firme" name="cfirme" {% if raison['cfirme']  %} {{raison['cfirme']|capitalize }} value="{{ raison['cfirme'] }}" {% endif %}class="form-control " type="text" style=" height: 37px;width: 290px"/>
-                            </div>
-                        </div>
-                        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                        <div class="form-inline">
-                            <div class="form-group test " >
-                                <label id="from-label"> Civilité</label> <br><br>
-                                <div>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="civi" value="Mr" {% if raison['civi'] =='Mr' %} checked  {% endif %}  checked>Monsieur
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="civi" value="Mme" {% if raison['civi'] =='Mme' %} checked  {% endif %}>Madame
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input type="radio" name="civi" value="Mlle" {% if raison['civi'] =='Mlle' %} checked  {% endif %} >Mademoiselle
-
-                                    </label>
-
-                                </div>
-                            </div>
-
-                            <div class="form-group test" style="margin-left: 63px;">
-                                <label id="from-label" >Nom du signataire  </label> <br><input id="sign" name="sign" {% if raison['sign']  %} {{raison['sign']|capitalize }} value="{{ raison['sign'] }}"  {% endif %}  placeholder="Mr Albert " class="form-control " type="text" style=" height: 37px;width: 290px"/>
-                            </div><br>
-                        </div>
-                        <br>
-                        <div class="form-inline">
-                            <div class="form-group test" style="margin-left: 250px;float: left;">
-                                <label id="from-label"> profession libérale</label> <br><br>
-                                <div style="margin-left: -63px;">
-                                    <label class="radio-inline" >
-                                        <input class="profession" type="radio" name="profession" id="profession" value="oui" {% if raison['profession'] =='oui' %} checked  {% endif %} >Oui
-                                    </label>
-                                    <label class="radio-inline">
-                                        <input class="profession" type="radio" name="profession" id="profession" value="non" {% if raison['profession'] =='non' %} checked  {% endif %}  >Non
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div class="form-group test" >
-
-                            </div><br>
-                        </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-#}
-
-    <div class="col-md-12 col-sm-12 {#col-xs-12#}" align="center" style="
-    shape-margin: 20px;
-    margin-bottom: 20%;
-">
-        <button type="button" class="btn  bouton-1 budgetisation" data-toggle="collapse" data-target="#demo-1"  style="background-color: black!important;color: white!important;">
-            Budgétisation<span class="glyphicon glyphicon-triangle-bottom"></span>
-        </button>
-        <div id="demo-1" class="collapse bouton-2" >
-            <form class="form-inline">
-                <div class="form-group ">
-                    <a href="{{ path('profession_liberale') }}" role="button" class="btn  prof ">
-                        <img class="icone" src="https://image.noelshack.com/fichiers/2018/24/3/1528884261-imageedit-33-8467682361.gif" alt="icone-3">
-                        Profession libérale   <span class="glyphicon glyphicon-triangle-right fleche-petit"></span>
-                    </a>
-                </div>
-                <div class="form-group ">
-                    <a href="{{ path('referencement') }}" role="button" class="btn btn-info ref ">
+            <div class="col-md-12 col-sm-12 {#col-xs-12#}" align="center">
+                <button type="button" class="btn btn-info bouton-1" data-toggle="collapse" data-target="#demo-1" >
+                    Budgétisation &nbsp;   <span class="glyphicon glyphicon-triangle-bottom"></span>
+                </button>
+                <div id="demo-1" class="collapse bouton-2" >
+                    {# <a href="{{ path('profession_liberale') }}" role="button" class="btn btn-info prof">
+                         <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-3.png" alt="icone-3">
+                         Profession libérale   <span class="glyphicon glyphicon-triangle-right fleche-petit"></span>
+                     </a>#}
+                    <a href="{{ path('referencement_mptei') }}" role="button" class="btn btn-info ref">
                         <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-3.png" alt="icone-3">
                         Référencement   <span class="glyphicon glyphicon-triangle-right fleche-petit"></span>
                     </a>
-                </div>
-                <div class="form-group ">
-                    <a href="{{ path('budget_gestion_contenu') }}" role="button" class="btn btn-info contenu">
+                    <a href="{{ path('budget_gestion_contenu') }}" role="button" class="btn btn-info">
                         <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icona-2.png" alt="icone-3">
                         Gestion de Contenu   <span class="glyphicon glyphicon-triangle-right"></span>
                     </a>
-                </div>
-                <div class="form-group ">
-                    <a href="{{ path('budget_affichage') }}" role="button" class="btn btn-info affichage">
+                    <a href="{{ path('budget_affichage') }}" role="button" class="btn btn-info">
                         <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-1.png" alt="icone-3">
-                        Affichage<span class="glyphicon glyphicon-triangle-right"></span>
+                        Affichage   <span class="glyphicon glyphicon-triangle-right"></span>
                     </a>
+                    {# <a href="{{ path('profession_liberale') }}" role="button" class="btn btn-info">
+                         <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-1.png" alt="icone-3">
+                         Profession libérale  <span class="glyphicon glyphicon-triangle-right"></span>
+                     </a>#}
+                    <br>
+                    {# <a href="http://www.telecontact.ma/" role="button" class="btn btn-info" id="bouton-3">
+                         Budget estimé
+                     </a>#}
                 </div>
+            </div>
 
-            </form>
-            {# <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                 <a href="{{ path('referencement') }}" role="button" class="btn btn-info ref">
-                     <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-3.png" alt="icone-3">
-                     Référencement   <span class="glyphicon glyphicon-triangle-right fleche-petit"></span>
-                 </a>
-             </div>
-             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                 <a href="{{ path('budget_gestion_contenu') }}" role="button" class="btn btn-info">
-                     <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icona-2.png" alt="icone-3">
-                     Gestion de Contenu   <span class="glyphicon glyphicon-triangle-right"></span>
-                 </a>
-             </div>
-             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                 <a href="{{ path('budget_affichage') }}" role="button" class="btn btn-info">
-                     <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-1.png" alt="icone-3">
-                     Affichage<span class="glyphicon glyphicon-triangle-right"></span>
-                 </a>
-             </div>
-             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                 <a href="{{ path('profession_liberale') }}" role="button" class="btn btn-info">
-                     <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-1.png" alt="icone-3">
-                     Réseaux socieaux & audit<span class="glyphicon glyphicon-triangle-right"></span>
-                 </a>
-             </div>#}
-            <br>
+
+
         </div>
     </div>
-</div>
+</section>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="http://code.jquery.com/jquery.js"></script>
+
 <script>
 
     $(document).ready(function() {
@@ -727,17 +2182,17 @@
             if (rs.length >0 && firme.length >0 && sign.length >0 ){
                 $('.bouton-1').removeAttr('disabled',false);
             }
-            if (profession =='oui')
-            {
+            /*if (profession =='oui')
+             {
 
-                $(".prof").show();
-                $(".ref").hide()
-            }else
-            {
+             $(".prof").show();
+             $(".ref").hide()
+             }else
+             {
 
-                $(".prof").hide();
-                $(".ref").show()
-            }
+             $(".prof").hide();
+             $(".ref").show()
+             }*/
         });
 
 
@@ -779,6 +2234,59 @@
 
 
         });
+
+
     });
 
 </script>
+<script type="text/javascript">
+
+
+    $('.count').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 4000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+
+
+
+
+
+
+    function hover() {
+        $(".button").on("mouseenter", function() {
+            return $(this).addClass("hover");
+        });
+    }
+
+    function hoverOff() {
+        $(".button").on("mouseleave", function() {
+            return $(this).removeClass("hover");
+        });
+    }
+
+
+
+    hover();
+    hoverOff();
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</html>

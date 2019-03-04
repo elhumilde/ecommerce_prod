@@ -34,6 +34,7 @@
 
 </section>
 <section  id="fond-2" >
+    <div class="container">
 
     <form id="jsForm" class="form-group" action="" method="GET">
         <div class="container" style="width: 1800px!important; ">
@@ -1408,59 +1409,7 @@
             <input type="text" id="rub3"  class="form-control"  value="400"    style="border-radius: -2px!important;display: none;">
 
 
-            <div class="row">
 
-                <div class="col-md-6">
-
-  {#                  <tr><td><input type="number" name="sum2" id="sum2" class="pres_marq" style="display:none;" /></td></tr>
-
-                    <td><input type="number"  id="sum3" name="sum3"  class="pres_marq" {% if referencement['sum3'] %} value="{{  referencement['sum3']}}" {% else %} value="0"{% endif %}  style="display:none;" /></td>
-                    <td> <input type="number" id="mari" name="mari"  {% if referencement['mari'] %} value="{{  referencement['mari']}}" {% else %} value="0"{% endif %}   style="display: none" ></td>
-                    <td> <input type="number" id="marque_pack" name="marque_pack" {% if referencement['marque_pack'] %} value="{{  referencement['marque_pack']}}" {% else %} value="0"{% endif %}  style="display: none" ></td>
-                    <td> <input type="number" id="resulta" name="resulta" {% if referencement['resulta'] %} value="{{  referencement['resulta']}}" {% else %} value="0"{% endif %}    style="display: none"></td>
-                    <td> <input type="number" id="resulta2" name="resulta2"  {% if referencement['resulta2'] %} value="{{  referencement['resulta2']}}" {% else %} value="0"{% endif %} style="display: none" ></td>
-
-                    <td> <input type="number" id="rubd"  name="rubd"     {% if referencement['rubd'] %} value="{{  referencement['rubd']}}" {% else %} value="0"{% endif %} style="display: none"></td>
-                    <td><input type="number" id="rania" name="rania"    {% if referencement['rania'] %} value="{{  referencement['rania']}}" {% else %} value="0"{% endif %} style="display: none"></td>
-                    <td><input type="number" id="raniad" name="raniad"  {% if referencement['raniad'] %} value="{{  referencement['raniad']}}" {% else %} value="0"{% endif %} style="display: none"></td><br>
-
-
-#}
-
-                    <input type="text" id="rub_supp_1" name="rub_supp_1"  class="form-control"     {% if desrubref['rub_supp_1'] %} value="{{  desrubref['rub_supp_1']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px;display:none;">
-                    <input type="text" id="rub_supp_2"  name="rub_supp_2" class="form-control"  {% if desrubref['rub_supp_2'] %} value="{{  desrubref['rub_supp_2']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:none;">
-                    <input type="text" id="rub_supp_3" name="rub_supp_3"  class="form-control"   {% if desrubref['rub_supp_3'] %} value="{{  desrubref['rub_supp_3']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:none;">
-                    <input type="text" id="rub_supp_4"  name="rub_supp_4"  class="form-control"  {% if desrubref['rub_supp_4'] %} value="{{  desrubref['rub_supp_4']}}" {% else %} value="0"{% endif %}         style="border-radius: -2px ;display:none;">
-                    <input type="text" id="rub_supp_5"  name="rub_supp_5"  class="form-control"  {% if desrubref['rub_supp_5'] %} value="{{  desrubref['rub_supp_5']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:none;">
-                    <input type="text" id="rub_supp_6" name="rub_supp_6" class="form-control"   {% if desrubref['rub_supp_6'] %} value="{{  desrubref['rub_supp_6']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:none;">
-                    <input type="text" id="rub_supp_7" name="rub_supp_7"  class="form-control"   {% if desrubref['rub_supp_7'] %} value="{{  desrubref['rub_supp_7']}}" {% else %} value="0"{% endif %}       style="border-radius: -2px ;display:none;">
-
-                    <input type="text" id="localiter_supp" name="localiter_supp" class="form-control"  {% if desrubref['localiter_supp'] %} value="{{  desrubref['localiter_supp']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp1"  name="localiter_supp1" class="form-control"  {% if desrubref['localiter_supp1'] %} value="{{  desrubref['localiter_supp1']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp2" name="localiter_supp2" class="form-control"  {% if desrubref['localiter_supp2'] %} value="{{  desrubref['localiter_supp2']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp3" name="localiter_supp3" class="form-control"   {% if desrubref['localiter_supp3'] %} value="{{  desrubref['localiter_supp3']}}" {% else %} value="0"{% endif %}    style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp4" name="localiter_supp4" class="form-control"   {% if desrubref['localiter_supp4'] %} value="{{  desrubref['localiter_supp4']}}" {% else %} value="0"{% endif %}      style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp5" name="localiter_supp5" class="form-control"  {% if desrubref['localiter_supp5'] %} value="{{  desrubref['localiter_supp5']}}" {% else %} value="0"{% endif %}    style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp6" name="localiter_supp6" class="form-control"  {% if desrubref['localiter_supp6'] %} value="{{  desrubref['localiter_supp6']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:none;">
-                    <input type="text" id="localiter_supp7" name="localiter_supp7" class="form-control"   {% if desrubref['localiter_supp7'] %} value="{{  desrubref['localiter_supp7']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:none;">
-
-                    <input type="text" id="final"  name="final"  class="form-control"  {% if desrubref['final'] %} value="{{  desrubref['final']}}" {% else %} value="0"{% endif %}      style="border-radius: -2px ; display:none;">
-
-                    <input type="text" id="final_total" class="form-control" value="0" style="border-radius: -2px;display: none;">
-
-
-                    <div class="form-group">
-
-                        <button id="khalila" class="btn black"><span style="color: #ffdb2e;">Budget estimé</span> <br>Référencement</button>
-
-                        <div id="ref" style="display: none; margin-top: 20px;"><input class="results" type="text" name="fayssal" id="fayssal"  {% if desrubref['fayssal'] %} value="{{  desrubref['fayssal']}}" {% else %} value="0"{% endif %}    readonly="">
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
 
 
 
@@ -1550,10 +1499,72 @@
 
             {% endif %}
 
+            <div class="row">
 
+                <div class="col-md-6">
+
+                    {#                  <tr><td><input type="number" name="sum2" id="sum2" class="pres_marq" style="display:none;" /></td></tr>
+
+                                      <td><input type="number"  id="sum3" name="sum3"  class="pres_marq" {% if referencement['sum3'] %} value="{{  referencement['sum3']}}" {% else %} value="0"{% endif %}  style="display:none;" /></td>
+                                      <td> <input type="number" id="mari" name="mari"  {% if referencement['mari'] %} value="{{  referencement['mari']}}" {% else %} value="0"{% endif %}   style="display: none" ></td>
+                                      <td> <input type="number" id="marque_pack" name="marque_pack" {% if referencement['marque_pack'] %} value="{{  referencement['marque_pack']}}" {% else %} value="0"{% endif %}  style="display: none" ></td>
+                                      <td> <input type="number" id="resulta" name="resulta" {% if referencement['resulta'] %} value="{{  referencement['resulta']}}" {% else %} value="0"{% endif %}    style="display: none"></td>
+                                      <td> <input type="number" id="resulta2" name="resulta2"  {% if referencement['resulta2'] %} value="{{  referencement['resulta2']}}" {% else %} value="0"{% endif %} style="display: none" ></td>
+
+                                      <td> <input type="number" id="rubd"  name="rubd"     {% if referencement['rubd'] %} value="{{  referencement['rubd']}}" {% else %} value="0"{% endif %} style="display: none"></td>
+                                      <td><input type="number" id="rania" name="rania"    {% if referencement['rania'] %} value="{{  referencement['rania']}}" {% else %} value="0"{% endif %} style="display: none"></td>
+                                      <td><input type="number" id="raniad" name="raniad"  {% if referencement['raniad'] %} value="{{  referencement['raniad']}}" {% else %} value="0"{% endif %} style="display: none"></td><br>
+
+
+                  #}
+
+                    <input type="text" id="rub_supp_1" name="rub_supp_1"  class="form-control"     {% if desrubref['rub_supp_1'] %} value="{{  desrubref['rub_supp_1']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px;display:none;">
+                    <input type="text" id="rub_supp_2"  name="rub_supp_2" class="form-control"  {% if desrubref['rub_supp_2'] %} value="{{  desrubref['rub_supp_2']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:none;">
+                    <input type="text" id="rub_supp_3" name="rub_supp_3"  class="form-control"   {% if desrubref['rub_supp_3'] %} value="{{  desrubref['rub_supp_3']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:none;">
+                    <input type="text" id="rub_supp_4"  name="rub_supp_4"  class="form-control"  {% if desrubref['rub_supp_4'] %} value="{{  desrubref['rub_supp_4']}}" {% else %} value="0"{% endif %}         style="border-radius: -2px ;display:none;">
+                    <input type="text" id="rub_supp_5"  name="rub_supp_5"  class="form-control"  {% if desrubref['rub_supp_5'] %} value="{{  desrubref['rub_supp_5']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:none;">
+                    <input type="text" id="rub_supp_6" name="rub_supp_6" class="form-control"   {% if desrubref['rub_supp_6'] %} value="{{  desrubref['rub_supp_6']}}" {% else %} value="0"{% endif %}        style="border-radius: -2px;display:none;">
+                    <input type="text" id="rub_supp_7" name="rub_supp_7"  class="form-control"   {% if desrubref['rub_supp_7'] %} value="{{  desrubref['rub_supp_7']}}" {% else %} value="0"{% endif %}       style="border-radius: -2px ;display:none;">
+
+                    <input type="text" id="localiter_supp" name="localiter_supp" class="form-control"  {% if desrubref['localiter_supp'] %} value="{{  desrubref['localiter_supp']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:none;">
+                    <input type="text" id="localiter_supp1"  name="localiter_supp1" class="form-control"  {% if desrubref['localiter_supp1'] %} value="{{  desrubref['localiter_supp1']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:none;">
+                    <input type="text" id="localiter_supp2" name="localiter_supp2" class="form-control"  {% if desrubref['localiter_supp2'] %} value="{{  desrubref['localiter_supp2']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:none;">
+                    <input type="text" id="localiter_supp3" name="localiter_supp3" class="form-control"   {% if desrubref['localiter_supp3'] %} value="{{  desrubref['localiter_supp3']}}" {% else %} value="0"{% endif %}    style="border-radius: -2px ;display:none;">
+                    <input type="text" id="localiter_supp4" name="localiter_supp4" class="form-control"   {% if desrubref['localiter_supp4'] %} value="{{  desrubref['localiter_supp4']}}" {% else %} value="0"{% endif %}      style="border-radius: -2px ;display:none;">
+                    <input type="text" id="localiter_supp5" name="localiter_supp5" class="form-control"  {% if desrubref['localiter_supp5'] %} value="{{  desrubref['localiter_supp5']}}" {% else %} value="0"{% endif %}    style="border-radius: -2px ;display:none;">
+                    <input type="text" id="localiter_supp6" name="localiter_supp6" class="form-control"  {% if desrubref['localiter_supp6'] %} value="{{  desrubref['localiter_supp6']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:none;">
+                    <input type="text" id="localiter_supp7" name="localiter_supp7" class="form-control"   {% if desrubref['localiter_supp7'] %} value="{{  desrubref['localiter_supp7']}}" {% else %} value="0"{% endif %}     style="border-radius: -2px ;display:none;">
+
+                    <input type="text" id="final"  name="final"  class="form-control"  {% if desrubref['final'] %} value="{{  desrubref['final']}}" {% else %} value="0"{% endif %}      style="border-radius: -2px ; display:none;">
+
+                    <input type="text" id="final_total" class="form-control" value="0" style="border-radius: -2px;display: none;">
+
+
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group">
+
+                            <button id="khalila" class="btn black"><span style="color: #ffdb2e;">Budget estimé</span> <br>Référencement</button>
+
+                            <div id="ref" style="display: none; margin-top: 20px;"><input class="results" type="text" name="fayssal" id="fayssal"  {% if desrubref['fayssal'] %} value="{{  desrubref['fayssal']}}" {% else %} value="0"{% endif %}    readonly="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="form-group pull-right">
+                            <div class="btn black" id="devis">
+                                <a href="{{ path('facture_sec_fayssal') }}" id="ajax_test_referencement_fort" target="_blank" style="color: white;font-weight: bold;font-size: 22px">Devis </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
     </form>
+    </div>
 </section>
 
 <script type="text/javascript">
@@ -1779,10 +1790,15 @@
 
     $('input#myInput').quicksearch('table#myTable   tbody tr');
     $('input#myInput_supp').quicksearch('table#myTable_supp   tbody tr');
+
     $('input#myInput_panier').quicksearch('table#myTable_panier   tbody tr');
     $('input#myInput1').quicksearch('table#myTable1 tbody tr');
+
     $('input#myInput_ville_first').quicksearch('table#myTable_ville tbody tr');
     $('input#myInput_ville_panier').quicksearch('table#myTable_ville_panier tbody tr');
+
+    $('input#myInput_ville').quicksearch('table#myTable_ville tbody tr');
+    $('input#myInput_ville_profession').quicksearch('table#myTable_ville_profession tbody tr');
 
     $('input#myInput_ville_first_1').quicksearch('table#myTable_ville_1 tbody tr');
     $('input#myInput_ville_panier_1').quicksearch('table#myTable_ville_panier_1 tbody tr');
@@ -4918,6 +4934,9 @@
 
         var total = final + rub_supp_1 + rub_supp_2 + rub_supp_3 + rub_supp_4 + rub_supp_5 + rub_supp_6 + rub_supp_7 + localiter_supp + localiter_supp1  + localiter_supp2  + localiter_supp3 + localiter_supp4 + localiter_supp5 + localiter_supp6 + localiter_supp7 + parseInt($("#resulta").val()) +parseInt($("#mari").val())  ;
 
+        if($(".profession").is(":checked") === true){
+            total=total+3000;
+        }
         $('input[id="fayssal"]').val(total);
 
 
@@ -6857,5 +6876,126 @@
         }
 
     });
+    /*----------------------------------------profession léberale---------------------------------------------------*/
 
+    $(document).on('change', '.checkbox_profession,.profession_ville', function () {
+
+        $('.loaders').css('display','');
+        var villes = $('input[name=villesp]:checked').val();
+        var profession = $('input[name=profession]:checked').val();
+
+        var total = 0;
+        var t;
+        $(".profession:checked").each(function() {
+            total += parseInt($(this).val());
+            t= total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+
+        });
+        if (t == 0) {
+            $('#prix').val(0);
+        } else {
+            $('#prix').val(total);
+        }
+
+        var prix = $('input[name=prix]').val();
+        var data_send    = {'villes': villes,'profession':profession,'prix':prix};
+        console.log(data_send);
+        $.ajax({
+            url: '{{ path('referencement_commande_profession') }}',
+            type: 'POST',
+            data: data_send,
+            statusCode: {
+                //traitement en cas de succès
+                200: function (response) {
+                    var successMessage = response;
+                    console.log(successMessage);
+
+                    prof();
+                    calculate_rubrique_total();
+                    /*  cal();*/
+
+
+
+                    /*  $('#prestation').children("option").remove();*/
+                    //on vide les champs formulaires ou on le supprime ou ...
+                    //on retire le loader...
+//                    window.location.href = "http://localhost/ecommerce/web/app_dev.php/devis_affichage";
+                    $('.loaders').css('display','none');
+
+                },
+                //traitement en cas d'erreur (on peut aussi traiter le cas erreur 500...)
+                412: function (response) {
+                    var errorsForm = response.responseJSON.formErrors;
+                    //on affiche les erreurs...
+                    alert('error');
+
+                }
+            }
+        });
+
+
+    });
+
+
+    function prof()
+    {
+
+        $('.loaders').css('display','');
+        var prix=  $("#prix").val( );
+        console.log("prix",prix);
+        form =$('#jsForm ');
+        var data_send = {'nbr': prix};
+        $.ajax({
+            url: '{{ path('referencement_commande_devis_prof') }}',
+            type: 'POST',
+            data: data_send,
+            statusCode: {
+                //traitement en cas de succès
+                200: function (response){
+                    var successMessage = response;
+                    cal();
+                    console.log(successMessage);
+                    /*  $('#prestation').children("option").remove();*/
+                    //on vide les champs formulaires ou on le supprime ou ...
+                    //on retire le loader...
+
+                    $('.loaders').css('display','none');
+
+//                    window.location.href = "http://localhost/ecommerce/web/app_dev.php/devis_affichage";
+                },
+                //traitement en cas d'erreur (on peut aussi traiter le cas erreur 500...)
+                412: function (response) {
+                    var errorsForm = response.responseJSON.formErrors;
+                    //on affiche les erreurs...
+                    alert('error');
+
+                }
+            }
+        });
+    }
+
+    $('#ajax_test_profession').on('click', function (event) {
+
+        event.preventDefault();
+
+
+        prof();
+    });
+
+    $('.checkbox_villes').on('change', function() {
+        $('.checkbox_villes').not(this).prop('checked', false);
+    });
+
+    var selectfct = function () {
+        if($(".profession_ville").is(":checked")){
+            $('.profession').prop('disabled', false);
+        }else{
+            $('.profession').prop('disabled', 'disabled');
+            $('.profession').prop('checked', false);
+        }
+    };
+    $(selectfct);
+    $(".profession_ville").click(selectfct);
+
+    /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 </script>
