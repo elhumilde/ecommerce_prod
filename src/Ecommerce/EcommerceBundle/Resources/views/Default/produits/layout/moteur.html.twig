@@ -37,13 +37,57 @@
     <div class="container">
 
     <form id="jsForm" class="form-group" action="" method="GET">
-        <div class="container" style="width: 1800px!important; ">
+        <div class="container" style="width: 1500px!important; ">
 
 
 
 
 
             <div class="row">
+                <section id="fond-4">
+
+                    <div class="container" align="center">
+
+                        <div class="row">
+
+                            <div style="width: 1356px">
+
+
+                                <div class="form-group " align="center">
+                                    <div class="form-group ">
+                                        <div class="btn-1 menu" style="background-color: black; width: 318px">
+                                            <a href="{{ path('referencement') }}" style="color: white">
+                                                <img class="icone" src="https://image.noelshack.com/fichiers/2018/13/5/1522417107-icone-3-inverse.png" alt="icone-3">  Référencement
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <div class="btn-1 menu" style="width: 330px!important;">
+                                        <a href="{{ path('budget_gestion_contenu') }}" id="ajax_test_referencement" style="width: 319px!important;color: black">
+                                            <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icona-2.png" alt="icone-3">
+                                            Gestion de Contenu   <span class="glyphicon glyphicon-triangle-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="btn-1 menu" style="width: 318px;">
+                                        <a href="{{ path('budget_affichage') }}" id="ajax_test_referencement" style="color: black">
+                                            <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-1.png" alt="icone-3">
+                                            Affichage   <span class="glyphicon glyphicon-triangle-right"></span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
                 <div class="activites" style="margin-left: 68px!important;">
                     <div class="btn-2" align="center">
                         <p >Mes activités</p>
@@ -310,7 +354,7 @@
                                                                 <label data-toggle="" data-target="#demo-2-2" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
                                                                     <input id="select" class="armss my-activitys  select_rub first" type="checkbox" name="villes_panier[]"   {% for villel in desrubref['villes_panier1'] %}
                                                                         {% if (villel ==  ville.codeville)   %} checked {% endif %}
-                                                                    {% endfor %}  value="{{ ville.codeville }}|{{ ville.libelle }}"/>{{ ville.libelle }}
+                                                                    {% endfor %}  value="{{ ville.codeville }}|{{ ville.libelle }}|{{ ville.cat }}"/>{{ ville.libelle }}
                                                                 </label><br>
                                                             </td>
                                                         </tr>
@@ -533,7 +577,7 @@
                                                                 <label data-toggle="" data-target="#demo-2-3" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
                                                                     <input id="select" class="my-activitys armss1 select_rub first" type="checkbox" name="villes_panier1[]" {% for villel in desrubref['villes_panier2'] %}
                                                                         {% if villel ==  ville.codeville  %} checked {% endif %}
-                                                                    {% endfor %}  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
+                                                                    {% endfor %}  value="{{ ville.codeville }}|{{ ville.libelle }}|{{ ville.cat }}"/>&nbsp; &nbsp;{{ ville.libelle }}
                                                                 </label><br>
                                                             </td>
                                                         </tr>
@@ -742,7 +786,7 @@
                                                         <td>
                                                             <label data-toggle="" data-target="#demo-2-4" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
                                                                 <input id="select" class="my-activitys armss2 select_rub first" type="checkbox" name="villes_panier2[]" {% for villel in desrubref['villes_panier3'] %}
-                                                                        {% if villel ==  ville.codeville %} checked {% endif %}{% endfor %}  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
+                                                                        {% if villel ==  ville.codeville %} checked {% endif %}{% endfor %}  value="{{ ville.codeville }}|{{ ville.libelle }}|{{ ville.cat }}"/>&nbsp; &nbsp;{{ ville.libelle }}
                                                             </label><br>
                                                         </td>
                                                     </tr>
@@ -951,7 +995,7 @@
                                                         <td>
                                                             <label data-toggle="" data-target="#demo-2-5" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
                                                                 <input id="select" class="my-activitys armss3 select_rub first" type="checkbox" name="villes_panier3[]" {% for villel in desrubref['villes_panier4'] %}
-                                                                        {% if villel == ville.codeville  %} checked {% endif %} {% endfor %}  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
+                                                                        {% if villel == ville.codeville  %} checked {% endif %} {% endfor %}  value="{{ ville.codeville }}|{{ ville.libelle }}|{{ ville.cat }}"/>&nbsp; &nbsp;{{ ville.libelle }}
                                                             </label><br>
                                                         </td>
                                                     </tr>
@@ -1166,7 +1210,7 @@
                                                             <td>
                                                                 <label data-toggle="" data-target="#demo-9" aria-expanded="true" aria-controls="collapseOne" class="checkbox-inline">
                                                                     <input id="select" class="my-activitys armss4 select_rub first" type="checkbox" name="villes_panier4[]" {% for villel in desrubref['villes_panier5'] %}
-                                                                        {% if villel == ville.codeville %} checked {% endif %} {% endfor %}  value="{{ ville.codeville }}|{{ ville.libelle }}"/>&nbsp; &nbsp;{{ ville.libelle }}
+                                                                        {% if villel == ville.codeville %} checked {% endif %} {% endfor %}  value="{{ ville.codeville }}|{{ ville.libelle }}|{{ ville.cat }}"/>&nbsp; &nbsp;{{ ville.libelle }}
                                                                 </label><br>
                                                             </td>
                                                         </tr>
@@ -1188,7 +1232,8 @@
 
 
                             </div>
-                            <div id="select_rub_prest5" >
+
+{#                            <div id="select_rub_prest5" >
                                 <div  class="form-group" >
                                     <div class="dropdown">
                                         <button class="btn dropdown-toggle multiselect" type="button" style="width: 400px;" id="rubrique1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1260,7 +1305,7 @@
                                 </div>
 
 
-                            </div>
+                            </div>#}
                         </form>
 
                         {# ------------------- selectionner marque-----------------#}
