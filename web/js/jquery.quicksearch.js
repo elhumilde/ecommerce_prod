@@ -1,3 +1,4 @@
+
 (function($, window, document, undefined) {
     $.fn.quicksearch = function (target, opt) {
 
@@ -22,7 +23,7 @@
                 this.style.display = "none";
             },
             prepareQuery: function (val) {
-                return val.toLowerCase().split(' ');
+                return removeDiacritics(val).toLowerCase().split(' ');
             },
             testQuery: function (query, txt, _row) {
                 for (var i = 0; i < query.length; i += 1) {
@@ -67,7 +68,7 @@
         };
 
         /*
-         * External API so that users can perform search programatically.
+         * External API so that users can perform search programatically. 
          * */
         this.search = function (submittedVal) {
             val = submittedVal;
@@ -75,7 +76,7 @@
         };
 
         /*
-         * External API to get the number of matched results as seen in
+         * External API to get the number of matched results as seen in 
          * https://github.com/ruiz107/quicksearch/commit/f78dc440b42d95ce9caed1d087174dd4359982d6
          * */
         this.currentMatchedResults = function() {
@@ -131,7 +132,7 @@
 
             var t = (typeof options.selector === "string") ? jq_results.find(options.selector) : $(target).not(options.noResults);
             cache = t.map(function () {
-                return e.strip_html(this.innerHTML);
+                return removeDiacritics(e.strip_html(this.innerHTML));
             });
 
             rowcache = jq_results.map(function () {
@@ -139,7 +140,7 @@
             });
 
             /*
-             * Modified fix for sync-ing "val".
+             * Modified fix for sync-ing "val". 
              * Original fix https://github.com/michaellwest/quicksearch/commit/4ace4008d079298a01f97f885ba8fa956a9703d1
              * */
             val = val || this.val() || "";
