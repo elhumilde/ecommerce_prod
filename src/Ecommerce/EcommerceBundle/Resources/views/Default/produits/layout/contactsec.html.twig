@@ -310,7 +310,7 @@
 
                 </th>
 
-                <td>{{ (referencement['rubd']/(referencement['rubrique']-1))|number_format|replace(',',' ') }}</td>
+                <td>-{#{{ (referencement['rubd']/(referencement['rubrique']-1))|number_format|replace(',',' ') }}#}</td>
                 <td>{{ (referencement['rubrique']-1) }}</td>
                 <td><br>
                     {% if desrubref['rub2']!=null  %}        {{ ( desrubref['rub_supp_1']+ desrubref['localiter_supp1'])|number_format|replace(',',' ') }}<br><br>{% endif %}
