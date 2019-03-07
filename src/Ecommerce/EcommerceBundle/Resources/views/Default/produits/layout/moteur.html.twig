@@ -5,6 +5,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"> </script>
 <link rel="stylesheet" href="{{ asset('css/style-budgetisation-referencement.css') }}" />
+<div class="icon-retour">
+    <a style="color: #2eb2ff;" href="http://www.e-contact.telecontact.ma/#fond-8">&lt; Retour  ( chemins des onglets parcourus )</a>
+</div>
 <section  id="fond-1" align=center>
 
     <div class="container">
@@ -3441,6 +3444,8 @@
 
             $("input[value*='"+v[0]+"|'][name='villes_panier[]']").parent().show();
 
+            $('input[id=final]').val(0);
+
         }
 
         calculate_rubrique_total();
@@ -3467,6 +3472,8 @@
 
             $("input[value*='"+v[0]+"|'][name='villes_panier1[]']").parent().show();
 
+            $('input[id=rub_supp_1]').val(0);
+
         }
         calculate_rubrique_total();
     });
@@ -3491,7 +3498,7 @@
             var v  =  $(this).attr("value").split('|');
 
             $("input[value*='"+v[0]+"|'][name='villes_panier2[]']").parent().show();
-
+            $('input[id=rub_supp_2]').val(0);
         }
 
         calculate_rubrique_total();
@@ -3516,6 +3523,8 @@
             var v  =  $(this).attr("value").split('|');
 
             $("input[value*='"+v[0]+"|'][name='villes_panier3[]']").parent().show();
+
+            $('input[id=rub_supp_3]').val(0);
         }
 
         calculate_rubrique_total();
@@ -3542,6 +3551,8 @@
             var v  =  $(this).attr("value").split('|');
 
             $("input[value*='"+v[0]+"|'][name='villes_panier4[]']").parent().show();
+
+            $('input[id=rub_supp_4]').val(0);
 
         }
 
@@ -4824,6 +4835,10 @@
         else
         if ($(".ville1 input[name='villes1']").prop('checked', false))
         {
+
+
+
+
             $(".ville1 input[name='villes1']").css("position", "absolute");
             $(".ville1 input[name='villes1']:disabled").css('display', '');
             $(".ville1 input[name='villes1']:disabled + h7").css('display', '');
