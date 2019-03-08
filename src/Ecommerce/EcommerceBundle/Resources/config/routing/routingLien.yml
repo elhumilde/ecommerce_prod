@@ -54,3 +54,14 @@ site_internet:
 catalogue_ref:
     pattern:  /scatalogue_ref
     defaults: { _controller: EcommerceBundle:Produits:catalogueref  }
+
+vignetteExtensible:
+    pattern:  /Vignette Extensible
+    defaults: { _controller: EcommerceBundle:Produits:vignetteExtensible  }
+
+banniere_Extensible:
+    pattern:  /Banniere Extensible
+    defaults: { _controller: EcommerceBundle:Produits:banniereExtensible  }
+audit:
+    pattern:  /Audit
+    defaults: { _controller: EcommerceBundle:Produits:audit  }

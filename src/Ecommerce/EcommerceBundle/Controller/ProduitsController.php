@@ -11,6 +11,19 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ProduitsController extends Controller
 {
+
+    public function vignetteExtensibleAction()
+    {
+        return $this->render('EcommerceBundle:Default:lien/vignet_extensible.html.twig');
+    }
+    public function banniereExtensibleAction()
+    {
+        return $this->render('EcommerceBundle:Default:lien/bannieres_extensibles.html.twig');
+    }
+    public function auditAction()
+    {
+        return $this->render('EcommerceBundle:Default:lien/audit.html.twig');
+    }
     public function budgetgestiondecontenuAction(/*Categories $categorie = null*/)
     {
         $session = $this ->getRequest()->getSession();

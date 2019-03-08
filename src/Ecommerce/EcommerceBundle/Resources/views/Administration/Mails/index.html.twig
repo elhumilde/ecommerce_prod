@@ -127,6 +127,7 @@
                                     <th style="width: 90px">Date fin</th>
                                     <th style="width: 90px">Type d'operation</th>
 
+                                    <th>Montant</th>
                                     <th>Action</th>
 
                                     {#<th>Action</th>#}
@@ -145,7 +146,7 @@
                                         <td>{{ entity.email }}</td>
                                         <td>{{ entity.join|join(' | ') }}</td>
                                         <td>{{ entity.dateCreation|date('d-m-Y') }}</td>
-                                        <td>{{ entity.dateCreation|date_modify("+15 day")|date('d-m-Y H:i') }}</td>
+                                        <td>{{ entity.dateCreation|date_modify("+15 day")|date('d-m-Y') }}</td>
                                         <td>
                                             {% if entity.proposition =='proposition' %}
                                                 {{ 'Proposition' }}
@@ -155,6 +156,7 @@
                                                 {{'Bon de commande'}}
                                             {% endif %}
                                         </td>
+                                        <td>{{ entity.resultat|number_format|replace(',',' ')   }}</td>
                                         <td>
 
                                             <a href="{{ path('adminEmail_show', { 'id': entity.id } ) }}" target="_blank">WEB</a>

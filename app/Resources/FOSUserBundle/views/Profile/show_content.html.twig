@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>E-contact</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,1284 +16,73 @@
      <script src="http://radio-virtuelle.fr/Caranille/Design/js/jquery.js"></script>#}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('Logo-econtact-2.png') }}" />
-
-    <style>
-        .dropdown-menu {
-            margin-left: 217px;
-            /*margin-left: 83px;*/
-            width: 149px;
-            color: white;
-            position: absolute;
-            top: 62%;
-            left: 0;
-            z-index: 1000;
-            display: none;
-            /* float: left; */
-            min-width: 129px;
-            padding: 5px 8px;
-            /* margin: 2px 0 0; */
-            /* list-style: none; */
-            background-color: #ffffff;
-            /* border: 1px solid #ccc; */
-            /* border: 1px solid rgba(0, 0, 0, 0.2); */
-            /* -webkit-border-radius: 6px; */
-            -moz-border-radius: 6px;
-            border-radius: 0px;
-            -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            -webkit-background-clip: padding-box;
-            -moz-background-clip: padding;
-            background-clip: padding-box;
-            color: #5f5d5d;
-        }
-        hr {
-            margin-top: 8px;
-            margin-bottom: 8px;
-            border: 0;
-            border-top: 1px solid #d8d3d3;
-        }
-        .navbar .btn, .navbar .btn-group {
-            margin-top: 21px;
-        }
-        .btn1 {
-            width: 95px;
-            height: 44px;
-            display: inline-block;
-            padding: 10px 1px;
-            margin-bottom: 0;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 1.42857143;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            -ms-touch-action: manipulation;
-            touch-action: manipulation;
-            cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            background-image: none;
-            border: 1px solid #ffdb2e;
-            border-radius: 4px;
-            float: right;
-            background-color: #ffdb2e;
-            margin: 20px;
-            font-weight: bold;
-        }
-        a {
-            color: #000000;
-            text-decoration: none;
-        }
-        a:hover {
-            color: #000000;
-            text-decoration: none;
-        }
-
-
-        #fond-1 {
-            background-image:url('https://image.noelshack.com/fichiers/2018/13/4/1522339957-background1.jpg');
-            left: 0;
-            height: 1250px;
-        }
-
-
-
-        #fond-1 .logo {
-
-            margin-left: 20px;
-            margin-top: 20px;
-            z-index: 1;
-            Position: Absolute;
-        }
-
-        .next {
-            margin-right: 20px;
-            margin-top: 180px;
-            z-index: 1;
-            position: relative;
-            float: right!important;
-        }
-
-        #fond-1 .header {
-            background-color: black;
-            color: white;
-            padding-top: 20px;
-            padding-bottom: 10px;
-            display: black;
-            margin-top: 400px;
-            letter-spacing: 2px;
-            font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-            border-radius: 5px;
-            font-size: 25px;
-        }
-
-        #fond-1 .well {
-            background-color: #ffdb2e;
-            border: 0;
-            height:380px;
-            margin-top: 22px;
-        }
-
-        #fond-1 .avatar {
-            margin-top: 50px;
-        }
-
-        #fond-1 .texte1 {
-            font-size: 16px;
-        }
-
-
-        #fond-1 .titre {
-            width: 260px;
-            height: 40px;
-            background-color: black;
-            color: white;
-            font-size: 18px;
-            padding-top: 7px;
-        }
-
-        #fond-1 .presentation {
-            background-color: white;
-            height:320px;
-            width: 260px;
-            overflow-y:scroll;
-            padding: 20px;
-            text-align: left;
-            font-size: 16px;
-        }
-
-
-
-        #fond-4 {
-            background-color: black;
-            left: 0;
-            height: 260px;
-        }
-
-        #fond-4 #content-4 .texte {
-            font-size: 28px;
-            font-weight: lighter;
-            color: white;
-            letter-spacing: 2px;
-        }
-
-        #fond-4 #content-4 #pourquoi {
-            color: white;
-            letter-spacing: 2px;
-        }
-
-        #fond-4, #fond-5 #content-4, h1 {
-            color: #ffdb2e;
-            padding-top: 36px;
-            letter-spacing: 1px;
-        }
-
-        #fond-4 #content-4 p {
-            color: white;
-            font-size: 23px;
-            font-weight: normal;
-            letter-spacing: 2px;
-        }
-
-        #fond-5 {
-            background-color: black;
-            left: 0;
-            height: 650px;
-        }
-
-        #fond-5 #content-4 .texte {
-            font-size: 28px;
-            font-weight: lighter;
-            color: white;
-            letter-spacing: 2px;
-        }
-
-        #fond-5 #content-4 #pourquoi {
-            color: white;
-            letter-spacing: 2px;
-        }
-
-
-
-        #fond-3 {
-            background-color: white;
-            left: 0;
-            height: 1000px;
-        }
-
-
-        #fond-6 {
-            background-color: white;
-            left: 0;
-            height: 740px;
-        }
-
-        #fond-7 {
-            background-image:url('https://image.noelshack.com/fichiers/2018/13/3/1522248185-construison-ensemble-2.jpg');
-            left: 0;
-            height: 300px;
-        }
-
-        #fond-7 .titre {
-            background-color: rgba(0, 0, 0, 0.5);
-            width: 940px;
-            height: 200px;
-            border-radius: 0;
-            margin-top: 50px;
-        }
-
-        #fond-7 .titre .acroche {
-            color: white;
-            letter-spacing: 2px;
-            line-height: 1.4;
-        }
-
-
-
-        #fond-8 {
-            background-color: white;
-            left: 0;
-            height: 650px;
-        }
-
-
-        #image-marketing {
-            height: 300px;
-            padding: 0;
-        }
-
-        .img-responsive {
-            width: 100%;
-            height: 300px;
-            padding-left: 0;
-            padding-right: 0;
-        }
-
-        #texte-marketing {
-            padding: 80px 80px 20px 80px;
-        }
-
-        .rectangle {
-            width: 290px;
-            height: 70px;
-            background-color: black;
-            border-radius: 5px;
-            color: white;
-            padding-top: 15px;
-            margin-top: 20px;
-            letter-spacing: 2px;
-        }
-
-        .ligne {
-            width: 100%;
-            height: 6px;
-            background-color: white;
-            padding: 0;
-            left: 0;
-            right: 0;
-            z-index: 1;
-            Position: Absolute;
-
-        }
-
-        .tiret {
-            width: 100px;
-            height: 10px;
-            background-color: white;
-        }
-
-
-        #fond-5 .titre {
-            background-color: #ffdb2e;
-            width: 600px;
-            height: 80px;
-            border-radius: 5px;
-            margin-top: 260px;
-        }
-
-        .vide {
-            height: 760px;
-            background-color: white;
-        }
-
-
-        #fond-6 #content-6 .icone {
-            padding-top: 50px;
-            padding-bottom: 5px;
-        }
-
-        #fond-6 #content-6 .list-group .titre {
-            width: 350px;
-            height: 74px;
-            background-color: black;
-            font-size: 24px;
-            border: 0;
-            color: white;
-            letter-spacing: 2px;
-            text-align: center;
-        }
-
-        #fond-6 #content-6 .list-group .content {
-            color: black;
-            padding-left: 40px;
-            font-size: 20px;
-        }
-
-        #fond-6 #content-6 .list-group {
-            width: 350px;
-        }
-
-        #fond-6 #content-6 .colone-1 .list-group #jaune {
-            background-color: #ffdb2e;
-        }
-
-
-
-        #fond-8 #content-8 .bouton-1 {
-            width: 460px;
-            height: 80px;
-            margin-top: 100px;
-            background-color: black;
-            border: 0;
-            font-size: 36px;
-            letter-spacing: 2px;
-        }
-
-
-        span.glyphicon-triangle-bottom {
-            font-size: 32px;
-            color: #ffdb2e;
-        }
-
-        span.glyphicon-triangle-right {
-            font-size: 20px;
-            vertical-align: -2px;
-        }
-
-        span.glyphicon-zoom-in {
-            float: right;
-        }
-
-
-        #fond-8 #content-8 .bouton-2 .btn-info {
-            background-color: #ffdb2e;
-            margin: 50px 15px 10px 15px;
-            width: 340px;
-            height: 60px;
-            border: 0;
-            font-size: 25px;
-            padding: 8px 0 0 0;
-            color: black;
-        }
-
-        #fond-8 #content-8 #bouton-3 {
-            background-color: black;
-            padding-top: 10px;
-            color: #ffdb2e;
-        }
-
-        #fond-8 #content-8 .bouton-2 .btn-info .icone {
-            width: 50px;
-            height: 50px;
-            padding: 0;
-        }
-
-        /*.btn-info {
-            color: #000;
-            background-color: #ffdb2e;
-            border-color: #ffdb2e;
-            margin-top: -6px;
-        }*/
-
-        /*amal*/
-
-        @media (min-width: 1440px){
-            #fond-1 .header {
-                margin-top: 150px;
-            }
-            #fond-1 {
-                height: 960px;
-            }
-            #fond-1 .well {
-                height: 377px !important;
-            }
-
-            #fond-3 {
-                height: 700px;
-            }
-            .vide {
-                height: 310px;;
-
-            }
-            /* .next {
-                 margin-right: 176px;
-                 margin-top: auto;
-             }*/
-            /*#fond-1*/ .suivant {
-                            width: 123px;
-                            height: 44px;
-                            background-color: #ffdb2e!important;
-                            color: black;
-                            font-size: 18px;
-                            margin: 30px;
-                            padding-top: 10px;
-                            float: right;
-                            margin-top: -100px;
-
-                        }
-
-
-            .btn3{
-                margin-top: 69px;
-            }
-            .btn5{
-                margin-top: 281px;
-            }
-        }
-
-
-
-
-        @media (max-width: 1400px)and  (min-width: 1224px) {
-            /*accueil*/
-            .dropdown-menu {
-                margin-left: 217px;
-            }
-            #fond-1 .header {
-                margin-top: -15px;
-            }
-
-
-            #fond-1 {
-                height: 700px;
-            }
-
-            #fond-1 .presentation {
-                width: 260px;
-                /*width: 230px;*/
-                height: 266px;
-            }
-
-            #fond-1 .titre {
-                width: 260px;
-                width: 260px;
-            }
-
-            #fond-1 .well {
-                height: 326px;
-            }
-
-            #fond-1 .avatar {
-                margin-top: 7px;
-            }
-
-
-            #fond-3 {
-                height: 520px;
-            }
-
-            #fond-4 {
-                height: 180px;
-            }
-
-            #fond-5 {
-                height: 500px;
-            }
-
-            .vide5 {
-                height: 200px !important;
-            }
-
-            #fond-4, #fond-5 #content-4, h1 {
-                color: #ffdb2e;
-                padding-top: 10px !important;
-                letter-spacing: 1px;
-            }
-
-            #texte-marketing {
-                padding: 20px 80px 20px 80px;
-            }
-
-            .btn2 {
-                margin-right: 60px;
-                margin-top: -14px;
-            }
-
-            .btn3 {
-                margin-right: 60px;
-                margin-top: -30px;
-            }
-
-            .btn5 {
-                margin-right: 60px;
-                margin-top: 90px;
-            }
-
-            .vide {
-                height: 378px;
-            }
-            #fond-6 #content-6 .list-group .content {
-                width: 309px;
-            }
-            #fond-6 #content-6 .list-group .titre {
-                width: 309px;
-            }
-            #fond-7 .titre {
-                background-color: rgba(0, 0, 0, 0.5);
-                width: 870px;
-                height: 190px;
-                border-radius: 0;
-                margin-top: 60px;
-            }
-            #fond-1 .avatar {
-                margin-top: 60px;
-            }
-
-
-            /*#fond-6 #content-6 .list-group .titre {
-                    width: 237px;
-                }
-            .list-group-item {
-                    width: 237px;
-                }*/
-            .suivant {
-                width: 123px;
-                height: 44px;
-                background-color: #ffdb2e !important;
-                color: black;
-                font-size: 18px;
-                margin: 30px;
-                padding-top: 10px;
-                float: right;
-                /*margin-top: -100px;*/
-                margin-top: -89px;
-            }
-
-            .form-group {
-                margin-top: 20px;
-            }
-
-
-        }
-
-        @media (max-width: 1223px)and  (min-width: 990px) {
-            /*accueil*/
-            .dropdown-menu {
-                margin-left: 217px;
-            }
-            #fond-1 .header {
-                margin-top: -15px;
-            }
-
-
-            #fond-1 {
-                height: 700px;
-            }
-
-            #fond-1 .presentation {
-
-                width: 220px;
-                height: 266px;
-            }
-
-            #fond-1 .titre {
-
-                width: 220px;
-            }
-
-            #fond-1 .well {
-                height: 326px;
-            }
-
-            #fond-1 .avatar {
-                margin-top: 7px;
-            }
-
-
-            #fond-3 {
-                height: 520px;
-            }
-
-            #fond-4 {
-                height: 180px;
-            }
-
-            #fond-5 {
-                height: 500px;
-            }
-
-            .vide5 {
-                height: 200px !important;
-            }
-
-            #fond-4, #fond-5 #content-4, h1 {
-                color: #ffdb2e;
-                padding-top: 10px !important;
-                letter-spacing: 1px;
-            }
-
-            #texte-marketing {
-                padding: 20px 80px 20px 80px;
-            }
-
-            .btn2 {
-                margin-right: 60px;
-                margin-top: -14px;
-            }
-
-            .btn3 {
-                margin-right: 60px;
-                margin-top: -30px;
-            }
-
-            .btn5 {
-                margin-right: 60px;
-                margin-top: 90px;
-            }
-
-            .vide {
-                height: 378px;
-            }
-            #fond-6 #content-6 .list-group .content {
-                width: 309px;
-            }
-            #fond-6 #content-6 .list-group .titre {
-                width: 309px;
-            }
-            #fond-7 .titre {
-                background-color: rgba(0, 0, 0, 0.5);
-                width: 870px;
-                height: 190px;
-                border-radius: 0;
-                margin-top: 60px;
-            }
-            #fond-1 .avatar {
-                margin-top: 60px;
-            }
-
-            /*#fond-6 #content-6 .list-group .titre {
-                    width: 237px;
-                }
-            .list-group-item {
-                    width: 237px;
-                }*/
-            .suivant {
-                width: 123px;
-                height: 44px;
-                background-color: #ffdb2e !important;
-                color: black;
-                font-size: 18px;
-                margin: 30px;
-                padding-top: 10px;
-                float: right;
-                /*margin-top: -100px;*/
-                margin-top: -89px;
-            }
-
-            .form-group {
-                margin-top: 20px;
-            }
-
-
-        }
-
-        @media (max-width: 990px)
-        {
-            #fond-1 {
-                height: 1160px;
-            }
-            #fond-1 .presentation {
-                width: 219px;
-            }
-            #fond-1 .titre {
-                width: 219px;
-            }
-            #fond-1 .header {
-                margin-top: 80px;
-            }
-            #fond-1 .well {
-                height: 299px;
-            }
-            /*.next {
-                    margin-right: 60px;
-                    margin-top: 80px;
-                }*/
-
-            .btn2 {
-                margin-right: 60px;
-                margin-top: 67px;
-            }
-            #fond-3 {
-                height: 900px;
-            }
-            .btn3 {
-                margin-right: 60px;
-                margin-top: 0px;
-            }
-            #fond-4, #fond-5 #content-4, h1 {
-                padding-top: 0px!important;
-
-            }
-            #fond-5 {
-
-                height: 634px;
-            }
-            .btn5 {
-                margin-right: 60px;
-                margin-top: 420px;
-            }
-            .vide {
-                height: 520px;
-            }
-
-
-            #fond-6 #content-6 .list-group {
-                width: 220px;
-            }
-            #fond-6 #content-6 .list-group .titre {
-                width: 220px!important;
-            }
-            .list-group-item {
-                width: 220px!important;
-            }
-            #fond-6 #content-6 .list-group .content {
-                color: black;
-                padding-left:5px;
-                font-size: 15px;
-                font-weight: bold;
-            }
-            #fond-7 .titre {
-                width: 700px;
-                height: 164px;
-                margin-top: 70px;
-
-            }
-
-
-            .form-inline .form-control {
-
-                width: 187px;
-            }
-            .suivant {
-                width: 123px;
-                height: 44px;
-                background-color: #ffdb2e !important;
-                color: black;
-                font-size: 18px;
-                margin: 30px;
-                padding-top: 10px;
-                float: right;
-                margin-top: -100px;
-            }
-
-        }
-
-
-        @media (max-width: 768px)
-        {
-            .col-sm-6 {
-                width: 33%;
-            }
-
-            #fond-1 .col-xs-12 {
-                width: 33%;
-            }
-
-            #fond-1 .header {
-                width: 60%;
-                margin-left: 197px;
-            }
-            #from-label
-            {
-
-                font-size: 18px;
-                float: none!important;
-            }
-
-            #fond-6 #content-6 .list-group .content {
-                margin-left: 36px;
-            }
-
-            #fond-6 #content-6 .list-group .titre {
-
-                margin-left: 36px;
-            }
-
-
-        }
-
-        @media (min-width: 768px) and (max-width:  992px)
-        {
-            .col-sm-6 {
-                width: 33%;
-            }
-
-        }
-
-
-        #from-label
-        {
-            font-size: 18px;
-            float: left
-        }
-
-
-
-    </style>
-    <style>
-
-        body {
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            margin: 0;
-        }
-
-        section {
-            width:100%;
-            background-size: cover;
-            padding: 0;
-            margin: 0;
-        }
-
-
-        #fond-2 {
-            background-image:url('https://image.noelshack.com/fichiers/2019/08/5/1550830885-fon-2.jpg');
-            left: 0;
-        }
-
-
-        #fond-2 .header {
-            color: white;
-            padding: 40px 40px 0 40px;
-            letter-spacing: 2px;
-            font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-            font-size: 35px;
-        }
-
-
-        #fond-2 .presentation {
-            padding: 20px;
-            text-align: left;
-            font-size: 19px;
-        }
-        ol, ul {
-            margin-bottom: 0;
-        }
-
-
-        #fond-2 .texte1 {
-            font-size: 20px;
-        }
-
-
-        #fond-2 .titre {
-            color: black;
-            font-size: 24px;
-            padding-top: 46px;
-            text-transform: uppercase;
-            font-weight: bold;
-            letter-spacing: 1px;
-
-        }
-        #fond-2 .ligne-titre {
-            height: 2px;
-            width: 20%;
-            background-color: black;
-            margin: 15px;
-        }
-
-
-        #fond-2 .texte {
-            text-align: left;
-            font-size: 16px;
-        }
-
-        #fond-2 .exp {
-            height: 572px;
-            background-color: #ffdb2e;
-        }
-
-
-        #fond-2 .col-whith {
-            padding-right: 0;
-            padding-left: 0;
-        }
-
-
-        #fond-2 .site {
-            background-color: #ffdb2e;
-            padding: 19px;
-        }
-
-        #fond-2 .site .telecontact-ma {
-            color: black;
-            font-size: 30px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin: 0;
-        }
-
-        #fond-2 .count {
-            color: white;
-            font-size: 25px;
-        }
-
-        #fond-2 .chiffres {
-            display: inline;
-            color: #ffdb2e;
-        }
-
-        #fond-2 #chiffre-conter {
-            padding: 16px 0 16px 100px;
-        }
-
-        #fond-2 .reference {
-            width: 60px;
-            height: 60px;
-            margin: 20px;
-        }
-
-
-        #fond-2 .reference img {
-            width: 100%;
-            height: 100%;
-        }
-
-        @media screen and (max-width: 1199px) and (min-width: 992px) {
-            #fond-2 .site {
-                padding: 39px 0 31px 0;
-            }
-        }
-
-        @media screen and (min-width: 992px) {
-            #fond-2 #align-left {
-                float: left;
-            }
-        }
-
-        @media screen and (max-width: 992px) {
-            #fond-2 #align-left {
-                float: none;
-            }
-        }
-
-        @media screen and (max-width: 992px) {
-            #fond-2 .exp {
-                height: 280px;
-            }
-        }
-
-        @media screen and (max-width: 992px) {
-            #fond-2 #chiffre-conter {
-                padding: 16px 0 16px 10px;
-            }
-        }
-
-
-
-
-
-
-        #texte-marketing {
-            padding: 80px 80px 20px 80px;
-        }
-
-
-        .rectangle {
-            width: 290px;
-            height: 70px;
-            background-color: black;
-            border-radius: 5px;
-            color: white;
-            padding-top: 15px;
-            margin-top: 20px;
-            letter-spacing: 2px;
-        }
-
-
-
-
-        #fond-9 {
-            padding: 0 0 60px 0 ;
-        }
-
-        #fond-9 .titre-3 {
-            color: black;
-            letter-spacing: 1px;
-            background-color: #ffdb2e;
-            padding: 30px;
-            font-size: 36px
-        }
-
-        #fond-9 .container img {
-            width: 60px;
-            height: 60px;
-            margin: 50px 0 20px 0;
-        }
-
-        #fond-9 .container .texte {
-            height: 60px;
-        }
-
-        #fond-9 .container .texte h4 {
-            line-height: 24px;
-        }
-
-        #fond-9 .container button {
-            color: white;
-            background-color: #3d494f;
-            font-size: 20px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            padding: 20px;
-            font-family: "Open Sans";
-            letter-spacing: 1px;
-            width: 100%;
-        }
-
-
-        #fond-9 .container p {
-            font-family: "Open Sans";
-            font-size: 16px;
-            padding: 10px;
-            margin-bottom: 50px;
-            height: 100px;
-            margin-bottom: 0;
-        }
-
-        .ligne-separation {
-            width: 100%;
-            height: 8px;
-            background-color: black;
-        }
-
-        #fond-10 {
-            padding: 20px 0 60px 0 ;
-        }
-
-        #fond-10 .titre-3 {
-            color: black;
-            letter-spacing: 1px;
-            padding: 30px;
-            font-size: 36px
-        }
-
-        #fond-10 .button {
-            background-color: #818b91;
-            margin: 16px;
-            width: 80%;
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            padding: 0;
-            -webkit-transition: all 0.3s ease;
-            -moz-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-        }
-
-        #fond-10 #button-5 {
-            width: 40%;
-        }
-
-        #fond-10 .question .chiffre {
-            color: white;
-            font-size: 60px;
-            font-family: "Open Sans";
-            display: inline-block;
-            font-weight: 600;
-            padding-right: 10px;
-        }
-
-        #fond-10 .question p {
-            color: white;
-            font-size: 20px;
-            font-family: "Open Sans";
-            text-align: left;
-            display: inline-block;
-            letter-spacing: 1px;
-        }
-
-        #fond-10 .question {
-            position: absolute;
-            width: 100%;
-            padding-top: 26px;
-        }
-
-
-        #fond-10 .reponse {
-            background-color: #ffdb2e;
-            position: relative;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            text-align: left;
-            padding: 18px 15px 10px 24px;
-        }
-
-        #fond-10 .question, .reponse {
-            display: inline-block;
-            -webkit-transition: all 0.2s ease;
-            -moz-transition: all 0.2s ease;
-            transition: all 0.2s ease;
-        }
-
-        #fond-10 .reponse p {
-            color: black;
-            font-size: 15px;
-            letter-spacing: 0;
-            line-height: 26px;
-        }
-
-        #fond-10 .button.hover .question {
-            -webkit-transform: translateX(-200px);
-            -moz-transform: translateX(-200px);
-            transform: translateX(-200px);
-            opacity: 0;
-        }
-
-        #fond-10 .button.hover .reponse {
-            -webkit-transform: translateX(-0px);
-            -moz-transform: translateX(-0px);
-            transform: translateX(-0px);
-            opacity: 1;
-        }
-
-        @media screen and (min-width: 1199px) {
-            #fond-10 .reponse-1 {
-                padding-bottom: 34px ;
-            }
-        }
-
-        @media screen and (max-width: 992px) {
-            #fond-10 #button-5 {
-                width: 76%;
-            }
-        }
-
-        @media screen and (max-width: 1199px) and (min-width: 992px) {
-            #fond-10 #button-5 {
-                width: 50%;
-            }
-        }
-
-        @media screen and (max-width: 1199px) and (min-width: 992px) {
-            #fond-10 .button {
-                width: 100%;
-            }
-        }
-
-        @media screen and (max-width: 1199px) and (min-width: 992px) {
-            #fond-10 .reponse-1 {
-                padding-bottom: 36px ;
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-        #fond-11 {
-            padding: 20px 0 60px 0 ;
-            background-image:url('https://image.noelshack.com/fichiers/2019/09/4/1551353967-background11.jpg');
-            left: 0;
-        }
-
-        #fond-11 .titre-3 {
-            color: white;
-            letter-spacing: 1px;
-            padding: 30px;
-            font-size: 36px
-        }
-
-        #fond-11 .button {
-            background-color: white;
-            margin: 16px;
-            width: 80%;
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-            padding: 0;
-            -webkit-transition: all 0.3s ease;
-            -moz-transition: all 0.3s ease;
-            transition: all 0.3s ease;
-        }
-
-
-        #fond-11 .question p {
-            color: #3d494f;
-            font-size: 20px;
-            font-family: "Open Sans";
-            text-align: left;
-            display: inline-block;
-        }
-
-        #fond-11 .question {
-            position: absolute;
-            width: 100%;
-            padding-top: 34px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-
-        #fond-11 .reponse {
-            background-color: #ffdb2e;
-            position: relative;
-            opacity: 0;
-            width: 100%;
-            height: 100%;
-            text-align: left;
-            padding: 18px 15px 10px 24px;
-        }
-
-        #fond-11 .question, .reponse {
-            display: inline-block;
-            -webkit-transition: all 0.2s ease;
-            -moz-transition: all 0.2s ease;
-            transition: all 0.2s ease;
-        }
-
-        #fond-11 .reponse p {
-            color: black;
-            font-size: 18px;
-            letter-spacing: 0;
-            line-height: 32px;
-        }
-
-        #fond-11 .button.hover .question {
-            -webkit-transform: translateX(-200px);
-            -moz-transform: translateX(-200px);
-            transform: translateX(-200px);
-            opacity: 0;
-        }
-
-        #fond-11 .button.hover .reponse {
-            -webkit-transform: translateX(-0px);
-            -moz-transform: translateX(-0px);
-            transform: translateX(-0px);
-            opacity: 1;
-        }
-
-        @media screen and (max-width: 1199px) and (min-width: 992px) {
-            #fond-11 .button {
-                width: 100%;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/accueil.css') }}" />
+
+<style>/*
+*  MENU HORIZONTAL DASHBOARD
+*-------------------------------------------------------*/
+    #wrapperMenu {
+        width: 30%;
+        margin: 20px 50px;
+    }
+
+    .wrappernav-dashboard {
+        /*background: #d3d3d3;*/
+        /*border: 1px dashed orange;*/
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+    }
+    #menu-dashboard {
+        /*border: 1px dashed red;*/
+        border-left: 1px solid #bcbcbc;
+        border-right: 1px solid #bcbcbc;
+        border-top: 1px solid #bcbcbc;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    #menu-dashboard .active a {
+        background-color: #F4BD16;
+        border-radius: 0;
+        color: #fff;
+    }
+    #menu-dashboard li {
+        border-radius: 0;
+        margin: 0;
+        padding: 0;
+        border-bottom: 1px solid #bcbcbc;
+    }
+    #menu-dashboard li > a {
+        border-radius: 0;
+        padding: 10px;
+        color: #444;
+    }
+    #menu-dashboard > li > a:hover,
+    #menu-dashboard > li > a:focus {
+        color: #fff;
+        background: #F4BD16;
+        -webkit-transition: all 1ms ease-in-out;
+        -moz-transition: all 1ms ease-in-out;
+        -ms-transition: all 1ms ease-in-out;
+        -o-transition: all 1ms ease-in-out;
+        transition: all 1ms ease-in-out;
+    }
+    #submenu {
+        background: #333;
+    }
+    #submenu li {
+        border: none;
+    }
+    #submenu li a {
+        color: #fff;
+        padding: 10px;
+        margin: 0;
+        text-indent: 20px;
+    }
+    #submenu li a:hover {
+        background: rgba(0,0,0,.5);
+    }
+</style>
 </head>
 
 
@@ -1683,6 +472,9 @@
 
 
 </section>
+<div class="vide1 vide5">
+    {#<a href="#fond-7" class="btn btn5 next" #}{#style="margin-top: 250px"#}{#><img src="https://image.noelshack.com/fichiers/2018/13/3/1522253637-btn-suivant.png"></a><br>#}
+</div>
 <a href="#fond-9" role="button" class="btn suivant">
     Suivant &nbsp;   <span class="glyphicon glyphicon-triangle-right"></span>
 </a>
@@ -1743,7 +535,9 @@
     </div>
 
 </section>
-
+<div class="vide2 vide5">
+    {#<a href="#fond-7" class="btn btn5 next" #}{#style="margin-top: 250px"#}{#><img src="https://image.noelshack.com/fichiers/2018/13/3/1522253637-btn-suivant.png"></a><br>#}
+</div>
 <div class="ligne-separation"></div>
 
 
@@ -1873,6 +667,13 @@
 
 
 </section>
+<div class="vide3 vide5">
+    {#<a href="#fond-7" class="btn btn5 next" #}{#style="margin-top: 250px"#}{#><img src="https://image.noelshack.com/fichiers/2018/13/3/1522253637-btn-suivant.png"></a><br>#}
+</div>
+
+<a href="#fond-11" role="button" class="btn suivant">
+    Suivant &nbsp;   <span class="glyphicon glyphicon-triangle-right"></span>
+</a>
 
 <section  id="fond-11" align=center>
 
@@ -1954,12 +755,16 @@
 
 
 
-    <a href="#fond-7" role="button" class="btn suivant">
-        Suivant &nbsp;   <span class="glyphicon glyphicon-triangle-right"></span>
-    </a>
+
 </section>
+<div class="vide4 vide5">
+    {#<a href="#fond-7" class="btn btn5 next" #}{#style="margin-top: 250px"#}{#><img src="https://image.noelshack.com/fichiers/2018/13/3/1522253637-btn-suivant.png"></a><br>#}
+</div>
 
 
+<a href="#fond-7" role="button" class="btn suivant">
+    Suivant &nbsp;   <span class="glyphicon glyphicon-triangle-right"></span>
+</a>
 
 <div class="ligne-separation" style="background-color: white"></div>
 
@@ -1995,7 +800,7 @@
 
         <div class="row">
 
-            <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
                 <div class="colone-1">
                     <div align=center>
                         <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-3.png" alt="icone-3">
@@ -2015,7 +820,7 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
                 <div class="colone-2">
                     <div align=center>
                         <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icona-2.png" alt="icone-3">
@@ -2026,21 +831,46 @@
                         <a href="{{ path('video') }} " target="_blank" class="list-group-item content">Vidéos &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
                         <a href="{{ path('catalogue_ref') }}" target="_blank" class="list-group-item content">Catalogues en ligne&nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
                         <a href="{{ path('pvi') }}" target="_blank" class="list-group-item content"> PVI&nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+                        <a href="{{ path('audit') }}" target="_blank" class="list-group-item content">Audit &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="colone-3">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
+                <div class="colone-3" id="colone-3">
                     <div align=center>
                         <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-1.png" alt="icone-3">
                     </div>
                     <div class="list-group">
                         <a class="list-group-item active titre" style="padding-top: 20px;">Affichage</a>
-                        <a href="{{ path('banniere') }}" target="_blank" class="list-group-item content">Bannières classiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                        <a href="{{ path('vignette_thematique') }}" target="_blank" class="list-group-item content">Vignettes thématiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                        <a href="{{ path('vignette_localte') }}" target="_blank" class="list-group-item content">Vignettes localités &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
-                        <a href="{{ path('vignette_accueil_video') }}" target="_blank" class="list-group-item content">Vignettes classiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
+
+
+                       {#<a href="{{ path('banniere') }}" target="_blank" class="list-group-item content">Bannières classiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>#}
+
+                        <a href="#colone-3" class="dropdown-toggle list-group-item content" data-toggle="collapse" data-target="#submenuuus" aria-expanded="false">
+                            <span class="icon-link2"></span>
+                            Bannières<span class="caret"></span></a>
+                        <ul class="nav collapse" id="submenuuus" role="menu" aria-labelledby="btn-1">
+                            <li class=" list-group-item "  style="padding: 0px; font-size: 16px;"> <a style="font-size: 16px;" href="{{ path('banniere') }}" target="_blank" class="content">Bannières classiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a></li>
+                            <li class=" list-group-item "  style="padding: 0px; font-size: 16px;">   <a style="font-size: 16px;" href="{{ path('banniere_Extensible') }}" target="_blank" class=" content">Bannières extensibles &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a></li>
+
+                        </ul>
+
+
+
+
+                        <a href="#colone-3" class="dropdown-toggle list-group-item content" data-toggle="collapse" data-target="#submenuuu" aria-expanded="false">
+                                <span class="icon-link2"></span>
+                                Vignettes<span class="caret"></span></a>
+                            <ul class="nav collapse" id="submenuuu" role="menu" aria-labelledby="btn-1">
+                                <li class=" list-group-item " style="padding: 0px; font-size: 16px;">  <a style="font-size: 16px;" href="{{ path('vignette_thematique') }}" target="_blank" class=" content">Vignettes thématiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a></li>
+                                <li class=" list-group-item "  style="padding: 0px; font-size: 16px;"><a style="font-size: 16px;" href="{{ path('vignette_accueil_video') }}" target="_blank" class=" content">Vignettes classiques &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a></li>
+                                <li class=" list-group-item "  style="padding: 0px; font-size: 16px;"> <a style="font-size: 16px;" href="{{ path('vignette_localte') }}" target="_blank" class=" content">Vignettes localités &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a></li>
+                                <li class=" list-group-item "  style="padding: 0px; font-size: 16px;"> <a style="font-size: 16px;" href="{{ path('vignetteExtensible') }}" target="_blank" class=" content">Vignettes extensibles &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a></li>
+
+                            </ul>
+
+
                         <a href="{{ path('professionnels') }}" target="_blank" class="list-group-item content">Professionnels du jour &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
                         <a href="{{ path('espace_promo') }}" target="_blank" class="list-group-item content">Espace Promo &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
                         <a href="{{ path('habillage') }}" target="_blank" class="list-group-item content">Habillage &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a>
@@ -2048,6 +878,34 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-4">
+                <div class="colone-3">
+                    <div align=center>
+                        <img class="icone" src="https://image.noelshack.com/fichiers/2018/08/5/1519379743-icone-1.png" alt="icone-3">
+                    </div>
+                    <div class="list-group">
+                        <a class="list-group-item active titre" >Réseaux socieaux </a>
+
+                        <a href="#colone-3" class="dropdown-toggle list-group-item content" data-toggle="collapse" data-target="#submenuuud" aria-expanded="false">
+                            <span class="icon-link2"></span>
+                            Facebook ads &nbsp;<span class="caret"></span></a>
+                        <ul class="nav collapse" id="submenuuud" role="menu" aria-labelledby="btn-1">
+                            <li class=" list-group-item " style="padding: 0px; font-size: 16px;">  <a style="font-size: 16px;" href="#" target="_blank" class=" content">Social clic &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a></li>
+                            <li class=" list-group-item "  style="padding: 0px; font-size: 16px;"><a style="font-size: 16px;" href="#" target="_blank" class=" content">Social video &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a></li>
+                            <li class=" list-group-item "  style="padding: 0px; font-size: 16px;"> <a style="font-size: 16px;" href="#" target="_blank" class=" content">Social contact &nbsp;   <span class="glyphicon glyphicon-zoom-in"></span></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
 
         </div>
     </div>
@@ -2241,6 +1099,13 @@
 </script>
 <script type="text/javascript">
 
+    $(document).ready(function(){
+
+        $('#submenu li a').on('click', function(e){
+            $('#submenu').removeClass('in');
+        });
+
+    });
 
     $('.count').each(function () {
         $(this).prop('Counter',0).animate({
