@@ -156,7 +156,7 @@
                                                 {{'Bon de commande'}}
                                             {% endif %}
                                         </td>
-                                        <td>{{ entity.resultat|number_format|replace(',',' ')   }}</td>
+                                        <td>{{ (entity.resultat+(entity.resultat*0.2))|number_format|replace(',',' ')   }}</td>
                                         <td>
 
                                             <a href="{{ path('adminEmail_show', { 'id': entity.id } ) }}" target="_blank">WEB</a>

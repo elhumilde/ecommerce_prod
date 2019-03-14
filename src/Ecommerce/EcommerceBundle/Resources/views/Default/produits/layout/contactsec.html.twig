@@ -119,10 +119,12 @@
 
     <p style="font-size: 15px;">
 
+{#
 
         {% if raison['civi'] =='Mr' %} cher  {% endif %}
         {% if raison['civi'] =='Mme' %} chère    {% endif %}
         {% if raison['civi'] =='Mlle' %} chère   {% endif %}
+#}
 
 
         {% if raison %}
@@ -1296,7 +1298,7 @@
                     <td>{{ paiement['reste']|number_format|replace(',',' ') }}</td>
                     {% if paiement['nbr']==1  %}
                         <td>{{ paiement['montant1']|number_format|replace(',',' ') }}</td>
-                        <td>{{ paiement['dateP1']|number_format|replace(',',' ') }}</td>
+                        <td>{{ paiement['dateP1']|date("d/m/Y") }}</td>
                     {% elseif paiement['nbr']==2 %}
                         <td>{{ paiement['montant1']|number_format|replace(',',' ') }}<br>{{ paiement['montant2']|number_format|replace(',',' ') }}</td>
                         <td>{{ paiement['dateP1']|date("d/m/Y") }}<br>{{ paiement['dateP2']|date("d/m/Y") }}</td>

@@ -4,6 +4,7 @@ body {
     top: 0;
     bottom: 0;
     margin: 0;
+    background-color: #f5f3f333;
 }
 
 section {
@@ -14,26 +15,29 @@ section {
 
 
 #fond-4 {
-    background-color: white;
-    height: 600px;
+    background-color: #f5f3f333;
+    height: auto;
     width: auto;
 }
 
 
 .responsive {
-    width: 100%;
+    width: 80%;
     height: auto;
 }
 
+
 .demo {
-    width: 240px;
-    height: 46px;
+    width: 175px;
+    height: auto;
     background-color: black;
     color: black;
-    font-size: 20px;
+    font-size: 100%;
     margin: 15px;
     color: white;
+    font-weight: bold;
 }
+
 
 .demo:hover {
     color: #ffdb2e;
@@ -43,12 +47,14 @@ section {
 }
 
 .show-product {
-    width: 400px;
-    height: 70px;
+    width: 245px;
+    height: auto;
     background-color: #ffdb2e;
     color: black;
-    font-size: 26px;
+    font-size:100%;
     margin: 30px;
+    font-weight: bold;
+
 }
 
 .btn [aria-expanded="true"]{
@@ -57,12 +63,12 @@ section {
 
 span.glyphicon-triangle-bottom {
     color: black;
-    font-size: 20px;
+    font-size: 90%;
 }
 
 .demo span.glyphicon-triangle-bottom {
     color: white;
-    font-size: 16px;
+    font-size: 90%;
 }
 
 .test1 a:hover  {

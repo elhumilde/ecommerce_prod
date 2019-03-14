@@ -59,7 +59,7 @@
                                 <div class="form-group " align="center">
                                     <div class="form-group ">
                                         <div class="btn-1 menu" style="background-color: black; width: 318px">
-                                            <a href="{{ path('referencement') }}" style="color: white">
+                                            <a href="{{ path('referencement_mptei') }}" style="color: white">
                                                 <img class="icone" src="https://image.noelshack.com/fichiers/2018/13/5/1522417107-icone-3-inverse.png" alt="icone-3">  Référencement
                                             </a>
                                         </div>
@@ -1293,6 +1293,8 @@
                                 </div>
                             </div>
 
+                            #}
+
                             <div id="select_rub_prest7" >
                                 <div  class="form-group" >
                                     <div class="dropdown">
@@ -1308,7 +1310,7 @@
                                 </div>
 
 
-                            </div>#}
+                            </div>
                         </form>
 
                         {# ------------------- selectionner marque-----------------#}
@@ -2840,11 +2842,13 @@
                         });
                         if (addvb) {
                             $(document).keypress('.input' + addvb + '', function (event) {
+                                alert('ici');
                                 var length_input = $('input.input' + addvb + '').val();
                                 if (event.which == 13 && $('input.input' + addvb + '').val() != "") {
                                     var text = $('.input' + addvb + '').val();
                                     $('#checkboxes' + addvb + '').append('<label class="label_prest"><input  class="prest controle-checkbox prest1" name="' + addvb + '[]"  type="checkbox" value="' + text + '" checked/> ' + text + '</label><br />');
                                     $('.input' + addvb + '').val(null);
+
                                     $('#prestaAjax').css('display', 'none');
                                 }
                             });
@@ -2852,12 +2856,15 @@
                         }
                         else {
                             $(document).keypress('.input', function (e) {
+
                                 var dInput = $('input.input').val();
                                 if (e.which == 13 && $('input.input').val() != "") {
                                     var text = $('.input').val();
                                     $('#checkboxes').append('<label class="label_prest"><input type="checkbox" id="addprestation" name="addprest[]" class="prest controle-checkbox prest1" value="' + text + '" checked/> ' + text + '</label><br />');
                                     $(".input").val(null);
+
                                     $('#prestaAjax').css('display', 'none');
+
                                 }
                             });
                             $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li> <div id="checkboxes"></div>Autre <input type="text" id="addprestation" name="addprest" class="input controle-checkbox in prest" placeholder="Renseigner la prestation ou le produit souhaité "style="width: 340px!important;height: 40px;!important;"/> </li>'));
@@ -6291,16 +6298,22 @@
                             $('#prestaAjax').css('display', 'none');
                         });
                         if (addvb) {
+
                             $(document).keypress('.input' + addvb + '', function (event) {
+
                                 var length_input = $('input.input' + addvb + '').val();
                                 if (event.which == 13 && $('input.input' + addvb + '').val() != "") {
+                                    alert('now');
                                     var text = $('.input' + addvb + '').val();
                                     $('#checkboxes' + addvb + '').append('<label class="label_prest"><input  class="prest controle-checkbox prest1" name="' + addvb + '[]"  type="checkbox" value="' + text + '" checked/> ' + text + '</label><br />');
                                     $('.input' + addvb + '').val(null);
+
                                     $('#prestaAjax').css('display', 'none');
+                                    $('#dropdown').addClass("open");
                                 }
                             });
                             $(current).closest('.form-group').siblings(".testpres").first().find('ul').append(('<li ><div id="checkboxes' + addvb + '" > </div>Autre <input id="addprestation" name="' + addvb + '[]" class="input' + addvb + ' controle-checkbox length-input prest "   type="text" placeholder="Renseigner la prestation ou le produit souhaité"style="width: 340px!important;height: 40px;!important;"/></li>'));
+
                         }
                         else {
                             $(document).keypress('.input', function (e) {
