@@ -1269,10 +1269,10 @@
 
     <div class="test">
         {% if code['offre']=='remise' %}
-            <span style="font-weight: 600;font-size: 14px">Remise accordée de <strong >{{ code['montant_remise']|number_format|replace(',',' ') }} MAD.</strong> <strong  >{{ code['nature_remise'] }} </strong> </span>
+            <span style="font-weight: 600;font-size: 14px">Remise accordée de <strong >{{ code['montant_remise']|number_format|replace(',',' ') }} MAD : </strong> <strong  >{{ code['nature_remise'] }} </strong> </span>
         {% endif %}
         {% if code['offre']=='gratuite' %}
-            <span style="font-weight: 600;font-size: 14px">Gratuité accordée de <strong >{{ code['montant_remise']|number_format|replace(',',' ') }} MAD.</strong> <strong  >{{ code['nature_remise'] }} </strong> </span>
+            <span style="font-weight: 600;font-size: 14px">Gratuité accordée de <strong >{{ code['montant_remise']|number_format|replace(',',' ') }} MAD : </strong> <strong  >{{ code['nature_remise'] }} </strong> </span>
 
         {% endif %}
     </div>
@@ -1314,6 +1314,7 @@
                 </tbody>
             </table>
         </div>
+        {#<div class="test"> </div>#}
         {#<div class="test"> </div>#}
     {% else %}
         <style>
