@@ -233,7 +233,10 @@
                     {% endfor %}#}
                     <div style="width: 391px!important;background-color: #f9f1c9">
                         <strong style="font-weight: 500;font-size: 14px;"> •&nbsp; <strong style="font-weight: 700;font-size: 14px;">{{ desrubref['rub1']|rub.libelle }} </strong><br>
-                            {% if  desrubref['villes1'] %}    visibilité sur : {{ desrubref['villes1']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier1'] %},                                    {% for ville in desrubref['villes_panier1'] %}
+                            {% if  desrubref['villes1'] %}    visibilité sur : {{ desrubref['villes1']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier1'] %},
+                                {% for ville in desrubref['villes_panier1'] %}
+                                    {% if loop.index==4 %}<br> {% endif %}
+                                    {% if loop.index==8 %}<br> {% endif %}
                                 {{ ville|somme.libelle }},
                             {% endfor %}{% endif %}</strong>
                     </div>
