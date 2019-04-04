@@ -56,11 +56,7 @@
             {% if entity.cfirme  %} Code firme&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<span >{{  entity.cfirme }}</span> {% endif %} </h5><br>
         <h7 class="civi" >
             <b>
-                {% if entity.civi  %}
-                    {% if entity.civi =='Mr' %} Cher  {% endif %}
-                    {% if entity.civi =='Mlle' %}  Chère {% endif %}
-                    {% if entity.civi =='Mme' %} Chère  {% endif %}
-                {% endif %}
+
                 {% if entity.civi  %}
                     {% if entity.civi =='Mme' %} Madame  {% endif %}
                     {% if entity.civi =='Mlle' %}  Mademoiselle {% endif %}

@@ -1686,23 +1686,33 @@ class ReferencementController extends Controller
 
 
 
-        $filenamed   =   "baniere-TLC.pdf";
-        $filenamed1   =  "Carte-visite.pdf";
-        $filenamed2   =  "Espace-Promo.pdf";
+
+        $filenamed   =   "bannière-classique.pdf";
+        $filenamed1   =  "Carte-de-visite.pdf";
+        $filenamed2   =  "Espace-promo.pdf";
         $filenamed3   =  "Habillage.pdf";
         $filenamed4   =  "Marques.pdf";
         $filenamed5   =  "Prestation.pdf";
         $filenamed6   =  "Professionnels-du-jour.pdf";
         $filenamed7  =   "Rubrique.pdf";
         $filenamed8  =   "Video.pdf";
-        $filenamed9  =   "Vignette-Accueil-Video.pdf";
-        $filenamed10 =   "Vignette-localite.pdf";
-        $filenamed11  =  "Vignette-thÃ©matique.pdf";
-        $filenamed12  =  "site_contact.pdf";
+        $filenamed9  =   "Vignette-classique.pdf";
+        $filenamed10 =   "Vignette-localité.pdf";
+        $filenamed11  =  "Vignette-thématique.pdf";
+        $filenamed12  =  "Site-contact.pdf";
         $filenamed13  =  "PVI.pdf";
         $filenamed14  =  "Catalogue_ref.pdf";
         $filenamed15  =  "CONDITIONS-GENERALES_VENTE.pdf";
         $filenamed16  =  "Profession-libérale.pdf";
+        $filenamed17  =  "Vignette-extensible.pdf";
+        $filenamed18  =  "Audit-de-site.pdf";
+        $filenamed19  =  "Bannière-extensible.pdf";
+        $filenamed20  =  "Facebook-Ads.pdf";
+        $filenamed21  =  "Film-Interview.pdf";
+        $filenamed22  =  "Motion-Design.pdf";
+        $filenamed23  =  "Vidéo-corporate.pdf";
+        $filenamed24  =  "Vidéo-graphique.pdf";
+
 
 
 
@@ -1714,7 +1724,7 @@ class ReferencementController extends Controller
 
         $attachment = chunk_split(base64_encode($pdfdoc));
 
-        $pdfdocd = file_get_contents("http://www.telecontact.ma/trouver/pdf/baniere-TLC.pdf");
+        $pdfdocd = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/bannière-classique.pdf");
         $attachmentd = chunk_split(base64_encode($pdfdocd));
 
 
@@ -1741,6 +1751,7 @@ class ReferencementController extends Controller
         $body .= $attachment . $eol;
 
 
+
         if( in_array("Baniere", $join)){
             $body .= "--" . $separator . $eol;
             $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed . "\"" . $eol;
@@ -1755,7 +1766,7 @@ class ReferencementController extends Controller
         if( in_array("Carte", $join) ){
 
 
-            $pdfdocd1 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Carte-visite.pdf");
+            $pdfdocd1 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Carte-de-visite.pdf");
             $attachmentd1 = chunk_split(base64_encode($pdfdocd1));
 
 
@@ -1771,7 +1782,7 @@ class ReferencementController extends Controller
         if( in_array("Espace", $join) ){
 
 
-            $pdfdocd2 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Espace-Promo.pdf");
+            $pdfdocd2 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Espace-promo.pdf");
             $attachmentd2 = chunk_split(base64_encode($pdfdocd2));
 
 
@@ -1788,7 +1799,7 @@ class ReferencementController extends Controller
 
 
 
-            $pdfdocd3 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Habillage.pdf");
+            $pdfdocd3 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Habillage.pdf");
             $attachmentd3 = chunk_split(base64_encode($pdfdocd3));
 
             $body .= "--" . $separator . $eol;
@@ -1863,6 +1874,8 @@ class ReferencementController extends Controller
             $body .= $attachmentd7 . $eol;
 
         }
+
+
         if( in_array("Video", $join)){
 
 
@@ -1882,7 +1895,7 @@ class ReferencementController extends Controller
         if( in_array("Vignette_vid", $join)){
 
 
-            $pdfdocd9 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Vignette-Accueil-Video.pdf");
+            $pdfdocd9 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-classique.pdf");
             $attachmentd9 = chunk_split(base64_encode($pdfdocd9));
 
 
@@ -1899,7 +1912,7 @@ class ReferencementController extends Controller
 
 
 
-            $pdfdocd10 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Vignette-localite.pdf");
+            $pdfdocd10 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-localité.pdf");
             $attachmentd10 = chunk_split(base64_encode($pdfdocd10));
 
             $body .= "--" . $separator . $eol;
@@ -1914,7 +1927,7 @@ class ReferencementController extends Controller
         if( in_array("Vignette_th", $join) ){
 
 
-            $pdfdocd11 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Vignette-thematique.pdf");
+            $pdfdocd11 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-thématique.pdf");
             $attachmentd11 = chunk_split(base64_encode($pdfdocd11));
 
 
@@ -1929,7 +1942,7 @@ class ReferencementController extends Controller
 
         if( in_array("site_internet", $join) ){
 
-            $pdfdocd12 = file_get_contents("http://www.telecontact.ma/trouver/pdf/site_contact.pdf");
+            $pdfdocd12 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Site-contact.pdf");
             $attachmentd12 = chunk_split(base64_encode($pdfdocd12));
 
 
@@ -1942,7 +1955,7 @@ class ReferencementController extends Controller
 
         } if( in_array("pvi", $join) ){
 
-        $pdfdocd13 = file_get_contents("http://www.telecontact.ma/trouver/pdf/PVI.pdf");
+        $pdfdocd13 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/PVI.pdf");
         $attachmentd13 = chunk_split(base64_encode($pdfdocd13));
 
 
@@ -1956,7 +1969,7 @@ class ReferencementController extends Controller
     }
         if( in_array("catalogue_ref", $join) ){
 
-            $pdfdocd14 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Catalogue_ref.pdf");
+            $pdfdocd14 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Catalogue_ref.pdf");
             $attachmentd14 = chunk_split(base64_encode($pdfdocd14));
 
 
@@ -1984,7 +1997,7 @@ class ReferencementController extends Controller
          }*/
         if( in_array("profession", $join) ){
 
-            $pdfdocd16 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Profession-libérale.pdf");
+            $pdfdocd16 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Profession-libérale.pdf");
             $attachmentd16 = chunk_split(base64_encode($pdfdocd16));
 
 
@@ -1996,7 +2009,118 @@ class ReferencementController extends Controller
             $body .= $attachmentd16 . $eol;
 
         }
+        if( in_array("vignette_extensible", $join) ){
 
+            $pdfdocd17 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-extensible.pdf");
+            $attachmentd17 = chunk_split(base64_encode($pdfdocd17));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed17 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd17 . $eol;
+
+        }
+        if( in_array("audit", $join) ){
+
+            $pdfdocd18 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Audit-de-site.pdf");
+            $attachmentd18 = chunk_split(base64_encode($pdfdocd18));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed18 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd18 . $eol;
+
+        }
+        if( in_array("benniere_extensible", $join) ){
+
+            $pdfdocd19 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Bannière-extensible.pdf");
+            $attachmentd19 = chunk_split(base64_encode($pdfdocd19));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed19 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd19 . $eol;
+
+        }
+        if( in_array("Facebook-Ads", $join) ){
+
+            $pdfdocd20 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Facebook-Ads.pdf");
+            $attachmentd20 = chunk_split(base64_encode($pdfdocd20));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed20 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd20 . $eol;
+
+        }
+        if( in_array("film_interview", $join) ){
+
+            $pdfdocd21 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Film-Interview.pdf");
+            $attachmentd21 = chunk_split(base64_encode($pdfdocd21));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed21 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd21 . $eol;
+
+        }
+        if( in_array("Motion_Design", $join) ){
+
+            $pdfdocd22 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Motion-Design.pdf");
+            $attachmentd22 = chunk_split(base64_encode($pdfdocd22));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed22 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd22 . $eol;
+
+        }
+        if( in_array("Vidéo_corporate", $join) ){
+
+            $pdfdocd23 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vidéo-corporate.pdf");
+            $attachmentd23 = chunk_split(base64_encode($pdfdocd23));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed23 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd23 . $eol;
+
+        }
+        if( in_array("Vidéo_graphique", $join) ){
+
+            $pdfdocd24 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vidéo-graphique.pdf");
+            $attachmentd24 = chunk_split(base64_encode($pdfdocd24));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed24 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd24 . $eol;
+
+        }
 
 
 
@@ -2476,27 +2600,37 @@ class ReferencementController extends Controller
 
 
 
-        $filenamed   =   "baniere-TLC.pdf";
-        $filenamed1   =  "Carte-visite.pdf";
-        $filenamed2   =  "Espace-Promo.pdf";
+
+        $filenamed   =   "bannière-classique.pdf";
+        $filenamed1   =  "Carte-de-visite.pdf";
+        $filenamed2   =  "Espace-promo.pdf";
         $filenamed3   =  "Habillage.pdf";
         $filenamed4   =  "Marques.pdf";
         $filenamed5   =  "Prestation.pdf";
         $filenamed6   =  "Professionnels-du-jour.pdf";
         $filenamed7  =   "Rubrique.pdf";
         $filenamed8  =   "Video.pdf";
-        $filenamed9  =   "Vignette-Accueil-Video.pdf";
-        $filenamed10 =   "Vignette-localite.pdf";
-        $filenamed11  =  "Vignette-thÃ©matique.pdf";
-        $filenamed12  =  "site_contact.pdf";
+        $filenamed9  =   "Vignette-classique.pdf";
+        $filenamed10 =   "Vignette-localité.pdf";
+        $filenamed11  =  "Vignette-thématique.pdf";
+        $filenamed12  =  "Site-contact.pdf";
         $filenamed13  =  "PVI.pdf";
         $filenamed14  =  "Catalogue_ref.pdf";
         $filenamed15  =  "CONDITIONS-GENERALES_VENTE.pdf";
         $filenamed16  =  "Profession-libérale.pdf";
+        $filenamed17  =  "Vignette-extensible.pdf";
+        $filenamed18  =  "Audit-de-site.pdf";
+        $filenamed19  =  "Bannière-extensible.pdf";
+        $filenamed20  =  "Facebook-Ads.pdf";
+        $filenamed21  =  "Film-Interview.pdf";
+        $filenamed22  =  "Motion-Design.pdf";
+        $filenamed23  =  "Vidéo-corporate.pdf";
+        $filenamed24  =  "Vidéo-graphique.pdf";
 
 
 
-        $pdfdoc     = $html2pdf->Output('Ordre d\'insertion.pdf', 'S');
+
+        $pdfdoc     = $html2pdf->Output('Proposition.pdf', 'S');
 
 
 
@@ -2504,7 +2638,7 @@ class ReferencementController extends Controller
 
         $attachment = chunk_split(base64_encode($pdfdoc));
 
-        $pdfdocd = file_get_contents("http://www.telecontact.ma/trouver/pdf/baniere-TLC.pdf");
+        $pdfdocd = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/bannière-classique.pdf");
         $attachmentd = chunk_split(base64_encode($pdfdocd));
 
 
@@ -2531,6 +2665,7 @@ class ReferencementController extends Controller
         $body .= $attachment . $eol;
 
 
+
         if( in_array("Baniere", $join)){
             $body .= "--" . $separator . $eol;
             $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed . "\"" . $eol;
@@ -2545,7 +2680,7 @@ class ReferencementController extends Controller
         if( in_array("Carte", $join) ){
 
 
-            $pdfdocd1 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Carte-visite.pdf");
+            $pdfdocd1 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Carte-de-visite.pdf");
             $attachmentd1 = chunk_split(base64_encode($pdfdocd1));
 
 
@@ -2561,7 +2696,7 @@ class ReferencementController extends Controller
         if( in_array("Espace", $join) ){
 
 
-            $pdfdocd2 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Espace-Promo.pdf");
+            $pdfdocd2 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Espace-promo.pdf");
             $attachmentd2 = chunk_split(base64_encode($pdfdocd2));
 
 
@@ -2578,7 +2713,7 @@ class ReferencementController extends Controller
 
 
 
-            $pdfdocd3 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Habillage.pdf");
+            $pdfdocd3 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Habillage.pdf");
             $attachmentd3 = chunk_split(base64_encode($pdfdocd3));
 
             $body .= "--" . $separator . $eol;
@@ -2625,7 +2760,7 @@ class ReferencementController extends Controller
 
 
 
-            $pdfdocd6 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Professionnels-du-jour.pdf");
+            $pdfdocd6 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Professionnels-du-jour.pdf");
             $attachmentd6 = chunk_split(base64_encode($pdfdocd6));
 
 
@@ -2653,6 +2788,8 @@ class ReferencementController extends Controller
             $body .= $attachmentd7 . $eol;
 
         }
+
+
         if( in_array("Video", $join)){
 
 
@@ -2672,7 +2809,7 @@ class ReferencementController extends Controller
         if( in_array("Vignette_vid", $join)){
 
 
-            $pdfdocd9 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Vignette-Accueil-Video.pdf");
+            $pdfdocd9 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-classique.pdf");
             $attachmentd9 = chunk_split(base64_encode($pdfdocd9));
 
 
@@ -2689,7 +2826,7 @@ class ReferencementController extends Controller
 
 
 
-            $pdfdocd10 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Vignette-localite.pdf");
+            $pdfdocd10 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-localité.pdf");
             $attachmentd10 = chunk_split(base64_encode($pdfdocd10));
 
             $body .= "--" . $separator . $eol;
@@ -2704,7 +2841,7 @@ class ReferencementController extends Controller
         if( in_array("Vignette_th", $join) ){
 
 
-            $pdfdocd11 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Vignette-thematique.pdf");
+            $pdfdocd11 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-thématique.pdf");
             $attachmentd11 = chunk_split(base64_encode($pdfdocd11));
 
 
@@ -2719,7 +2856,7 @@ class ReferencementController extends Controller
 
         if( in_array("site_internet", $join) ){
 
-            $pdfdocd12 = file_get_contents("http://www.telecontact.ma/trouver/pdf/site_contact.pdf");
+            $pdfdocd12 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Site-contact.pdf");
             $attachmentd12 = chunk_split(base64_encode($pdfdocd12));
 
 
@@ -2732,7 +2869,7 @@ class ReferencementController extends Controller
 
         } if( in_array("pvi", $join) ){
 
-        $pdfdocd13 = file_get_contents("http://www.telecontact.ma/trouver/pdf/PVI.pdf");
+        $pdfdocd13 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/PVI.pdf");
         $attachmentd13 = chunk_split(base64_encode($pdfdocd13));
 
 
@@ -2746,7 +2883,7 @@ class ReferencementController extends Controller
     }
         if( in_array("catalogue_ref", $join) ){
 
-            $pdfdocd14 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Catalogue_ref.pdf");
+            $pdfdocd14 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Catalogue_ref.pdf");
             $attachmentd14 = chunk_split(base64_encode($pdfdocd14));
 
 
@@ -2758,23 +2895,23 @@ class ReferencementController extends Controller
             $body .= $attachmentd14 . $eol;
 
         }
-        /*if( in_array("reguelement", $join) ){
+        /* if( in_array("reguelement", $join) ){
 
-            $pdfdocd15 = file_get_contents("http://www.telecontact.ma/trouver/pdf/CONDITIONS-GENERALES_VENTE.pdf");
-            $attachmentd15 = chunk_split(base64_encode($pdfdocd15));
+             $pdfdocd15 = file_get_contents("http://www.telecontact.ma/trouver/pdf/CONDITIONS-GENERALES_VENTE.pdf");
+             $attachmentd15 = chunk_split(base64_encode($pdfdocd15));
 
 
-            $body .= "--" . $separator . $eol;
-            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed15 . "\"" . $eol;
-            $body .= "Content-Transfer-Encoding: base64" . $eol;
-            $body .= "Content-Disposition: attachment" . $eol . $eol;
+             $body .= "--" . $separator . $eol;
+             $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed15 . "\"" . $eol;
+             $body .= "Content-Transfer-Encoding: base64" . $eol;
+             $body .= "Content-Disposition: attachment" . $eol . $eol;
 
-            $body .= $attachmentd15 . $eol;
+             $body .= $attachmentd15 . $eol;
 
-        }*/
+         }*/
         if( in_array("profession", $join) ){
 
-            $pdfdocd16 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Profession-libérale.pdf");
+            $pdfdocd16 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Profession-libérale.pdf");
             $attachmentd16 = chunk_split(base64_encode($pdfdocd16));
 
 
@@ -2784,6 +2921,118 @@ class ReferencementController extends Controller
             $body .= "Content-Disposition: attachment" . $eol . $eol;
 
             $body .= $attachmentd16 . $eol;
+
+        }
+        if( in_array("vignette_extensible", $join) ){
+
+            $pdfdocd17 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-extensible.pdf");
+            $attachmentd17 = chunk_split(base64_encode($pdfdocd17));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed17 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd17 . $eol;
+
+        }
+        if( in_array("audit", $join) ){
+
+            $pdfdocd18 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Audit-de-site.pdf");
+            $attachmentd18 = chunk_split(base64_encode($pdfdocd18));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed18 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd18 . $eol;
+
+        }
+        if( in_array("benniere_extensible", $join) ){
+
+            $pdfdocd19 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Bannière-extensible.pdf");
+            $attachmentd19 = chunk_split(base64_encode($pdfdocd19));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed19 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd19 . $eol;
+
+        }
+        if( in_array("Facebook-Ads", $join) ){
+
+            $pdfdocd20 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Facebook-Ads.pdf");
+            $attachmentd20 = chunk_split(base64_encode($pdfdocd20));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed20 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd20 . $eol;
+
+        }
+        if( in_array("film_interview", $join) ){
+
+            $pdfdocd21 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Film-Interview.pdf");
+            $attachmentd21 = chunk_split(base64_encode($pdfdocd21));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed21 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd21 . $eol;
+
+        }
+        if( in_array("Motion_Design", $join) ){
+
+            $pdfdocd22 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Motion-Design.pdf");
+            $attachmentd22 = chunk_split(base64_encode($pdfdocd22));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed22 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd22 . $eol;
+
+        }
+        if( in_array("Vidéo_corporate", $join) ){
+
+            $pdfdocd23 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vidéo-corporate.pdf");
+            $attachmentd23 = chunk_split(base64_encode($pdfdocd23));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed23 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd23 . $eol;
+
+        }
+        if( in_array("Vidéo_graphique", $join) ){
+
+            $pdfdocd24 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vidéo-graphique.pdf");
+            $attachmentd24 = chunk_split(base64_encode($pdfdocd24));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed24 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd24 . $eol;
 
         }
 
@@ -3274,27 +3523,37 @@ class ReferencementController extends Controller
 
 
 
-        $filenamed   =   "baniere-TLC.pdf";
-        $filenamed1   =  "Carte-visite.pdf";
-        $filenamed2   =  "Espace-Promo.pdf";
+
+        $filenamed   =   "bannière-classique.pdf";
+        $filenamed1   =  "Carte-de-visite.pdf";
+        $filenamed2   =  "Espace-promo.pdf";
         $filenamed3   =  "Habillage.pdf";
         $filenamed4   =  "Marques.pdf";
         $filenamed5   =  "Prestation.pdf";
         $filenamed6   =  "Professionnels-du-jour.pdf";
         $filenamed7  =   "Rubrique.pdf";
         $filenamed8  =   "Video.pdf";
-        $filenamed9  =   "Vignette-Accueil-Video.pdf";
-        $filenamed10 =   "Vignette-localite.pdf";
-        $filenamed11  =  "Vignette-thÃ©matique.pdf";
-        $filenamed12  =  "site_contact.pdf";
+        $filenamed9  =   "Vignette-classique.pdf";
+        $filenamed10 =   "Vignette-localité.pdf";
+        $filenamed11  =  "Vignette-thématique.pdf";
+        $filenamed12  =  "Site-contact.pdf";
         $filenamed13  =  "PVI.pdf";
         $filenamed14  =  "Catalogue_ref.pdf";
-        $filenamed15  =  "Conditions generales de vente.pdf";
+        $filenamed15  =  "CONDITIONS-GENERALES_VENTE.pdf";
         $filenamed16  =  "Profession-libérale.pdf";
+        $filenamed17  =  "Vignette-extensible.pdf";
+        $filenamed18  =  "Audit-de-site.pdf";
+        $filenamed19  =  "Bannière-extensible.pdf";
+        $filenamed20  =  "Facebook-Ads.pdf";
+        $filenamed21  =  "Film-Interview.pdf";
+        $filenamed22  =  "Motion-Design.pdf";
+        $filenamed23  =  "Vidéo-corporate.pdf";
+        $filenamed24  =  "Vidéo-graphique.pdf";
 
 
 
-        $pdfdoc     = $html2pdf->Output('Bon de commande.pdf', 'S');
+
+        $pdfdoc     = $html2pdf->Output('Proposition.pdf', 'S');
 
 
 
@@ -3302,7 +3561,7 @@ class ReferencementController extends Controller
 
         $attachment = chunk_split(base64_encode($pdfdoc));
 
-        $pdfdocd = file_get_contents("http://www.telecontact.ma/trouver/pdf/baniere-TLC.pdf");
+        $pdfdocd = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/bannière-classique.pdf");
         $attachmentd = chunk_split(base64_encode($pdfdocd));
 
 
@@ -3329,6 +3588,7 @@ class ReferencementController extends Controller
         $body .= $attachment . $eol;
 
 
+
         if( in_array("Baniere", $join)){
             $body .= "--" . $separator . $eol;
             $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed . "\"" . $eol;
@@ -3343,7 +3603,7 @@ class ReferencementController extends Controller
         if( in_array("Carte", $join) ){
 
 
-            $pdfdocd1 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Carte-visite.pdf");
+            $pdfdocd1 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Carte-de-visite.pdf");
             $attachmentd1 = chunk_split(base64_encode($pdfdocd1));
 
 
@@ -3359,7 +3619,7 @@ class ReferencementController extends Controller
         if( in_array("Espace", $join) ){
 
 
-            $pdfdocd2 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Espace-Promo.pdf");
+            $pdfdocd2 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Espace-promo.pdf");
             $attachmentd2 = chunk_split(base64_encode($pdfdocd2));
 
 
@@ -3376,7 +3636,7 @@ class ReferencementController extends Controller
 
 
 
-            $pdfdocd3 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Habillage.pdf");
+            $pdfdocd3 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Habillage.pdf");
             $attachmentd3 = chunk_split(base64_encode($pdfdocd3));
 
             $body .= "--" . $separator . $eol;
@@ -3423,7 +3683,7 @@ class ReferencementController extends Controller
 
 
 
-            $pdfdocd6 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Professionnels-du-jour.pdf");
+            $pdfdocd6 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Professionnels-du-jour.pdf");
             $attachmentd6 = chunk_split(base64_encode($pdfdocd6));
 
 
@@ -3451,6 +3711,8 @@ class ReferencementController extends Controller
             $body .= $attachmentd7 . $eol;
 
         }
+
+
         if( in_array("Video", $join)){
 
 
@@ -3470,7 +3732,7 @@ class ReferencementController extends Controller
         if( in_array("Vignette_vid", $join)){
 
 
-            $pdfdocd9 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Vignette-Accueil-Video.pdf");
+            $pdfdocd9 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-classique.pdf");
             $attachmentd9 = chunk_split(base64_encode($pdfdocd9));
 
 
@@ -3487,7 +3749,7 @@ class ReferencementController extends Controller
 
 
 
-            $pdfdocd10 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Vignette-localite.pdf");
+            $pdfdocd10 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-localité.pdf");
             $attachmentd10 = chunk_split(base64_encode($pdfdocd10));
 
             $body .= "--" . $separator . $eol;
@@ -3502,7 +3764,7 @@ class ReferencementController extends Controller
         if( in_array("Vignette_th", $join) ){
 
 
-            $pdfdocd11 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Vignette-thematique.pdf");
+            $pdfdocd11 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-thématique.pdf");
             $attachmentd11 = chunk_split(base64_encode($pdfdocd11));
 
 
@@ -3517,7 +3779,7 @@ class ReferencementController extends Controller
 
         if( in_array("site_internet", $join) ){
 
-            $pdfdocd12 = file_get_contents("http://www.telecontact.ma/trouver/pdf/site_contact.pdf");
+            $pdfdocd12 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Site-contact.pdf");
             $attachmentd12 = chunk_split(base64_encode($pdfdocd12));
 
 
@@ -3530,7 +3792,7 @@ class ReferencementController extends Controller
 
         } if( in_array("pvi", $join) ){
 
-        $pdfdocd13 = file_get_contents("http://www.telecontact.ma/trouver/pdf/PVI.pdf");
+        $pdfdocd13 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/PVI.pdf");
         $attachmentd13 = chunk_split(base64_encode($pdfdocd13));
 
 
@@ -3544,7 +3806,7 @@ class ReferencementController extends Controller
     }
         if( in_array("catalogue_ref", $join) ){
 
-            $pdfdocd14 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Catalogue_ref.pdf");
+            $pdfdocd14 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Catalogue_ref.pdf");
             $attachmentd14 = chunk_split(base64_encode($pdfdocd14));
 
 
@@ -3556,23 +3818,23 @@ class ReferencementController extends Controller
             $body .= $attachmentd14 . $eol;
 
         }
-        if( in_array("reguelement", $join) ){
+         if( in_array("reguelement", $join) ){
 
-            $pdfdocd15 = file_get_contents("http://www.telecontact.ma/trouver/pdf/conditions-générales-de-vente.pdf");
-            $attachmentd15 = chunk_split(base64_encode($pdfdocd15));
+             $pdfdocd15 = file_get_contents("http://www.telecontact.ma/trouver/pdf/CONDITIONS-GENERALES_VENTE.pdf");
+             $attachmentd15 = chunk_split(base64_encode($pdfdocd15));
 
 
-            $body .= "--" . $separator . $eol;
-            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed15 . "\"" . $eol;
-            $body .= "Content-Transfer-Encoding: base64" . $eol;
-            $body .= "Content-Disposition: attachment" . $eol . $eol;
+             $body .= "--" . $separator . $eol;
+             $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed15 . "\"" . $eol;
+             $body .= "Content-Transfer-Encoding: base64" . $eol;
+             $body .= "Content-Disposition: attachment" . $eol . $eol;
 
-            $body .= $attachmentd15 . $eol;
+             $body .= $attachmentd15 . $eol;
 
-        }
+         }
         if( in_array("profession", $join) ){
 
-            $pdfdocd16 = file_get_contents("http://www.telecontact.ma/trouver/pdf/Profession-libérale.pdf");
+            $pdfdocd16 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Profession-libérale.pdf");
             $attachmentd16 = chunk_split(base64_encode($pdfdocd16));
 
 
@@ -3584,7 +3846,118 @@ class ReferencementController extends Controller
             $body .= $attachmentd16 . $eol;
 
         }
+        if( in_array("vignette_extensible", $join) ){
 
+            $pdfdocd17 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vignette-extensible.pdf");
+            $attachmentd17 = chunk_split(base64_encode($pdfdocd17));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed17 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd17 . $eol;
+
+        }
+        if( in_array("audit", $join) ){
+
+            $pdfdocd18 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Audit-de-site.pdf");
+            $attachmentd18 = chunk_split(base64_encode($pdfdocd18));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed18 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd18 . $eol;
+
+        }
+        if( in_array("benniere_extensible", $join) ){
+
+            $pdfdocd19 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Bannière-extensible.pdf");
+            $attachmentd19 = chunk_split(base64_encode($pdfdocd19));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed19 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd19 . $eol;
+
+        }
+        if( in_array("Facebook-Ads", $join) ){
+
+            $pdfdocd20 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Facebook-Ads.pdf");
+            $attachmentd20 = chunk_split(base64_encode($pdfdocd20));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed20 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd20 . $eol;
+
+        }
+        if( in_array("film_interview", $join) ){
+
+            $pdfdocd21 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Film-Interview.pdf");
+            $attachmentd21 = chunk_split(base64_encode($pdfdocd21));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed21 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd21 . $eol;
+
+        }
+        if( in_array("Motion_Design", $join) ){
+
+            $pdfdocd22 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Motion-Design.pdf");
+            $attachmentd22 = chunk_split(base64_encode($pdfdocd22));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed22 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd22 . $eol;
+
+        }
+        if( in_array("Vidéo_corporate", $join) ){
+
+            $pdfdocd23 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vidéo-corporate.pdf");
+            $attachmentd23 = chunk_split(base64_encode($pdfdocd23));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed23 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd23 . $eol;
+
+        }
+        if( in_array("Vidéo_graphique", $join) ){
+
+            $pdfdocd24 = file_get_contents("http://www.telecontact.ma/trouver/pdf_new/Vidéo-graphique.pdf");
+            $attachmentd24 = chunk_split(base64_encode($pdfdocd24));
+
+
+            $body .= "--" . $separator . $eol;
+            $body .= "Content-Type: application/octet-stream; name=\"" . $filenamed24 . "\"" . $eol;
+            $body .= "Content-Transfer-Encoding: base64" . $eol;
+            $body .= "Content-Disposition: attachment" . $eol . $eol;
+
+            $body .= $attachmentd24 . $eol;
+
+        }
 
 
 

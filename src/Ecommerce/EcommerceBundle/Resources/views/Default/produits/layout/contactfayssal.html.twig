@@ -1460,80 +1460,222 @@
     <form action="{{ path('referencement_commande_devis_fn_pdf') }}" method="post">
         {#<label>Envoyer le devis&nbsp; &nbsp;</label><input class="email"  id="email" name="email_ad" placeholder="E-mail" type="email" required />&nbsp; &nbsp;
         {#<button type="submit" id="bnk"  class="envoyer" >Envoyer</button>#}
+        <div align="center" style="margin: 0 auto;">
+            <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3" style=" display: inline-flex;">
+                <div class="form-group">
+                    <div  >
+                        <button type="button" class="" id="dropdownMenu2" data-toggle="collapse" data-target="#demo-2-2">
+                            Référencement&nbsp;   <img class="white-triangle2" src="{{ asset('white-triangle.png') }}" >
+                        </button>
+                        <div id="demo-2-2" class="collapse bouton-2" >
+                            <div >
+                                <table >
+                                    <tr>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="joindre" value="Prestation">&nbsp;Prestation
+                                        </label><br>
+                                    </tr>
+                                    <tr>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="joindre" value="Marques">&nbsp;Marques
+                                        </label><br>
+                                    </tr>
+                                    <tr>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="joindre" value="Rubrique">&nbsp;Rubrique
+                                        </label><br>
+                                    </tr>
+                                    <tr>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="joindre" value="profession">&nbsp;Profession libérale
+                                        </label><br>
+                                    </tr>
+                                    <tr>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="joindre" value="autres_professions">&nbsp;Autres professions libérales
+                                        </label><br>
+                                    </tr>
+                                    <tr>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="joindre" value="Carte">&nbsp;Carte visite
+                                        </label><br>
+                                    </tr>
 
+                                </table>
 
-
-        <div class="form-group col-md-8" style="margin-left: 169px;margin-top: -132px;">
-            <label style="/*margin-left: 167px;*/">Joindre un document PDF </label> :<br /><br />
-            <div align="center">
-                <div class="form-inline" style="line-height: 2;">
-                    <div class="form-group " >
-                        <label class="checkbox-inline joindre" >
-                            <input type="checkbox" name="joindre" value="Baniere">&nbsp;Baniere TLC
-                        </label>&nbsp;&nbsp;&nbsp;
-                        <label class="checkbox-inline joindre">
-                            <input type="checkbox" name="joindre" value="Carte">&nbsp;Carte visite
-                        </label>&nbsp;&nbsp;&nbsp;
-                        <label class="checkbox-inline joindre" >
-                            <input type="checkbox" name="joindre" value="Espace">&nbsp;Espace Promo
-                        </label>&nbsp;&nbsp;&nbsp;
-                        <label class="checkbox-inline joindre" >
-                            <input type="checkbox" name="joindre" value="Habillage">&nbsp;Habillage
-                        </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="form-inline" style="line-height: 3;">
-                    <div class="form-group " >
-                        <label class="checkbox-inline joindre"  >
-                            <input type="checkbox" name="joindre" value="Marques">&nbsp;Marques
-                        </label>&nbsp;&nbsp;&nbsp;
-                        <label class="checkbox-inline joindre" >
-                            <input type="checkbox" name="joindre" value="Prestation">&nbsp;Prestation
-                        </label>&nbsp;&nbsp;&nbsp;
-                        <label class="checkbox-inline joindre" >
-                            <input type="checkbox" name="joindre" value="Professionnels">&nbsp;Professionnels du jour
-                        </label>&nbsp;&nbsp;&nbsp;
-                        <label class="checkbox-inline joindre">
-                            <input type="checkbox" name="joindre" value="Rubrique">&nbsp;Rubrique
-                        </label>
-                    </div>
-                </div>
-                <div class="form-inline" >
-                    <div class="form-group " >
-                        <label class="checkbox-inline joindre" >
-                            <input type="checkbox" name="joindre" value="Video">&nbsp;Video
-                        </label>&nbsp;&nbsp;&nbsp;
-                        <label class="checkbox-inline joindre"  >
-                            <input type="checkbox" name="joindre" value="Vignette_vid">&nbsp;Vignette Accueil Video
-                        </label>&nbsp;&nbsp;&nbsp;
-
-                        <label class="checkbox-inline joindre"  >
-                            <input type="checkbox" name="joindre" value="Vignette_lo">&nbsp;Vignette localite
-                        </label>&nbsp;&nbsp;&nbsp;
-                        <label class="checkbox-inline joindre" >
-                            <input type="checkbox" name="joindre" value="Vignette_th">&nbsp;Vignette thématique
-                        </label>
-                    </div>
-                </div>
-
-                <div class="form-inline" >
-                    <div class="form-group " >
-                        <label class="checkbox-inline joindre" >
-                            <input type="checkbox" name="joindre" value="site_internet">&nbsp;Site internet
-                        </label>&nbsp;&nbsp;&nbsp;
-
-                    </div>
-                    <div class="form-group " >
-                        <label class="checkbox-inline joindre" >
-                            <input type="checkbox" name="joindre" value="profession">&nbsp;Profession libérale
-                        </label>&nbsp;&nbsp;&nbsp;
-
-                    </div>
-                </div>
-
             </div>
+            <div  class="col-lg-2 col-md-3 col-sm-3 col-xs-3" style=" display: inline-flex;">
+                <div class="form-group">
+                    <div >
+                        <button type="button" class="" id="dropdownMenu2" data-toggle="collapse" data-target="#demo-2-3">
+                            Gestion de contenu&nbsp;   <img class="white-triangle2" src="{{ asset('white-triangle.png') }}" >
+                        </button>
+                        <div id="demo-2-3" class="collapse bouton-2" >
+                            <table >
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="site_internet">&nbsp;Site internet
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="Video_graphique">&nbsp;Vidéo graphique
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="Video_corporate">&nbsp;Vidéo corporate
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="film_interview">&nbsp;Film Interview
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="Motion_Design">&nbsp;Motion Design
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="catalogue">&nbsp;Catalogue e ligne
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="pvi">&nbsp;pvi
+                                    </label><br>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="col-lg-2 col-md-3 col-sm-3 col-xs-3" style=" display: inline-flex;">
+                <div class="form-group">
+                    <div >
+                        <button type="button" class="" id="dropdownMenu2" data-toggle="collapse" data-target="#demo-2-4">
+                            Affichage&nbsp;   <img class="white-triangle2" src="{{ asset('white-triangle.png') }}" >
+                        </button>
+                        <div id="demo-2-4" class="collapse bouton-2" >
+                            <table >
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="Baniere">&nbsp;Bannières classiques
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="banniere_extensible">&nbsp;Bannières extensibles
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="Vignette_th">&nbsp;Vignettes thématiques
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="Vignette_lo">&nbsp;Vignettes localites
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="Vignette_vid">&nbsp;Vignettes classiques
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="vignette_extensible">&nbsp;Vignettes extensibles
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="Professionnels">&nbsp;Professionnels du jour
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="Espace">&nbsp;Espace Promo
+                                    </label><br>
+                                </tr>
+                                <tr>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" name="joindre" value="Habillage">&nbsp;Habillage
+                                    </label><br>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="col-lg-2 col-md-3 col-sm-3 col-xs-3" style=" display: inline-flex;">
+                <div class="form-group">
+                    <div >
+                        <button type="button" class="" id="dropdownMenu2" data-toggle="collapse" data-target="#demo-2-5">
+                            Réseaux sociaux & audit&nbsp;    <img class="white-triangle2" src="{{ asset('white-triangle.png') }}" >
+                        </button>
+                        <div id="demo-2-5" class="collapse bouton-2">
+                            <div class="form-inline" >
+                                <table >
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="joindre" value="Facebook-Ads">&nbsp;Facebook ads
+                                            </label>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="joindre" value="audit">&nbsp;Audit
+                                            </label>
+                                        </td>
+
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div  class="col-lg-2 col-md-3 col-sm-3 col-xs-3" style=" display: inline-flex;">
+                <div class="form-group">
+                    <div >
+                        <button type="button" class="" id="dropdownMenu2" data-toggle="collapse" data-target="#demo-2-6">
+                            Audience&nbsp;   <img class="white-triangle2" src="{{ asset('white-triangle.png') }}" >
+                        </button>
+                        <div id="demo-2-6" class="collapse bouton-2">
+                            <div class="form-inline" >
+                                <table >
+                                    <tr>
+                                        <td>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="joindre" value="Audience">&nbsp;Audience
+                                            </label>
+                                        </td>
+
+                                    </tr>
+
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <br /><br />
+
+
+
         <br /><br />
         <div class="form-group col-md-8" style="margin-left: 169px;margin-top: -24px;">
             <div class="form-inline" >

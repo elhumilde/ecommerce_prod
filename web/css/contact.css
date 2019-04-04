@@ -126,8 +126,6 @@ button[disabled]{
         justify-content: flex-start!important;
     }
 }
-
-/*-----------------------------------------------*/
 .loaders {
     position: fixed;
     top: 0;
@@ -634,3 +632,38 @@ section {
     /* margin-left: -15px; */
 }
 
+
+/*-----------------------------------------------*/
+#dropdownMenu2
+{
+    width: 184px!important;
+    /* margin-left: 55px; */
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    font-size: 13px;
+}
+.white-triangle2 {
+    height: 12px;
+    float: right;
+    margin-top: 5px;
+}
+#demo-2-2,#demo-2-3,#demo-2-4,#demo-2-5,#demo-2-6
+{
+    overflow-y: scroll;
+    width: 184px;
+    font-size: 15px;
+    text-align: justify;
+    background-color: whitesmoke;
+    height: 152px;
+}
+
+@media (min-width: 992px)
+{
+    .col-lg-3 {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 19%!important;
+    }
+}
