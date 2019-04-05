@@ -227,24 +227,78 @@
 
         {% if desrubref['rub1']!=null  %}
             <tr>
+
+                {% if desrubref['package']=='non' %}
                 <th scope="row"><strong style="font-size: 15px;">Rubrique principale : </strong><br>
                     {#{% for rubrique in desrubref['rubrique'] %}
                     - <h7 style="font-weight: 500;font-size: 16px;">{{ rubrique.sel|rub.libelle }}</h7>
                     {% endfor %}#}
                     <div style="width: 391px!important;background-color: #f9f1c9">
                         <strong style="font-weight: 500;font-size: 14px;"> •&nbsp; <strong style="font-weight: 700;font-size: 14px;">{{ desrubref['rub1']|rub.libelle }} </strong><br>
-                            {% if  desrubref['villes1'] %}    visibilité sur : {{ desrubref['villes1']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier1'] %},
+                            {% if  desrubref['villes1'] %}
+                                visibilité sur : {{ desrubref['villes1']|somme.libelle  }} {% endif %} {% if  desrubref['villes_panier1'] %},
                                 {% for ville in desrubref['villes_panier1'] %}
                                     {% if loop.index==4 %}<br> {% endif %}
                                     {% if loop.index==8 %}<br> {% endif %}
                                 {{ ville|somme.libelle }},
-                            {% endfor %}{% endif %}</strong>
+                            {% endfor %}
+                            {% endif %}
+                        </strong>
                     </div>
                 </th>
 
                 <td>-</td>
                 <td>1</td>
                 <td>{{ ( desrubref['final']+ desrubref['localiter_supp'])|number_format|replace(',',' ')  }}</td>
+            {% else %}
+
+                <th scope="row"><strong style="font-size: 15px;">Rubrique principale : </strong><br>
+                    {#{% for rubrique in desrubref['rubrique'] %}
+                    - <h7 style="font-weight: 500;font-size: 16px;">{{ rubrique.sel|rub.libelle }}</h7>
+                    {% endfor %}#}
+                    <div style="width: 350px!important;background-color: #f9f1c9">
+                        <strong style="font-weight: 500;font-size: 14px;"> •&nbsp; <span style="font-weight: 700;font-size: 14px;">{{ desrubref['rub1']|rub.libelle }} </span><br>
+                            Visibilité sur
+                            {%  if  desrubref['package_value'] %}
+                                {%  if  desrubref['package_value']=='8450' %}
+                                    Grand Casablanca : <br>
+                                    Casablanca, Darbouazza, Titmlil, Nouacer,<br>
+                                    Bouskoura, Médiouna, Had soualem
+
+                                {% endif %}
+                                {%  if  desrubref['package_value']=='6100' %}
+                                    Grand Rabat : <br>
+                                    Rabat, Salé, Temara, Skhirate
+
+                                {% endif %}
+                                {%  if  desrubref['package_value']=='5600' %}
+                                    Grand Tanger : <br>
+                                    Tanger, Ksar el Sghir, Asila, Larache
+
+                                {% endif %}
+                                {%  if  desrubref['package_value']=='4500' %}
+                                    Grand Tetouan : <br>
+                                    Tetouan, Mdiq,Fnideq, martil,Chefchaouan
+
+                                {% endif %}
+                                {%  if  desrubref['package_value']=='5800' %}
+                                    Grand Agadir : <br>
+                                    Agadir, Ait Melloul, Inzegan, Dchira,<br> Drarga
+
+                                {% endif %}
+                            {% endif %}
+                        </strong>
+                    </div>
+                </th>
+
+                <td>-</td>
+                <td>1</td>
+                <td>{{ ( desrubref['final'])|number_format|replace(',',' ')  }}</td>
+
+
+
+                {% endif %}
+
             </tr>
 
 

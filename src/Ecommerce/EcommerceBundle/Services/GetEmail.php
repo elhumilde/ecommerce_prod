@@ -125,6 +125,8 @@ class GetEmail
 
                     'final'=>0,
                     'fayssal'=>0,
+                    'package'=>NULL,
+                    'package_value'=>0,
 
 
                 );

@@ -228,7 +228,8 @@ class ReferencementController extends Controller
 
                     'final'=>0,
                     'fayssal'=>0,
-
+                    'package'=>NULL,
+                    'package_value'=>0,
 
                 );
 
@@ -684,6 +685,9 @@ class ReferencementController extends Controller
 
                     'final'=>0,
                     'fayssal'=>0,
+
+                    'package'=>NULL,
+                    'package_value'=>0,
 
                 );
 
@@ -1457,6 +1461,10 @@ class ReferencementController extends Controller
 
         $mail = $request->request->get('email');
         $join = $request->request->get('join');
+        if($join){
+            $join=array();
+        }
+
         $text='Bonjour <br><br>Je vous prie de trouver en pièce jointe notre proposition de parution dans telecontact.ma <br><br>
               Je reste bien évidemment à votre disposition pour tout complément d\'information.<br><br>
               En attendant votre retour, veuillez agréer nos sincères salutations <br><br>
@@ -1583,7 +1591,8 @@ class ReferencementController extends Controller
 
                     'final'=>0,
                     'fayssal'=>0,
-
+                    'package'=>NULL,
+                    'package_value'=>0,
 
                 );
 
@@ -2498,7 +2507,8 @@ class ReferencementController extends Controller
 
                     'final'=>0,
                     'fayssal'=>0,
-
+                    'package'=>NULL,
+                    'package_value'=>0,
                 );
 
         if ($session->has('code'))
@@ -3421,7 +3431,8 @@ class ReferencementController extends Controller
 
                     'final'=>0,
                     'fayssal'=>0,
-
+                    'package'=>NULL,
+                    'package_value'=>0,
                 );
 
         if ($session->has('code'))
@@ -4909,6 +4920,9 @@ class ReferencementController extends Controller
        if ($rub1){
         $rub1=explode('|',$rub1);}
 
+        $package = $request->request->get('package');
+        $package_value = $request->request->get('villes_package');
+
         $prest1 = $request->request->get('prest');
         $addprest1 = $request->request->get('addprest');
         $villes1 = $request->request->get('villes');
@@ -5106,8 +5120,7 @@ class ReferencementController extends Controller
 
 
 
-
-        $desrubref =array('final'=>$final,'fayssal'=>$fayssal,'rub_supp_1'=>$rub_supp_1,'rub_supp_2'=>$rub_supp_2,'rub_supp_3'=>$rub_supp_3,'rub_supp_4'=>$rub_supp_4,'rub_supp_5'=>$rub_supp_5,'rub_supp_6'=>$rub_supp_6,'rub_supp_7'=>$rub_supp_7,
+        $desrubref =array('package_value'=>$package_value,'package'=>$package,'final'=>$final,'fayssal'=>$fayssal,'rub_supp_1'=>$rub_supp_1,'rub_supp_2'=>$rub_supp_2,'rub_supp_3'=>$rub_supp_3,'rub_supp_4'=>$rub_supp_4,'rub_supp_5'=>$rub_supp_5,'rub_supp_6'=>$rub_supp_6,'rub_supp_7'=>$rub_supp_7,
             'localiter_supp'=>$localiter_supp,'localiter_supp1'=>$localiter_supp1,'localiter_supp2'=>$localiter_supp2,'localiter_supp3'=>$localiter_supp3,'localiter_supp4'=>$localiter_supp4,'localiter_supp5'=>$localiter_supp5,'localiter_supp6'=>$localiter_supp6,'localiter_supp7'=>$localiter_supp7,
             'villes_panier7'=>$arr7,'villes_panier6'=>$arr6,'villes_panier5'=>$arr5,'villes_panier4'=>$arr4,'villes_panier3'=>$arr3,'villes_panier2'=>$arr2,'villes_panier1'=>$arr1,'villes7'=>$villes7[0],'villes6'=>$villes6[0],'villes5'=>$villes5[0],'villes4'=>$villes4[0],'villes3'=>$villes3[0],'villes2'=>$villes2[0],'villes1'=>$villes1[0],'rub1'=>$rub1[0],'prest1'=>$prest1,'addprest1'=>$addprest1,'rub2'=>$rub2[0],'prest2'=>$prest2,'addprest2'=>$addprest2,'rub3'=>$rub3[0],'prest3'=>$prest3,'addprest3'=>$addprest3,'rub4'=>$rub4[0],'prest4'=>$prest4,'addprest4'=>$addprest4,'rub5'=>$rub5[0],'prest5'=>$prest5,'addprest5'=>$addprest5,'rub6'=>$rub6[0],'prest6'=>$prest6,'addprest6'=>$addprest6,'rub7'=>$rub7[0],'prest7'=>$prest7,'addprest7'=>$addprest7,'prestsupp'=>$prestsupp);
 

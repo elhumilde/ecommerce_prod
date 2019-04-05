@@ -139,11 +139,11 @@
                             <div class="form-group">
                                 <label id="from-label">Package</label> <br><br>
                                 <div>
-                                    <label class=" btn btn-default" style="background-color: #fff!important;border-color: #ccc;color: black!important;width:30%!important">
-                                        <input class="profession" type="radio" name="profession" id="profession" value="oui">Oui
+                                    <label class=" btn btn-default" style="background-color: #fff!important;border-color: #ccc;color: black!important;width:30%!important;margin:0;">
+                                        <input class="package" type="radio" name="package" id="package_yes" value="oui" {% if desrubref['package']  !=null %}{% if desrubref['package']=='oui' %}checked {% endif %}{% endif %}>Oui
                                     </label>
-                                    <label class=" btn btn-default" style="background-color: #fff!important;border-color: #ccc;color: black!important;width:30%!important">
-                                        <input class="profession" type="radio" name="profession" id="profession" value="non">Non&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <label class=" btn btn-default" style="background-color: #fff!important;border-color: #ccc;color: black!important;width:30%!important;margin:0;">
+                                        <input class="package" type="radio" name="package" id="package_non" value="non" {% if desrubref['package']  !=null %}{% if desrubref['package']=='non' %} checked {% endif %} {% else %}  checked{% endif %}>Non&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     </label>
                                 </div>
                             </div>
@@ -211,7 +211,7 @@
 
 
 
-                                    <div class="col-md-3">
+                                    <div class="col-md-3" id="no_package" {% if desrubref['package']  !=null %}{% if desrubref['package']=='oui' %}  style="display:none; " {% endif %}{% endif %}>
                                         <div  class="form-group" >
                                             <div class="dropdown">
 
@@ -297,7 +297,7 @@
 
 
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-3" id="no_package2"  {% if desrubref['package']  !=null %}{% if desrubref['package']=='oui' %}  style="display:none; " {% endif %}{% endif %}>
 
 
                                         <button type="button" id="dropdownMenu2"  class="btn dropdown-toggle multiselect mySelect" data-toggle="collapse" data-target="#demo-2-2">
@@ -394,12 +394,89 @@
 
                                     </div>
 
+                                    <div class="col-md-3" id="select_rub_prest_package"  {% if desrubref['package']  !=NULL %}{% if desrubref['package']=='oui' %}  style="display:yes;" {% else %} style="display:none; " {% endif %}{% endif %}  {% if desrubref['package']  ==NULL %}style="display:none; " {% endif %}>
+                                        <div class="form-group">
+                                            <div class="dropdown open">
+
+
+                                                <button type="button" id="dropdownMenu1" class="btn dropdown-toggle multiselect" data-toggle="dropdown" style="width: 400px;" aria-haspopup="true" aria-expanded="true">
+                                                    <span id="select_ville_principe">   Package &nbsp; </span><span id="ville_principe_view" style="display: none;"></span>
+                                                </button>
+
+
+                                                <ul class=" dropdown-menu mySelect ul_rub ville" id="select-rubrique">
+
+
+                                                    <table id="myTable_ville">
+
+                                                        <tbody>
+
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input id="villes_package" class="yes_package select_rub  chnage_color  " type="checkbox" name="villes_package" value="8450" {% if desrubref['package_value']  %}{% if desrubref['package_value']=='8450' %} checked {% endif %}{% endif %} ><h7 class="label_rub">Grand Casablanca</h7>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input id="villes_package" class="yes_package select_rub   chnage_color " type="checkbox" name="villes_package" value="6100" {% if desrubref['package_value']  %}{% if desrubref['package_value']=='6100' %} checked {% endif %}{% endif %}><h7 class="label_rub">Grand Rabat</h7>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input id="villes_package" class="yes_package select_rub   chnage_color " type="checkbox" name="villes_package" value="5600" {% if desrubref['package_value']  %}{% if desrubref['package_value']=='5600' %} checked {% endif %}{% endif %}><h7 class="label_rub">Grand Tanger</h7>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input id="villes_package" class="yes_package select_rub   chnage_color " type="checkbox" name="villes_package" value="4500" {% if desrubref['package_value']  %}{% if desrubref['package_value']=='4500' %} checked {% endif %}{% endif %}><h7 class="label_rub">Grand Tetouan</h7>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label>
+                                                                    <input id="villes_package" class="yes_package select_rub   chnage_color " type="checkbox" name="villes_package" value="5800" {% if desrubref['package_value']  %}{% if desrubref['package_value']=='5800' %} checked {% endif %}{% endif %}><h7 class="label_rub">Grand Agadir</h7>
+                                                                </label>
+                                                            </td>
+                                                        </tr>
+
+                                                        </tbody>
+                                                    </table>
+
+
+
+                                                </ul>
+
+
+                                            </div>
+                                        </div>
+
+
+
+
+                                    </div>
+
+
 
 
 
                                 </div>
                             </div>
-                            <div id="select_rub_prest1" >
+
+
+
+
+
+
+                                    <div id="select_rub_prest1" >
                                 <div class="row">
 
                                     <div class="col-md-3">
@@ -3501,6 +3578,32 @@
     });
 
 
+            $(document).on('change', '.yes_package', function () {
+
+
+                //
+                if($(this).is(":checked")){
+
+                    var num1 = $("#num1").val();
+                    var v  =  $('.yes_package:checked').attr("value");
+
+
+                    $('input[id=final]').val(v);
+
+
+                }
+                else{
+
+
+
+
+                    $('input[id=final]').val(0);
+
+                }
+
+                calculate_rubrique_total();
+            });
+
     $(document).on('change', '.arms', function () {
 
 
@@ -4889,6 +4992,64 @@
      }
      });*/
 
+    $(".yes_package   input[name='villes_package']").on('change',function() {
+
+
+        if(($(".yes_package  input[name='villes_package']").is(":checked")))
+        {
+
+
+            $('.yes_package ').not(this).prop('disabled', this.checked);
+            $(".yes_package  input[name='villes_package']:disabled").css('display', 'none');
+            $(".yes_package  input[name='villes_package']:disabled + h7 ").css('display', 'none');
+            $(".yes_package  input[name='villes_package']").css('float', 'left');
+            $(".yes_package  input[name='villes_package']").css('clear', 'left');
+            /*$('.r').css("position", "absolute");
+             $('.r').css("margin-top", "auto");
+             $('.r').css("margin-bottom", "auto");
+             $('.r').css("top", -8);
+             $('.r').css("bottom", 0);*/
+            $('.label_rub').css("margin-left", 21);
+
+
+        }
+        else
+        if ($(".yes_package  input[name='villes_package']").prop('checked', false))
+        {
+
+
+
+
+            $(".yes_package  input[name='villes_package']").css("position", "absolute");
+            $(".yes_package  input[name='villes_package']:disabled").css('display', '');
+            $(".yes_package  input[name='villes_package']:disabled + h7").css('display', '');
+            $('.label_rub').css("margin-left", 18);
+
+
+        }
+    });
+
+    $(".yes_package  input[name='villes_package']").on('change  ',function() {
+        $(".yes_package  input[name='villes_package']").not(this).prop('disabled', this.checked);
+    });
+
+
+    $(window).load(function() {
+
+        if(($(".yes_package  input[name='villes_package']").is(":checked"))) {
+            $(".yes_package  input[name='villes_package']").prop('disabled', true);
+            $(".yes_package  input[name='villes_package']:checked").removeAttr('disabled');
+            $(".yes_package  input[name='villes_package']:disabled").css('display', 'none');
+            $(".yes_package  input[name='villes_package']:disabled + h7").css('display', 'none');
+        }
+        else
+        if ($(".yes_package  input[name='villes_package']").prop('checked', false)) {
+            $(".yes_package  input[name='villes_package']").prop('disabled', false);
+            $(".yes_package  input[name='villes_package']:checked").removeAttr('disabled');
+            $(".yes_package  input[name='villes_package']:disabled").css('display', '');
+            $(".yes_package  input[name='villes_package']:disabled + h7").css('display', '');
+        }
+    });
 
 
 
@@ -7335,6 +7496,22 @@
     /*-------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
+    $("input[name=package]").change(function(){
+
+        if($("#package_non").is(':checked')){
+            $("#no_package").show();
+            $("#no_package2").show();
+            $("#select_rub_prest_package").hide();
+
+            $('input[id=final]').val(0);
+            
+        calculate_rubrique_total();
+        }else if($("#package_yes").is(':checked')){
+            $("#no_package").hide();
+            $("#no_package2").hide();
+            $("#select_rub_prest_package").show();
+        }
+    });
 
 
 </script>
