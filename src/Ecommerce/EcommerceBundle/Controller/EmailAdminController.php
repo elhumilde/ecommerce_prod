@@ -168,10 +168,12 @@ $returnArray[get_class($entity)] = $entity;
 
     public function indexAction()
     {
+        ini_set('memory_limit', '-1');
         $em = $this->getDoctrine()->getManager();
         $query = $em->getRepository('EcommerceBundle:Mails')->createQueryBuilder('t')->select('t')
             ->orderBy('t.dateCreation', 'desc')
             ->getQuery()->getResult();
+
         return $this->render('EcommerceBundle:Administration:Mails/index.html.twig', array(
             'emails' => $query,
         ));

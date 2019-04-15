@@ -30,9 +30,19 @@ class UtilisateurFormType extends AbstractType
            /* ->add('anneeExpAvtEmb', null, array('label' => 'Année d\'expérience', 'translation_domain' => 'FOSUserBundle','attr' => array(   'min' => 0)))
             ->add('nbrCltAnneePrec', null, array('label' => 'Nombre de client ', 'translation_domain' => 'FOSUserBundle','attr' => array(   'min' => 0)))*/
            /* ->add('anneeEmb', 'date', array ('label' => 'Date d\'embauche','widget' => 'choice','pattern' => '{{ day }}-{{ month }}-{{ year }', 'years'=> range(date('Y'), date('Y') - 30, -1)))
-            */
+            */->add('enabled', 'choice', array(
+               'choices' => array(
+                   '1' =>'Active',
+                   '0'   =>'Désactive'
+               ),
+               'label' => ' Etat',
+               'required' => true,
+               'empty_value' => false,
 
-            ->add('anneeEmb', 'date', array ('label' => 'Date d\'embauche','widget' => 'choice','pattern' => '{{ day }}-{{ month }}-{{ year }', 'years'=> range(date('Y'), date('Y') - 30, -1)))
+           ))
+
+
+        ->add('anneeEmb', 'date', array ('label' => 'Date d\'embauche','widget' => 'choice','pattern' => '{{ day }}-{{ month }}-{{ year }', 'years'=> range(date('Y'), date('Y') - 30, -1)))
 
 
 

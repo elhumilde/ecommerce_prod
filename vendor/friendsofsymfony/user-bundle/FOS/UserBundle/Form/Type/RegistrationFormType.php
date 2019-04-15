@@ -41,8 +41,8 @@ class RegistrationFormType extends AbstractType
             ->add('nbrCltAnneePrec', null, array('label' => 'Nombre de client ', 'translation_domain' => 'FOSUserBundle','attr' => array(   'min' => 0)))*/
             ->add('anneeEmb', 'date', array ('label' => 'Date d\'embauche','widget' => 'choice','pattern' => '{{ day }}-{{ month }}-{{ year }', 'years'       => range(date('Y'), date('Y') - 30, -1)))
            /* ->add('profil', 'choice', array('choices'   => array('' => 'Select Profil','Responsable Equipe Commerciale' => 'Responsable Equipe Commerciale', 'Senior' => 'Senior','Junior' => 'Junior'),   'required'  => true,), array('label' => 'Profil', 'translation_domain' => 'FOSUserBundle'))*/
-           ->add('groupe', 'choice', array('choices'   => array('' => 'Sélectionner un groupe','televente' => 'Télévente', 'Kilaouy' => 'Kilaouy','Chraibi' => 'Chraibi','Benzahra' => 'Benzahra','Alami' => 'Alami')))
-           ->add('profil', null, array('label' => 'Profil', 'translation_domain' => 'FOSUserBundle' ,'attr' => array('class' => 'ckeditor')))
+            ->add('groupe', 'choice', array('choices'   => array('' => 'Sélectionner un groupe','marketing' => 'Marketing Direct','televente' => 'Télévente', 'Kilaouy' => 'Kilaouy','Chraibi' => 'Chraibi','Benzahra' => 'Benzahra','Alami' => 'Alami')))
+            ->add('profil', null, array('label' => 'Profil', 'translation_domain' => 'FOSUserBundle' ,'attr' => array('class' => 'ckeditor')))
             ->add('teleconatct',"entity", array( 'label' => false ,"class"=>"EcommerceBundle:Telecontact", "property"=>"titre",'attr'=>array('style'=>'display:none;')))
             ->add('description', null, array('label' => 'Expertise Métier', 'translation_domain' => 'FOSUserBundle','attr' => array('class' => 'ckeditor')))
             ->add('experiececontenu', null, array('label' => 'Description Experience', 'translation_domain' => 'FOSUserBundle' ,'attr' => array('class' => 'ckeditor')))

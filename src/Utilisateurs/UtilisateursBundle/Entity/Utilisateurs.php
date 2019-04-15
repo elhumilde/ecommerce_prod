@@ -59,6 +59,9 @@ class Utilisateurs extends BaseUser
     private $anneeExpAvtEmb;
 
 
+
+
+
     /**
      * @var \DateTime
      *
@@ -449,4 +452,5 @@ class Utilisateurs extends BaseUser
     {
         return $this->path;
     }
+
 }
